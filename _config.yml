@@ -1,3 +1,140 @@
 title: "Hanane - Cybersecurity Journey"
-description: "Notes d'apprentissage TryHackMe"
+description: "📚 Notes d'apprentissage TryHackMe | Pentest | Ethical Hacking | CTF"
 theme: jekyll-theme-cayman
+github:
+  is_project_page: false
+  is_user_page: true
+
+# Configuration personnalisée
+show_downloads: false
+google_analytics: # Ajoutez votre ID Google Analytics si vous en avez un
+twitter_username: # Votre @twitter (optionnel)
+github_username: # Votre nom d'utilisateur GitHub
+
+# Couleurs personnalisées (override du thème Cayman)
+override_theme:
+  primary_color: "#0d1117"  # Noir profond tech
+  secondary_color: "#161b22"  # Gris foncé
+  accent_color: "#58a6ff"  # Bleu GitHub
+  text_color: "#c9d1d9"  # Gris clair lisible
+  link_color: "#58a6ff"
+  code_background: "#0d1117"
+  border_color: "#30363d"
+
+# Plugins Jekyll
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-avatar
+  - jekyll-github-metadata
+
+# Navigation
+nav:
+  - title: "🏠 Accueil"
+    url: "/"
+  - title: "📖 Notes THM"
+    url: "/tryhackme/"
+  - title: "🔓 CTF Writeups"
+    url: "/writeups/"
+  - title: "🛠️ Outils"
+    url: "/tools/"
+  - title: "📚 Ressources"
+    url: "/resources/"
+  - title: "📈 Progression"
+    url: "/progress/"
+
+# Features spéciales pour cybersécurité
+features:
+  dark_mode: true
+  code_highlighting: true
+  terminal_style: true
+  responsive: true
+
+# Social links (à compléter)
+social:
+  github: "votre-username"
+  linkedin: # votre profil LinkedIn
+  twitter: # votre Twitter
+  discord: # votre Discord (optionnel)
+  tryhackme: # votre profil TryHackMe
+
+# En-tête personnalisé
+header:
+  image: "/assets/images/cyber-header.jpg"  # Créez une image header stylée
+  overlay_color: "rgba(13, 17, 23, 0.85)"
+  actions:
+    - label: "📂 Voir mes Writeups"
+      url: "/writeups/"
+    - label: "⭐ GitHub"
+      url: "https://github.com/votre-username"
+
+# Footer personnalisé
+footer:
+  copyright_year: 2024
+  quote: "Stay curious. Stay ethical. Hack the planet 🌐"
+  badges:
+    - image: "https://tryhackme-badges.s3.amazonaws.com/votre-username.png"
+      alt: "TryHackMe"
+      url: "https://tryhackme.com/p/votre-username"
+    - image: "https://img.shields.io/badge/Cybersecurity-Enthusiast-blue"
+      alt: "Cybersecurity Enthusiast"
+
+# Configuration des publications (posts)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Hanane"
+      category: "Cybersecurity"
+      tags: []
+      toc: true  # Table of contents automatique
+      share: true
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Exclude certains fichiers/dossiers
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+
+# SASS/CSS custom
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Markdown processing
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Collections pour organisation
+collections:
+  tryhackme_rooms:
+    output: true
+    permalink: /tryhackme/:path/
+  ctf_writeups:
+    output: true
+    permalink: /writeups/:path/
+  tools:
+    output: true
+    permalink: /tools/:path/
