@@ -1,3 +1,8 @@
-theme: jekyll-theme-minimal
-title: ItsHanane - CyberSecurity
-description: Étudiante en Cybersécurité passionnée
+title: Haname — Cybersecurity Student
+email: ""
+description: "Site personnel — Étudiante en cybersécurité à la FSSM"
+baseurl: "" # laisser vide pour GitHub Pages
+url: "https://itshaname.github.io"
+theme: null
+plugins: []
+markdown: kramdown
