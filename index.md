@@ -32,21 +32,23 @@ nav: home
   100% { transform: scale(1); }
 }
 
-@keyframes cyberiaGlitch {
-  0% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff; }
-  25% { text-shadow: -2px 2px 0px #ff00ff, 2px -2px 0px #00ffff; }
-  50% { text-shadow: 2px -2px 0px #00ffff, -2px 2px 0px #ff00ff; }
-  75% { text-shadow: -2px -2px 0px #00ffff, 2px 2px 0px #ff00ff; }
-  100% { text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff; }
-}
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
+@keyframes glitch-1 {
+  0% { clip-path: inset(40% 0 61% 0); }
+  100% { clip-path: inset(92% 0 1% 0); }
+}
+
+@keyframes glitch-2 {
+  0% { clip-path: inset(25% 0 58% 0); }
+  100% { clip-path: inset(75% 0 1% 0); }
+}
+
 body {
-  background: #0a0a0f;
+  background: #0a0e1a;
   min-height: 100vh;
   margin: 0;
   position: relative;
@@ -67,7 +69,7 @@ body {
   position: absolute;
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  color: rgba(0, 170, 255, 0.15);
+  color: rgba(59, 130, 246, 0.15);
   opacity: 0;
   animation: matrixRain linear infinite;
 }
@@ -84,57 +86,71 @@ body {
   z-index: 1;
 }
 
-/* CYBERIA Header avec ligne horizontale */
+/* CYBERIA Header - Style néon avec couleurs bleues marines */
 .cyberia-header {
   text-align: center;
   margin-bottom: 60px;
   padding: 40px 20px;
   position: relative;
+  background: rgba(0, 20, 40, 0.6);
+  border-radius: 30px;
+  border: 3px solid #1e4d7b;
+  box-shadow: 0 0 40px rgba(30, 77, 123, 0.5), inset 0 0 30px rgba(30, 77, 123, 0.2);
 }
 
 .cyberia-title {
   font-size: 5em;
-  color: #ff00ff;
-  text-shadow: 0 0 20px #ff00ff;
+  color: #ff6b4a;
+  text-shadow: 
+    0 0 10px #ff6b4a,
+    0 0 20px #ff6b4a,
+    0 0 30px #ff6b4a,
+    0 0 40px #ff3300;
   margin: 0;
   font-weight: 900;
   letter-spacing: 10px;
   text-transform: uppercase;
-  animation: cyberiaGlitch 0.8s infinite;
   position: relative;
+  font-style: italic;
+  -webkit-text-stroke: 2px #ff3300;
+  paint-order: stroke fill;
 }
 
-/* Ligne horizontale comme dans l'image */
+/* Ligne horizontale */
 .cyberia-line {
   width: 100%;
   height: 3px;
   background: linear-gradient(90deg, 
     transparent, 
-    #ff00ff, 
-    #00ffff, 
-    #ff00ff, 
+    #1e4d7b, 
+    #3b82f6, 
+    #1e4d7b, 
     transparent);
   margin: 20px auto;
   max-width: 500px;
-  box-shadow: 0 0 10px #ff00ff;
+  box-shadow: 0 0 15px #3b82f6;
 }
 
 .cyberia-subtitle {
   font-size: 1.8em;
-  color: #00ffff;
+  color: #60a5fa;
   margin: 10px 0 0 0;
-  text-shadow: 0 0 10px #00ffff;
+  text-shadow: 
+    0 0 10px #60a5fa,
+    0 0 20px #3b82f6,
+    0 0 30px #2563eb;
   letter-spacing: 4px;
   font-weight: 300;
+  font-style: italic;
 }
 
 .cyberia-subtitle::after {
   content: '_';
   animation: blink 1s infinite;
-  color: #ff00ff;
+  color: #60a5fa;
 }
 
-/* Rest of the page - keeping original style */
+/* Rest of the page - theme bleu marine */
 .cyber-header {
   text-align: center;
   margin-bottom: 60px;
@@ -144,7 +160,7 @@ body {
   font-size: 3em;
   text-align: center;
   color: transparent;
-  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff6b9d);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #2563eb);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -156,7 +172,7 @@ body {
 
 .subtitle {
   font-size: 1.5em;
-  color: #8b949e;
+  color: #94a3b8;
   text-align: center;
   margin-bottom: 40px;
   font-style: italic;
@@ -165,7 +181,7 @@ body {
 .glitch-text {
   font-size: 1.8em;
   font-weight: bold;
-  color: #fff;
+  color: #e2e8f0;
   position: relative;
   display: inline-block;
   margin: 10px 0 40px 0;
@@ -183,24 +199,14 @@ body {
 
 .glitch-text:before {
   left: 2px;
-  text-shadow: -1px 0 #ff00ff;
+  text-shadow: -1px 0 #3b82f6;
   animation: glitch-1 2s infinite linear alternate-reverse;
 }
 
 .glitch-text:after {
   left: -2px;
-  text-shadow: -1px 0 #00ffff;
+  text-shadow: -1px 0 #60a5fa;
   animation: glitch-2 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-1 {
-  0% { clip-path: inset(40% 0 61% 0); }
-  100% { clip-path: inset(92% 0 1% 0); }
-}
-
-@keyframes glitch-2 {
-  0% { clip-path: inset(25% 0 58% 0); }
-  100% { clip-path: inset(75% 0 1% 0); }
 }
 
 .hologram-grid {
@@ -211,8 +217,8 @@ body {
 }
 
 .holo-card {
-  background: rgba(13, 17, 23, 0.85);
-  border: 1px solid rgba(138, 141, 255, 0.3);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 15px;
   padding: 30px;
   text-align: center;
@@ -231,7 +237,7 @@ body {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #ff00ff, #00ffff, transparent);
+  background: linear-gradient(45deg, #3b82f6, #60a5fa, transparent);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s;
@@ -243,19 +249,19 @@ body {
 
 .holo-card:hover {
   transform: translateY(-10px) scale(1.02);
-  border-color: #00ffff;
-  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.2);
+  border-color: #60a5fa;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
 }
 
 .holo-card h3 {
-  color: #ff00ff;
+  color: #3b82f6;
   margin: 0 0 15px 0;
   font-size: 1.5em;
   font-weight: 600;
 }
 
 .holo-card p {
-  color: #c9d1d9;
+  color: #cbd5e1;
   margin: 0;
   line-height: 1.6;
 }
@@ -263,28 +269,28 @@ body {
 .welcome-text {
   text-align: center;
   font-size: 1.2em;
-  color: #8b949e;
+  color: #94a3b8;
   margin: 50px 0;
   padding: 30px;
-  background: rgba(13, 17, 23, 0.7);
+  background: rgba(15, 23, 42, 0.7);
   border-radius: 15px;
-  border-left: 4px solid #ff00ff;
+  border-left: 4px solid #3b82f6;
   animation: slideIn 1s ease-out;
 }
 
 .mission-statement {
   text-align: center;
   font-size: 1.1em;
-  color: #00ffff;
+  color: #60a5fa;
   margin: 40px 0;
   padding: 20px;
-  background: rgba(13, 17, 23, 0.5);
+  background: rgba(15, 23, 42, 0.5);
   border-radius: 10px;
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .mission-statement strong {
-  color: #ff00ff;
+  color: #3b82f6;
 }
 
 .badge-container {
@@ -298,10 +304,10 @@ body {
 .floating-badge {
   display: inline-block;
   padding: 12px 25px;
-  background: rgba(22, 27, 34, 0.8);
-  border: 1px solid #30363d;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #1e40af;
   border-radius: 25px;
-  color: #00ffff;
+  color: #60a5fa;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s;
@@ -309,10 +315,10 @@ body {
 }
 
 .floating-badge:hover {
-  background: #ff00ff;
+  background: #3b82f6;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 0, 255, 0.3);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
   animation: none;
 }
 
@@ -320,8 +326,8 @@ body {
   text-align: center;
   margin-top: 80px;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 0, 255, 0.3);
-  color: #586069;
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+  color: #64748b;
   font-size: 0.9em;
 }
 
@@ -403,12 +409,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Random opacity
     digit.style.opacity = Math.random() * 0.2 + 0.05;
     
-    // Cyberia colors
+    // Blue marine colors
     const colors = [
-      'rgba(255, 0, 255, 0.15)',
-      'rgba(0, 255, 255, 0.15)',
-      'rgba(255, 107, 157, 0.15)',
-      'rgba(88, 166, 255, 0.15)'
+      'rgba(59, 130, 246, 0.15)',
+      'rgba(96, 165, 250, 0.15)',
+      'rgba(37, 99, 235, 0.15)',
+      'rgba(30, 64, 175, 0.15)'
     ];
     digit.style.color = colors[Math.floor(Math.random() * colors.length)];
     
@@ -435,11 +441,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Random opacity
     floatDigit.style.opacity = Math.random() * 0.3 + 0.1;
     
-    // Cyberia colors - brighter for floating ones
+    // Blue marine colors - brighter for floating ones
     const floatColors = [
-      'rgba(255, 0, 255, 0.25)',
-      'rgba(0, 255, 255, 0.25)',
-      'rgba(255, 107, 157, 0.25)'
+      'rgba(59, 130, 246, 0.25)',
+      'rgba(96, 165, 250, 0.25)',
+      'rgba(37, 99, 235, 0.25)'
     ];
     floatDigit.style.color = floatColors[Math.floor(Math.random() * floatColors.length)];
     
@@ -499,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <div class="welcome-text">
-    <p>Salut — je suis <strong style="color: #ff00ff;">Haname</strong>, étudiante en cybersécurité à la FSSM.<br>
+    <p>Salut — je suis <strong style="color: #3b82f6;">Haname</strong>, étudiante en cybersécurité à la FSSM.<br>
     Bienvenue sur mon site où je partage mon parcours, mes parcours (paths) TryHackMe, la formation FSSM, et mes laboratoires personnels.</p>
   </div>
 
