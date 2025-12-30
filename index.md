@@ -45,6 +45,25 @@ nav: home
   50% { opacity: 0; }
 }
 
+@keyframes cloudFloat {
+  0%, 100% { 
+    transform: translateX(0) translateY(0);
+    filter: blur(0px);
+  }
+  25% { 
+    transform: translateX(-10px) translateY(-5px);
+    filter: blur(1px);
+  }
+  50% { 
+    transform: translateX(10px) translateY(5px);
+    filter: blur(0.5px);
+  }
+  75% { 
+    transform: translateX(-5px) translateY(3px);
+    filter: blur(0.8px);
+  }
+}
+
 body {
   background: #0a0a0f;
   min-height: 100vh;
@@ -84,7 +103,7 @@ body {
   z-index: 1;
 }
 
-/* CYBERIA Header - Simple and clean */
+/* CYBERIA Header avec nuage */
 .cyberia-header {
   text-align: center;
   margin-bottom: 60px;
@@ -117,6 +136,57 @@ body {
   content: '_';
   animation: blink 1s infinite;
   color: #ff00ff;
+}
+
+/* Nuage autour de CYBERIA */
+.cloud-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: cloudFloat 20s ease-in-out infinite;
+}
+
+.cloud-1 {
+  width: 300px;
+  height: 100px;
+  top: -30px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cloud-2 {
+  width: 250px;
+  height: 80px;
+  top: 30px;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+.cloud-3 {
+  width: 200px;
+  height: 60px;
+  bottom: 40px;
+  left: 20%;
+  animation-delay: 10s;
+}
+
+.cloud-4 {
+  width: 180px;
+  height: 50px;
+  bottom: 20px;
+  right: 25%;
+  animation-delay: 15s;
 }
 
 /* Rest of the page - keeping original style */
@@ -327,6 +397,10 @@ body {
     letter-spacing: 2px;
   }
   
+  .cloud-1, .cloud-2, .cloud-3, .cloud-4 {
+    transform: scale(0.7);
+  }
+  
   .neon-title {
     font-size: 2em;
   }
@@ -434,13 +508,25 @@ document.addEventListener('DOMContentLoaded', function() {
     card.style.animation = 'slideIn 0.8s ease-out forwards';
     card.style.opacity = '0';
   });
+  
+  // Create cloud container
+  const cloudContainer = document.createElement('div');
+  cloudContainer.className = 'cloud-container';
+  document.querySelector('.cyberia-header').appendChild(cloudContainer);
 });
 </script>
 
 <div class="container">
 
-  <!-- Simple CYBERIA Header -->
+  <!-- CYBERIA Header avec nuage -->
   <div class="cyberia-header">
+    <div class="cloud-container">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-4"></div>
+    </div>
+    
     <div class="cyberia-title">CYBERIA</div>
     <div class="cyberia-subtitle">Cafe & Club</div>
   </div>
