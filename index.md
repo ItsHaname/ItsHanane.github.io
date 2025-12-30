@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="terminal-dot yellow"></div>
     <div class="terminal-dot green"></div>
   </div>
-  <div class="typing-text">$ Bienvenue sur le terminal de Haname...</div>
+  <div class="typing-text">$  Bienvenue sur mon site ...</div>
 </div>
 
 <div class="neon-title">HANAME</div>
