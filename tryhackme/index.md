@@ -33,7 +33,7 @@ nav: tryhackme
 
 @keyframes glow {
   0%, 100% { text-shadow: 0 0 10px #dc2626, 0 0 20px #dc2626; }
-  50% { text-shadow: 0 0 20px #dc2626, 0 0 40px #dc2626, 0 0 60px #ef4444; }
+  50% { text-shadow: 0 0 20px #dc2626, 0 0 40px #ef4444, 0 0 60px #f87171; }
 }
 
 .thm-container {
@@ -307,6 +307,13 @@ nav: tryhackme
   font-weight: 700;
 }
 
+.room-card p {
+  color: #cbd5e1;
+  margin: 15px 0;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
 .room-difficulty {
   display: inline-block;
   padding: 6px 14px;
@@ -388,9 +395,9 @@ nav: tryhackme
 <div class="thm-container">
 
 <div class="thm-hero">
-  <div class="thm-logo">🎯</div>
+  <div class="thm-logo">🔐</div>
   <div class="thm-title">TryHackMe</div>
-  <div class="thm-subtitle">My Cybersecurity Journey</div>
+  <div class="thm-subtitle">Mon Apprentissage en Cybersécurité</div>
 </div>
 
 <div class="badge-section">
@@ -403,77 +410,97 @@ nav: tryhackme
 <div class="path-section">
   <div class="path-header">
     <div class="path-badge">EN COURS</div>
-    <h2 class="path-title">Junior Penetration Tester</h2>
+    <h2 class="path-title">Parcours d'Apprentissage</h2>
     <p class="path-description">
-      Ce parcours couvre les compétences essentielles pour débuter en tant que pentester : 
-      reconnaissance, exploitation web, escalade de privilèges, et post-exploitation.
+      Mon parcours sur TryHackMe pour développer mes compétences en cybersécurité offensive et défensive,
+      en suivant les modules recommandés pour devenir un professionnel qualifié.
     </p>
   </div>
 
   <div class="progress-bar-container">
     <div class="progress-label">
-      <span>Progression du parcours</span>
-      <span>En cours...</span>
+      <span>Progression globale</span>
+      <span>Débutant</span>
     </div>
     <div class="progress-bar">
-      <div class="progress-fill" style="width: 15%;"></div>
+      <div class="progress-fill" style="width: 20%;"></div>
     </div>
   </div>
 
   <div class="stats-grid">
     <div class="stat-box">
-      <div class="stat-number">1</div>
-      <div class="stat-label">Parcours actif</div>
+      <div class="stat-number">3</div>
+      <div class="stat-label">Modules actifs</div>
     </div>
     <div class="stat-box">
-      <div class="stat-number">...</div>
-      <div class="stat-label">Rooms complétées</div>
+      <div class="stat-number">12+</div>
+      <div class="stat-label">Salles visitées</div>
     </div>
     <div class="stat-box">
-      <div class="stat-number">...</div>
+      <div class="stat-number">5</div>
       <div class="stat-label">Badges obtenus</div>
     </div>
   </div>
 
   <h3 style="color: #ef4444; font-size: 2em; margin: 60px 0 30px 0; text-align: center;">
-    Rooms du Parcours
+    Mes Modules Actuels
   </h3>
 
   <div class="rooms-grid">
     
-  <div class="room-card">
+   <div class="room-card">
       <span class="room-status status-progress">En cours</span>
-      <h3>Nmap & Reconnaissance</h3>
+      <h3>Introduction to Cyber Security</h3>
+      <p>Comprendre la sécurité offensive et défensive, et découvrir les carrières disponibles en cybersécurité.</p>
       <span class="room-difficulty difficulty-easy">Facile</span>
     </div>
 
    <div class="room-card">
-      <span class="room-status status-pending">À venir</span>
-      <h3>Web Exploitation</h3>
+      <span class="room-status status-progress">En cours</span>
+      <h3>Introduction to Pentesting</h3>
+      <p>Comprendre ce qu'implique un test d'intrusion, y compris les techniques et méthodologies que tout pentester devrait connaître.</p>
+      <span class="room-difficulty difficulty-medium">Moyen</span>
+    </div>
+
+   <div class="room-card">
+      <span class="room-status status-progress">En cours</span>
+      <h3>Introduction to Web Hacking</h3>
+      <p>Apprendre et exploiter certaines des vulnérabilités d'application web les plus populaires dans l'industrie.</p>
       <span class="room-difficulty difficulty-medium">Moyen</span>
     </div>
 
   <div class="room-card">
       <span class="room-status status-pending">À venir</span>
-      <h3>Privilege Escalation Linux</h3>
+      <h3>Burp Suite</h3>
+      <p>L'outil standard de l'industrie pour le hacking d'applications web, essentiel pour tout test de pénétration web.</p>
       <span class="room-difficulty difficulty-medium">Moyen</span>
     </div>
 
   <div class="room-card">
       <span class="room-status status-pending">À venir</span>
-      <h3>Forensics & Logs</h3>
+      <h3>Network Security</h3>
+      <p>Apprendre les bases de la reconnaissance réseau passive et active. Comprendre le fonctionnement des protocoles courants.</p>
       <span class="room-difficulty difficulty-medium">Moyen</span>
+    </div>
+
+   <div class="room-card">
+      <span class="room-status status-pending">À venir</span>
+      <h3>Metasploit</h3>
+      <p>Le framework d'exploitation le plus utilisé. Apprendre à l'utiliser et à débloquer son plein potentiel.</p>
+      <span class="room-difficulty difficulty-hard">Difficile</span>
     </div>
 
   <div class="room-card">
       <span class="room-status status-pending">À venir</span>
-      <h3>Metasploit Framework</h3>
-      <span class="room-difficulty difficulty-medium">Moyen</span>
+      <h3>Privilege Escalation</h3>
+      <p>Apprendre les techniques fondamentales pour élever les privilèges de compte dans les systèmes Linux et Windows.</p>
+      <span class="room-difficulty difficulty-hard">Difficile</span>
     </div>
 
   <div class="room-card">
       <span class="room-status status-pending">À venir</span>
-      <h3>Post-Exploitation</h3>
+      <h3>Vulnerability Research</h3>
+      <p>Se familiariser avec les compétences, méthodes de recherche et ressources utilisées pour exploiter les applications et systèmes vulnérables.</p>
       <span class="room-difficulty difficulty-hard">Difficile</span>
     </div>
 
@@ -482,9 +509,10 @@ nav: tryhackme
 
 <div style="text-align: center; margin-top: 80px; padding: 40px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.9)); border-radius: 20px; border: 2px solid #7f1d1d;">
   <p style="color: #94a3b8; font-size: 1.1em; line-height: 1.8;">
-    Profil TryHackMe: <a href="https://tryhackme.com/p/3165378" target="_blank" style="color: #ef4444; font-weight: bold; text-decoration: none;">@3165378</a><br>
-    Objectif: <span style="color: #dc2626; font-weight: bold;">Compléter le parcours Junior Penetration Tester</span><br>
-    Suivez ma progression et mes write-ups sur cette page
+    <span style="color: #ef4444; font-weight: bold;">🎯 Objectif Principal:</span> Devenir un Pentester Junior certifié<br>
+    <span style="color: #ef4444; font-weight: bold;">📊 Progression:</span> Débutant → Junior Penetration Tester → Pentester Professionnel<br>
+    <span style="color: #ef4444; font-weight: bold;">🔗 Profil TryHackMe:</span> <a href="https://tryhackme.com/p/3165378" target="_blank" style="color: #ef4444; font-weight: bold; text-decoration: none;">@3165378</a><br>
+    <span style="color: #ef4444; font-weight: bold;">🏆 Certification visée:</span> Jr. Penetration Tester (PT1)
   </p>
 </div>
 
