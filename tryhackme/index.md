@@ -1,473 +1,471 @@
 ---
 layout: default
-title: TryHackMe
-nav: tryhackme
+title: Parcours FSSM
+nav: fssm
 ---
 
 <style>
-:root {
-  --cyber-teal: #00ffff;
-  --cyber-purple: #9d00ff;
-  --cyber-pink: #ff00ff;
-  --dark-bg: #0a0a0a;
-  --darker-bg: #050505;
-  --text-glow: #ffffff;
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-body {
-  background-color: var(--dark-bg);
-  color: var(--text-glow);
-  font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Matrix rain effect */
-.matrix-bg {
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 10px #60a5fa, 0 0 20px #3b82f6; }
+  50% { text-shadow: 0 0 20px #60a5fa, 0 0 40px #3b82f6, 0 0 60px #2563eb; }
+}
+
+@keyframes rotate3d {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.fssm-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Particles background */
+.particles {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  opacity: 0.1;
   pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  position: relative;
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: float 4s infinite ease-in-out;
 }
 
-/* Header */
-.header {
+.fssm-hero {
   text-align: center;
-  padding: 3rem 0;
-  border-bottom: 2px solid var(--cyber-teal);
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.header::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 25%;
-  width: 50%;
-  height: 4px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    var(--cyber-purple), 
-    var(--cyber-pink), 
-    var(--cyber-purple), 
-    transparent);
-  filter: blur(2px);
-}
-
-.title {
-  font-size: 4rem;
-  margin: 0;
-  color: var(--cyber-teal);
-  text-shadow: 
-    0 0 10px var(--cyber-teal),
-    0 0 20px var(--cyber-teal);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-.subtitle {
-  color: var(--cyber-pink);
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  letter-spacing: 2px;
-}
-
-/* Terminal style intro */
-.terminal {
-  background: var(--darker-bg);
-  border: 1px solid var(--cyber-teal);
-  padding: 2rem;
-  margin: 2rem 0;
-  box-shadow: 
-    0 0 20px rgba(0, 255, 255, 0.2),
-    inset 0 0 20px rgba(0, 255, 255, 0.1);
-  position: relative;
-}
-
-.terminal::before {
-  content: 'user@tryhackme:~$';
-  position: absolute;
-  top: -12px;
-  left: 20px;
-  background: var(--darker-bg);
-  padding: 0 10px;
-  color: var(--cyber-pink);
-  font-weight: bold;
-}
-
-.terminal p {
-  margin: 0.5rem 0;
-  color: #00ff00;
-}
-
-.terminal p::before {
-  content: '> ';
-  color: var(--cyber-teal);
-}
-
-/* Modules grid */
-.modules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-}
-
-.module-card {
-  background: linear-gradient(
-    145deg,
-    rgba(0, 255, 255, 0.05),
-    rgba(157, 0, 255, 0.05)
-  );
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  padding: 2rem;
-  transition: all 0.3s ease;
+  margin-bottom: 80px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(0, 20, 40, 0.9), rgba(15, 23, 42, 0.8));
+  border-radius: 30px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
   position: relative;
   overflow: hidden;
 }
 
-.module-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--cyber-pink);
-  box-shadow: 
-    0 10px 30px rgba(255, 0, 255, 0.3),
-    0 0 50px rgba(157, 0, 255, 0.2);
+.fssm-hero::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #3b82f6, #60a5fa, #2563eb, #1e40af);
+  background-size: 300% 300%;
+  animation: gradientBG 4s ease infinite;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.semester-badge {
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #ff6b4a, #ff3300);
+  color: white;
+  font-size: 1.8em;
+  font-weight: 900;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(255, 107, 74, 0.5);
+  animation: pulse 3s infinite;
+  letter-spacing: 3px;
+}
+
+.fssm-title {
+  font-size: 4em;
+  color: transparent;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #2563eb, #60a5fa, #3b82f6);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientBG 3s ease infinite, glow 2s ease-in-out infinite;
+  margin: 30px 0;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.fssm-subtitle {
+  font-size: 1.5em;
+  color: #60a5fa;
+  margin: 20px 0;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.fssm-subtitle::after {
+  content: '_';
+  animation: blink 1s infinite;
+  color: #ff6b4a;
+}
+
+.university-name {
+  font-size: 1.2em;
+  color: #94a3b8;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.terminal-section {
+  background: rgba(10, 14, 26, 0.95);
+  border: 2px solid #3b82f6;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 40px 0;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.terminal-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ff5f56; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green { background: #27c93f; }
+
+.terminal-text {
+  color: #60a5fa;
+  line-height: 2;
+}
+
+.terminal-text .prompt {
+  color: #ff6b4a;
+  font-weight: bold;
+}
+
+.terminal-text .command {
+  color: #3b82f6;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+  perspective: 1000px;
+}
+
+.module-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 35px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  animation: slideIn 0.8s ease-out backwards;
+  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .module-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    var(--cyber-teal), 
-    var(--cyber-purple), 
-    var(--cyber-pink));
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #60a5fa, #2563eb, #1e40af);
+  background-size: 300% 300%;
+  animation: gradientBG 6s ease infinite;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-.module-title {
-  color: var(--cyber-teal);
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.module-card:hover::before {
+  opacity: 1;
 }
 
-/* Room list */
-.room-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.room-item {
-  padding: 0.8rem 1rem;
-  margin: 0.5rem 0;
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 3px solid var(--cyber-purple);
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.room-item:hover {
-  background: rgba(0, 255, 255, 0.1);
-  border-left-color: var(--cyber-pink);
-  padding-left: 1.5rem;
-}
-
-/* Status indicators */
-.status {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
+.module-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
   border-radius: 50%;
-  margin-right: 10px;
+  background: rgba(96, 165, 250, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
 }
 
-.status-completed {
-  background: #00ff00;
-  box-shadow: 0 0 10px #00ff00;
+.module-card:hover::after {
+  width: 500px;
+  height: 500px;
 }
 
-.status-inprogress {
-  background: var(--cyber-teal);
-  box-shadow: 0 0 10px var(--cyber-teal);
+.module-card:hover {
+  transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.6);
+}
+
+.module-card:nth-child(1) { animation-delay: 0.1s; }
+.module-card:nth-child(2) { animation-delay: 0.2s; }
+.module-card:nth-child(3) { animation-delay: 0.3s; }
+.module-card:nth-child(4) { animation-delay: 0.4s; }
+.module-card:nth-child(5) { animation-delay: 0.5s; }
+
+.module-icon {
+  font-size: 3em;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px currentColor);
+}
+
+.module-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: 900;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  z-index: 1;
+}
+
+.module-card h3 {
+  color: #60a5fa;
+  margin: 20px 0;
+  font-size: 1.8em;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.module-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59, 130, 246, 0.15);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
   animation: pulse 2s infinite;
 }
 
-.status-pending {
-  background: var(--cyber-pink);
-  box-shadow: 0 0 10px var(--cyber-pink);
-  opacity: 0.5;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-/* Profile section */
-.profile-section {
+.coming-soon {
   text-align: center;
-  padding: 3rem;
-  margin: 3rem 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 255, 0.05),
-    rgba(157, 0, 255, 0.05)
-  );
-  border: 1px solid rgba(255, 0, 255, 0.3);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(255, 107, 74, 0.1), rgba(59, 130, 246, 0.1));
+  border-radius: 20px;
+  border: 2px dashed #3b82f6;
+  margin: 50px 0;
 }
 
-.profile-link {
-  color: var(--cyber-teal);
-  text-decoration: none;
-  font-size: 1.2rem;
-  border: 1px solid var(--cyber-teal);
-  padding: 0.8rem 2rem;
-  display: inline-block;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
+.coming-soon h2 {
+  color: #ff6b4a;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  animation: glow 2s ease-in-out infinite;
 }
 
-.profile-link:hover {
-  background: var(--cyber-teal);
-  color: var(--dark-bg);
-  box-shadow: 0 0 20px var(--cyber-teal);
+.coming-soon p {
+  color: #94a3b8;
+  font-size: 1.2em;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-  border-top: 1px solid rgba(0, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.9rem;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
+  .fssm-title {
+    font-size: 2.5em;
   }
   
-  .container {
-    padding: 1rem;
+  .semester-badge {
+    font-size: 1.3em;
+    padding: 12px 30px;
   }
   
   .modules-grid {
     grid-template-columns: 1fr;
   }
+  
+  .module-card:hover {
+    transform: translateY(-10px);
+  }
 }
 </style>
 
-<div class="matrix-bg" id="matrixCanvas"></div>
+<div class="fssm-container">
 
-<div class="container">
+<div class="fssm-hero">
+  <div class="semester-badge">S6</div>
+  <div class="fssm-title">Formation FSSM</div>
+  <div class="fssm-subtitle">Cybersecurity & Network Engineering</div>
+  <div class="university-name">Faculté des Sciences Semlalia • Marrakech</div>
+</div>
 
-  <div class="header">
-    <h1 class="title">TRYHACKME</h1>
-    <div class="subtitle">CYBERSECURITY LEARNING JOURNEY</div>
+<div class="terminal-section">
+  <div class="terminal-header">
+    <div class="terminal-dot red"></div>
+    <div class="terminal-dot yellow"></div>
+    <div class="terminal-dot green"></div>
   </div>
-
-  <div class="terminal">
-    <p>User: 3165378</p>
-    <p>Status: Active Learner</p>
-    <p>Path: Beginner → Pentester</p>
-    <p>Current Focus: Web Application Security</p>
-    <p>Motto: "Learn. Hack. Document."</p>
+  <div class="terminal-text">
+    <span class="prompt">haname@fssm:~$</span> <span class="command">cat semester_info.txt</span><br>
+    → Semestre: S6 (Janvier - Juin 2025)<br>
+    → Spécialisation: Cybersécurité & Réseaux<br>
+    → Modules: 5 modules avancés<br>
+    → Status: En cours...<span style="animation: blink 1s infinite;">_</span>
   </div>
+</div>
 
-  <div class="modules-grid">
-    
-    <div class="module-card">
-      <h3 class="module-title">Cyber Security Basics</h3>
-      <ul class="room-list">
-        <li class="room-item">
-          <span class="status status-completed"></span>
-          Introduction to Cyber Security
-        </li>
-        <li class="room-item">
-          <span class="status status-completed"></span>
-          What is Offensive Security
-        </li>
-        <li class="room-item">
-          <span class="status status-inprogress"></span>
-          Defensive Security Principles
-        </li>
-      </ul>
+<h2 style="color: #60a5fa; text-align: center; margin: 60px 0 40px 0; font-size: 2.5em; text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);">
+  📚 Modules S6
+</h2>
+
+<div class="modules-grid">
+  
+  <a href="/fssm/iot-analyse-connexion" class="module-card">
+    <span class="module-number">M1</span>
+    <div class="module-icon">🌐</div>
+    <h3>IoT Analyse et Connexion</h3>
+    <div class="module-status">
+      <span class="status-dot"></span>
+      En cours
     </div>
+  </a>
 
-    <div class="module-card">
-      <h3 class="module-title">Penetration Testing</h3>
-      <ul class="room-list">
-        <li class="room-item">
-          <span class="status status-completed"></span>
-          Pentesting Fundamentals
-        </li>
-        <li class="room-item">
-          <span class="status status-inprogress"></span>
-          Testing Methodologies
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Ethics & Legal Aspects
-        </li>
-      </ul>
+  <a href="/fssm/parallelisme-programmation-reseaux" class="module-card">
+    <span class="module-number">M2</span>
+    <div class="module-icon">⚡</div>
+    <h3>Parallélisme et Programmation Réseaux</h3>
+    <div class="module-status">
+      <span class="status-dot"></span>
+      En cours
     </div>
+  </a>
 
-    <div class="module-card">
-      <h3 class="module-title">Web Hacking</h3>
-      <ul class="room-list">
-        <li class="room-item">
-          <span class="status status-inprogress"></span>
-          Introduction to Web Hacking
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Burp Suite Mastery
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          OWASP Top 10
-        </li>
-      </ul>
+  <a href="/fssm/droit-digital" class="module-card">
+    <span class="module-number">M3</span>
+    <div class="module-icon">⚖️</div>
+    <h3>Droit Digital</h3>
+    <div class="module-status">
+      <span class="status-dot"></span>
+      En cours
     </div>
+  </a>
 
-    <div class="module-card">
-      <h3 class="module-title">Network Security</h3>
-      <ul class="room-list">
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Network Reconnaissance
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Nmap & Network Scanning
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Protocol Analysis
-        </li>
-      </ul>
+  <a href="/fssm/gouvernance-securite" class="module-card">
+    <span class="module-number">M4</span>
+    <div class="module-icon">🛡️</div>
+    <h3>Gouvernance de la Sécurité</h3>
+    <div class="module-status">
+      <span class="status-dot"></span>
+      En cours
     </div>
+  </a>
 
-    <div class="module-card">
-      <h3 class="module-title">Advanced Tools</h3>
-      <ul class="room-list">
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Metasploit Framework
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Vulnerability Research
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Privilege Escalation
-        </li>
-      </ul>
+  <a href="/fssm/cryptographie-cybersecurite" class="module-card">
+    <span class="module-number">M5</span>
+    <div class="module-icon">🔐</div>
+    <h3>Cryptographie et Cybersécurité</h3>
+    <div class="module-status">
+      <span class="status-dot"></span>
+      En cours
     </div>
+  </a>
 
-    <div class="module-card">
-      <h3 class="module-title">Certification Path</h3>
-      <ul class="room-list">
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Jr. Penetration Tester (PT1)
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Practical Challenges
-        </li>
-        <li class="room-item">
-          <span class="status status-pending"></span>
-          Real-world Scenarios
-        </li>
-      </ul>
-    </div>
+</div>
 
-  </div>
+<div class="coming-soon">
+  <h2>🚀 Notes & Projets</h2>
+  <p>Le contenu détaillé de chaque module sera ajouté au fur et à mesure du semestre.</p>
+  <p style="margin-top: 15px; color: #60a5fa;">Stay tuned for updates...</p>
+</div>
 
-  <div class="profile-section">
-    <h3 style="color: var(--cyber-pink); margin-bottom: 1rem;">
-      MY TRYHACKME PROFILE
-    </h3>
-    <p>ID: 3165378</p>
-    <a href="https://tryhackme.com/p/3165378" target="_blank" class="profile-link">
-      VISIT PROFILE →
-    </a>
-  </div>
-
-  <div class="footer">
-    <p>© CYBERIA | Cybersecurity Knowledge Base</p>
-    <p>Last Updated: Today | Always Learning</p>
-  </div>
+<div style="text-align: center; margin-top: 80px; padding: 40px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(0, 20, 40, 0.9)); border-radius: 20px; border: 2px solid #1e4d7b;">
+  <p style="color: #94a3b8; font-size: 1.1em; line-height: 1.8;">
+    🎓 Année académique <span style="color: #60a5fa; font-weight: bold;">2024-2025</span><br>
+    📍 FSSM - Faculté des Sciences Semlalia, Marrakech<br>
+    💼 Spécialité: <span style="color: #3b82f6; font-weight: bold;">Cybersécurité & Ingénierie Réseau</span>
+  </p>
+</div>
 
 </div>
 
 <script>
-// Simple Matrix effect
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-const matrixBg = document.getElementById('matrixCanvas');
-
-matrixBg.appendChild(canvas);
-
-canvas.width = matrixBg.clientWidth;
-canvas.height = matrixBg.clientHeight;
-
-const matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
-const matrixArray = matrix.split("");
-
-const font_size = 12;
-const columns = canvas.width / font_size;
-const drops = [];
-
-for(let x = 0; x < columns; x++)
-    drops[x] = 1; 
-
-function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    ctx.fillStyle = "#0F0";
-    ctx.font = font_size + "px monospace";
-    
-    for(let i = 0; i < drops.length; i++) {
-        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
-        ctx.fillText(text, i * font_size, drops[i] * font_size);
-        
-        if(drops[i] * font_size > canvas.height && Math.random() > 0.975)
-            drops[i] = 0;
-        
-        drops[i]++;
-    }
-}
-
-setInterval(draw, 35);
-
-// Resize canvas on window resize
-window.addEventListener('resize', function() {
-    canvas.width = matrixBg.clientWidth;
-    canvas.height = matrixBg.clientHeight;
+// Create animated particles
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.fssm-container');
+  const particlesDiv = document.createElement('div');
+  particlesDiv.className = 'particles';
+  container.insertBefore(particlesDiv, container.firstChild);
+  
+  for (let i = 0; i < 30; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 4 + 's';
+    particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    particlesDiv.appendChild(particle);
+  }
 });
 </script>
