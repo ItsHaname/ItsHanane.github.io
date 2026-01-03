@@ -1,519 +1,420 @@
 ---
 layout: default
-title: Parcours TryHackMe
+title: TryHackMe
 nav: tryhackme
 ---
 
 <style>
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+:root {
+  --main-bg: #0a0a0a;
+  --card-bg: #121212;
+  --accent-red: #ff2e2e;
+  --accent-blue: #2e8bff;
+  --accent-purple: #8a2be2;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
-  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(220, 38, 38, 0.6); }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-}
-
-@keyframes glow {
-  0%, 100% { text-shadow: 0 0 10px #dc2626, 0 0 20px #dc2626; }
-  50% { text-shadow: 0 0 20px #dc2626, 0 0 40px #ef4444, 0 0 60px #f87171; }
+body {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 46, 46, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(46, 139, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 90%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+    var(--main-bg);
+  font-family: 'Courier New', monospace;
 }
 
 .thm-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.thm-hero {
-  text-align: center;
-  margin-bottom: 80px;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
-  border-radius: 30px;
-  border: 3px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-  overflow: hidden;
-}
-
-.thm-hero::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: linear-gradient(45deg, #dc2626, #ef4444, #f87171, #dc2626);
-  background-size: 300% 300%;
-  animation: gradientBG 4s ease infinite;
-  border-radius: 30px;
-  z-index: -1;
-}
-
-.thm-logo {
-  font-size: 4em;
-  margin-bottom: 20px;
-  animation: float 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 30px #dc2626);
-}
-
-.thm-title {
-  font-size: 4em;
-  color: transparent;
-  background: linear-gradient(90deg, #dc2626, #ef4444, #f87171, #ef4444, #dc2626);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: gradientBG 3s ease infinite, glow 2s ease-in-out infinite;
-  margin: 30px 0;
-  font-weight: 900;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-.thm-subtitle {
-  font-size: 1.5em;
-  color: #94a3b8;
-  margin: 20px 0;
-  font-style: italic;
-  letter-spacing: 2px;
-}
-
-.thm-subtitle::after {
-  content: '_';
-  animation: blink 1s infinite;
-  color: #dc2626;
-}
-
-.badge-section {
-  text-align: center;
-  margin: 60px 0;
-  padding: 40px;
-  background: rgba(15, 23, 42, 0.8);
-  border-radius: 20px;
-  border: 2px solid #dc2626;
-  box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
-}
-
-.badge-section h2 {
-  color: #ef4444;
-  font-size: 2em;
-  margin-bottom: 30px;
-  text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
-}
-
-.badge-frame {
-  display: inline-block;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  border: 2px solid #dc2626;
-  box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
-}
-
-.badge-frame iframe {
-  border: none;
-  border-radius: 10px;
-  min-height: 200px;
-}
-
-.path-section {
-  margin: 80px 0;
-}
-
-.path-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.path-badge {
-  display: inline-block;
-  padding: 15px 40px;
-  background: linear-gradient(135deg, #dc2626, #991b1b);
-  color: white;
-  font-size: 1.2em;
-  font-weight: 900;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5);
-  animation: pulse 3s infinite;
-  letter-spacing: 2px;
-}
-
-.path-title {
-  font-size: 3em;
-  color: #ef4444;
-  font-weight: 900;
-  text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
-  margin: 20px 0;
-}
-
-.path-description {
-  color: #94a3b8;
-  font-size: 1.2em;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  line-height: 1.8;
-}
-
-.progress-bar-container {
-  background: rgba(15, 23, 42, 0.8);
-  border-radius: 15px;
-  padding: 30px;
-  margin: 40px 0;
-  border: 2px solid rgba(220, 38, 38, 0.3);
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  color: #cbd5e1;
-  font-size: 1.1em;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 30px;
-  background: rgba(30, 41, 59, 0.8);
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-  border: 2px solid #374151;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #dc2626, #ef4444);
-  border-radius: 15px;
-  transition: width 2s ease-out;
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+  padding: 2rem;
   position: relative;
   overflow: hidden;
 }
 
-.progress-fill::after {
+/* Glitch effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 2rem;
+  border: 3px solid var(--accent-red);
+  background: rgba(18, 18, 18, 0.9);
+  box-shadow: 
+    0 0 30px rgba(255, 46, 46, 0.3),
+    inset 0 0 30px rgba(255, 46, 46, 0.1);
+}
+
+.header::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--accent-red), 
+    var(--accent-blue), 
+    var(--accent-purple),
+    var(--accent-red));
+  animation: pulse 2s infinite;
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+.header h1 {
+  font-size: 3.5rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  text-shadow: 
+    0 0 10px var(--accent-red),
+    0 0 20px rgba(255, 46, 46, 0.5);
+  animation: glitch 3s infinite;
 }
 
-.rooms-grid {
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Grid System */
+.paths-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin: 40px 0;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
 }
 
-.room-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
-  border: 2px solid transparent;
-  border-radius: 20px;
-  padding: 30px;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.path-card {
+  background: var(--card-bg);
+  border: 2px solid var(--accent-red);
+  padding: 2rem;
   position: relative;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  animation: slideIn 0.8s ease-out backwards;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.room-card::before {
+.path-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 30px rgba(255, 46, 46, 0.3),
+    0 0 50px rgba(46, 139, 255, 0.2);
+  border-color: var(--accent-blue);
+}
+
+.path-card::before {
+  content: '>>';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: var(--accent-red);
+  font-weight: bold;
+}
+
+.path-title {
+  color: var(--accent-blue);
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Room List */
+.room-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.room-item {
+  color: var(--text-primary);
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  margin: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--accent-purple);
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.room-item:hover {
+  background: rgba(46, 139, 255, 0.1);
+  border-left-color: var(--accent-blue);
+  padding-left: 3rem;
+}
+
+.room-item::before {
+  content: '•';
+  position: absolute;
+  left: 1rem;
+  color: var(--accent-red);
+  font-size: 1.5rem;
+}
+
+.room-item.completed {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.room-item.completed::before {
+  content: '✓';
+  color: #00ff00;
+}
+
+/* Terminal Effect */
+.terminal {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid var(--accent-red);
+  padding: 2rem;
+  margin: 2rem 0;
+  font-family: 'Courier New', monospace;
+  color: #00ff00;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #dc2626, #ef4444, #f87171, #dc2626);
-  background-size: 300% 300%;
-  animation: gradientBG 6s ease infinite;
-  border-radius: 20px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--accent-red), 
+    transparent);
+  animation: pulse 1.5s infinite;
 }
 
-.room-card:hover::before {
-  opacity: 1;
-}
-
-.room-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(220, 38, 38, 0.5);
-}
-
-.room-status {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  font-weight: 700;
-  border: 1px solid;
-}
-
-.status-completed {
-  background: rgba(34, 197, 94, 0.2);
-  color: #22c55e;
-  border-color: #22c55e;
-}
-
-.status-progress {
-  background: rgba(234, 179, 8, 0.2);
-  color: #eab308;
-  border-color: #eab308;
-}
-
-.status-pending {
-  background: rgba(107, 114, 128, 0.2);
-  color: #9ca3af;
-  border-color: #6b7280;
-}
-
-.room-card h3 {
-  color: #ef4444;
-  margin: 10px 0 15px 0;
-  font-size: 1.6em;
-  font-weight: 700;
-}
-
-.room-card p {
-  color: #cbd5e1;
-  margin: 15px 0;
+.terminal-line {
+  margin: 0.5rem 0;
   line-height: 1.6;
-  font-size: 0.95em;
 }
 
-.room-difficulty {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 15px;
-  font-size: 0.9em;
-  font-weight: 600;
-  margin-top: 10px;
+.terminal-line::before {
+  content: '$ ';
+  color: var(--accent-blue);
+  font-weight: bold;
 }
 
-.difficulty-easy {
-  background: rgba(34, 197, 94, 0.2);
-  color: #22c55e;
-  border: 1px solid #22c55e;
-}
-
-.difficulty-medium {
-  background: rgba(234, 179, 8, 0.2);
-  color: #eab308;
-  border: 1px solid #eab308;
-}
-
-.difficulty-hard {
-  background: rgba(220, 38, 38, 0.2);
-  color: #dc2626;
-  border: 1px solid #dc2626;
-}
-
-.stats-grid {
+/* Stats Panel */
+.stats-panel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin: 50px 0;
+  gap: 1.5rem;
+  margin: 3rem 0;
 }
 
 .stat-box {
-  background: rgba(15, 23, 42, 0.8);
-  border: 2px solid rgba(220, 38, 38, 0.3);
-  border-radius: 15px;
-  padding: 30px;
+  background: linear-gradient(135deg, 
+    rgba(255, 46, 46, 0.1), 
+    rgba(46, 139, 255, 0.1));
+  border: 1px solid rgba(255, 46, 46, 0.3);
+  padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
-.stat-box:hover {
-  border-color: #ef4444;
-  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
-  transform: translateY(-5px);
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
 }
 
 .stat-number {
-  font-size: 2.5em;
-  color: #dc2626;
-  font-weight: 900;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: var(--accent-red);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px currentColor;
 }
 
 .stat-label {
-  color: #94a3b8;
-  font-size: 0.95em;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+/* Scanline overlay */
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+}
+
+.scanline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 255, 0, 0.5),
+    transparent
+  );
+  animation: scanline 10s linear infinite;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .thm-title {
-    font-size: 2.5em;
+  .header h1 {
+    font-size: 2.5rem;
   }
   
-  .path-title {
-    font-size: 2em;
-  }
-  
-  .rooms-grid {
+  .paths-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .thm-container {
+    padding: 1rem;
   }
 }
 </style>
 
+<div class="scanline"></div>
+
 <div class="thm-container">
 
-<div class="thm-hero">
-  <div class="thm-logo">🔐</div>
-  <div class="thm-title">TryHackMe</div>
-  <div class="thm-subtitle">Mon Apprentissage en Cybersécurité</div>
-</div>
-
-<div class="badge-section">
-  <h2>Mon Profil TryHackMe</h2>
-  <div class="badge-frame">
-    <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3165378" width="100%" height="280"></iframe>
-  </div>
-</div>
-
-<div class="path-section">
-  <div class="path-header">
-    <div class="path-badge">EN COURS</div>
-    <h2 class="path-title">Parcours d'Apprentissage</h2>
-    <p class="path-description">
-      Mon parcours sur TryHackMe pour développer mes compétences en cybersécurité offensive et défensive,
-      en suivant les modules recommandés pour devenir un professionnel qualifié.
-    </p>
+  <div class="header">
+    <h1>TRYHACKME PROGRESS</h1>
+    <p>CYBERSECURITY LEARNING PATH</p>
   </div>
 
-  <div class="progress-bar-container">
-    <div class="progress-label">
-      <span>Progression globale</span>
-      <span>Débutant</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill" style="width: 20%;"></div>
-    </div>
-  </div>
-
-  <div class="stats-grid">
-    <div class="stat-box">
-      <div class="stat-number">3</div>
-      <div class="stat-label">Modules actifs</div>
-    </div>
+  <div class="stats-panel">
     <div class="stat-box">
       <div class="stat-number">12+</div>
-      <div class="stat-label">Salles visitées</div>
+      <div class="stat-label">Rooms Completed</div>
     </div>
     <div class="stat-box">
       <div class="stat-number">5</div>
-      <div class="stat-label">Badges obtenus</div>
+      <div class="stat-label">Badges Earned</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">3165378</div>
+      <div class="stat-label">User ID</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Active Learning</div>
     </div>
   </div>
 
-  <h3 style="color: #ef4444; font-size: 2em; margin: 60px 0 30px 0; text-align: center;">
-    Mes Modules Actuels
-  </h3>
+  <div class="paths-grid">
 
-  <div class="rooms-grid">
-    
-   <div class="room-card">
-      <span class="room-status status-progress">En cours</span>
-      <h3>Introduction to Cyber Security</h3>
-      <p>Comprendre la sécurité offensive et défensive, et découvrir les carrières disponibles en cybersécurité.</p>
-      <span class="room-difficulty difficulty-easy">Facile</span>
+  <div class="path-card">
+      <h2 class="path-title">Introduction to Cyber Security</h2>
+      <ul class="room-list">
+        <li class="room-item completed">What is Cyber Security?</li>
+        <li class="room-item completed">Offensive vs Defensive</li>
+        <li class="room-item completed">Careers in Cyber</li>
+      </ul>
     </div>
 
-   <div class="room-card">
-      <span class="room-status status-progress">En cours</span>
-      <h3>Introduction to Pentesting</h3>
-      <p>Comprendre ce qu'implique un test d'intrusion, y compris les techniques et méthodologies que tout pentester devrait connaître.</p>
-      <span class="room-difficulty difficulty-medium">Moyen</span>
+  <div class="path-card">
+      <h2 class="path-title">Introduction to Pentesting</h2>
+      <ul class="room-list">
+        <li class="room-item completed">Pentesting Fundamentals</li>
+        <li class="room-item">Principles of Security</li>
+        <li class="room-item">Methodologies</li>
+      </ul>
     </div>
 
-   <div class="room-card">
-      <span class="room-status status-progress">En cours</span>
-      <h3>Introduction to Web Hacking</h3>
-      <p>Apprendre et exploiter certaines des vulnérabilités d'application web les plus populaires dans l'industrie.</p>
-      <span class="room-difficulty difficulty-medium">Moyen</span>
+   <div class="path-card">
+      <h2 class="path-title">Introduction to Web Hacking</h2>
+      <ul class="room-list">
+        <li class="room-item">Burp Suite</li>
+        <li class="room-item">OWASP Top 10</li>
+        <li class="room-item">SQL Injection</li>
+        <li class="room-item">XSS Attacks</li>
+      </ul>
     </div>
 
-  <div class="room-card">
-      <span class="room-status status-pending">À venir</span>
-      <h3>Burp Suite</h3>
-      <p>L'outil standard de l'industrie pour le hacking d'applications web, essentiel pour tout test de pénétration web.</p>
-      <span class="room-difficulty difficulty-medium">Moyen</span>
+  <div class="path-card">
+      <h2 class="path-title">Network Security</h2>
+      <ul class="room-list">
+        <li class="room-item">Nmap Basics</li>
+        <li class="room-item">Passive Recon</li>
+        <li class="room-item">Active Recon</li>
+        <li class="room-item">Protocol Analysis</li>
+      </ul>
     </div>
 
-  <div class="room-card">
-      <span class="room-status status-pending">À venir</span>
-      <h3>Network Security</h3>
-      <p>Apprendre les bases de la reconnaissance réseau passive et active. Comprendre le fonctionnement des protocoles courants.</p>
-      <span class="room-difficulty difficulty-medium">Moyen</span>
+   <div class="path-card">
+      <h2 class="path-title">Advanced Topics</h2>
+      <ul class="room-list">
+        <li class="room-item">Vulnerability Research</li>
+        <li class="room-item">Metasploit Framework</li>
+        <li class="room-item">Privilege Escalation</li>
+        <li class="room-item">Post-Exploitation</li>
+      </ul>
     </div>
 
-   <div class="room-card">
-      <span class="room-status status-pending">À venir</span>
-      <h3>Metasploit</h3>
-      <p>Le framework d'exploitation le plus utilisé. Apprendre à l'utiliser et à débloquer son plein potentiel.</p>
-      <span class="room-difficulty difficulty-hard">Difficile</span>
-    </div>
-
-  <div class="room-card">
-      <span class="room-status status-pending">À venir</span>
-      <h3>Privilege Escalation</h3>
-      <p>Apprendre les techniques fondamentales pour élever les privilèges de compte dans les systèmes Linux et Windows.</p>
-      <span class="room-difficulty difficulty-hard">Difficile</span>
-    </div>
-
-  <div class="room-card">
-      <span class="room-status status-pending">À venir</span>
-      <h3>Vulnerability Research</h3>
-      <p>Se familiariser avec les compétences, méthodes de recherche et ressources utilisées pour exploiter les applications et systèmes vulnérables.</p>
-      <span class="room-difficulty difficulty-hard">Difficile</span>
+  <div class="path-card">
+      <h2 class="path-title">Certification Path</h2>
+      <ul class="room-list">
+        <li class="room-item">Jr. Penetration Tester (PT1)</li>
+        <li class="room-item">Practical Challenges</li>
+        <li class="room-item">Exam Preparation</li>
+      </ul>
     </div>
 
   </div>
-</div>
 
-<div style="text-align: center; margin-top: 80px; padding: 40px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.9)); border-radius: 20px; border: 2px solid #7f1d1d;">
-  <p style="color: #94a3b8; font-size: 1.1em; line-height: 1.8;">
-    <span style="color: #ef4444; font-weight: bold;">🎯 Objectif Principal:</span> Devenir un Pentester Junior certifié<br>
-    <span style="color: #ef4444; font-weight: bold;">📊 Progression:</span> Débutant → Junior Penetration Tester → Pentester Professionnel<br>
-    <span style="color: #ef4444; font-weight: bold;">🔗 Profil TryHackMe:</span> <a href="https://tryhackme.com/p/3165378" target="_blank" style="color: #ef4444; font-weight: bold; text-decoration: none;">@3165378</a><br>
-    <span style="color: #ef4444; font-weight: bold;">🏆 Certification visée:</span> Jr. Penetration Tester (PT1)
-  </p>
-</div>
+  <div class="terminal">
+    <div class="terminal-line">[root@tryhackme]$ ./status_check.sh</div>
+    <div class="terminal-line">>> Loading user profile: 3165378</div>
+    <div class="terminal-line">>> Current path: Beginner → Intermediate</div>
+    <div class="terminal-line">>> Active learning: TRUE</div>
+    <div class="terminal-line">>> Next target: Complete Web Hacking module</div>
+    <div class="terminal-line">>> Estimated completion: 2-3 weeks</div>
+    <div class="terminal-line">>> [SYSTEM] Keep hacking!</div>
+  </div>
 
 </div>
