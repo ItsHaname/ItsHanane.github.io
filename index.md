@@ -3,50 +3,41 @@ layout: default
 title: Accueil
 nav: home
 ---
-
 <style>
 @keyframes matrixRain {
   0% { transform: translateY(-100vh); }
   100% { transform: translateY(100vh); }
 }
-
 @keyframes floatUpDown {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
-
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-
 @keyframes glitch-1 {
   0% { clip-path: inset(40% 0 61% 0); }
   100% { clip-path: inset(92% 0 1% 0); }
 }
-
 @keyframes glitch-2 {
   0% { clip-path: inset(25% 0 58% 0); }
   100% { clip-path: inset(75% 0 1% 0); }
 }
-
 body {
   background: #0a0e1a;
   min-height: 100vh;
@@ -54,7 +45,6 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-
 .binary-background {
   position: fixed;
   top: 0;
@@ -64,7 +54,6 @@ body {
   pointer-events: none;
   z-index: -1;
 }
-
 .binary-digit {
   position: absolute;
   font-family: 'Courier New', monospace;
@@ -73,11 +62,9 @@ body {
   opacity: 0;
   animation: matrixRain linear infinite;
 }
-
 .binary-digit.float {
   animation: floatUpDown 3s ease-in-out infinite;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -85,7 +72,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
 /* CYBERIA Header - Style néon avec couleurs bleues marines */
 .cyberia-header {
   text-align: center;
@@ -97,7 +83,6 @@ body {
   border: 3px solid #1e4d7b;
   box-shadow: 0 0 40px rgba(30, 77, 123, 0.5), inset 0 0 30px rgba(30, 77, 123, 0.2);
 }
-
 .cyberia-title {
   font-size: 5em;
   color: #ff6b4a;
@@ -115,7 +100,6 @@ body {
   -webkit-text-stroke: 2px #ff3300;
   paint-order: stroke fill;
 }
-
 /* Ligne horizontale */
 .cyberia-line {
   width: 100%;
@@ -130,7 +114,6 @@ body {
   max-width: 500px;
   box-shadow: 0 0 15px #3b82f6;
 }
-
 .cyberia-subtitle {
   font-size: 1.8em;
   color: #60a5fa;
@@ -143,19 +126,16 @@ body {
   font-weight: 300;
   font-style: italic;
 }
-
 .cyberia-subtitle::after {
   content: '_';
   animation: blink 1s infinite;
   color: #60a5fa;
 }
-
 /* Rest of the page - theme bleu marine */
 .cyber-header {
   text-align: center;
   margin-bottom: 60px;
 }
-
 .neon-title {
   font-size: 3em;
   text-align: center;
@@ -169,7 +149,6 @@ body {
   font-weight: 900;
   letter-spacing: 2px;
 }
-
 .subtitle {
   font-size: 1.5em;
   color: #94a3b8;
@@ -177,7 +156,6 @@ body {
   margin-bottom: 40px;
   font-style: italic;
 }
-
 .glitch-text {
   font-size: 1.8em;
   font-weight: bold;
@@ -186,7 +164,6 @@ body {
   display: inline-block;
   margin: 10px 0 40px 0;
 }
-
 .glitch-text:before,
 .glitch-text:after {
   content: attr(data-text);
@@ -196,26 +173,22 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .glitch-text:before {
   left: 2px;
   text-shadow: -1px 0 #3b82f6;
   animation: glitch-1 2s infinite linear alternate-reverse;
 }
-
 .glitch-text:after {
   left: -2px;
   text-shadow: -1px 0 #60a5fa;
   animation: glitch-2 3s infinite linear alternate-reverse;
 }
-
 .hologram-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin: 60px 0;
 }
-
 .holo-card {
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(59, 130, 246, 0.3);
@@ -229,7 +202,6 @@ body {
   color: inherit;
   display: block;
 }
-
 .holo-card:before {
   content: '';
   position: absolute;
@@ -242,30 +214,25 @@ body {
   opacity: 0;
   transition: opacity 0.4s;
 }
-
 .holo-card:hover:before {
   opacity: 0.5;
 }
-
 .holo-card:hover {
   transform: translateY(-10px) scale(1.02);
   border-color: #60a5fa;
   box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
 }
-
 .holo-card h3 {
   color: #3b82f6;
   margin: 0 0 15px 0;
   font-size: 1.5em;
   font-weight: 600;
 }
-
 .holo-card p {
   color: #cbd5e1;
   margin: 0;
   line-height: 1.6;
 }
-
 .welcome-text {
   text-align: center;
   font-size: 1.2em;
@@ -277,7 +244,6 @@ body {
   border-left: 4px solid #3b82f6;
   animation: slideIn 1s ease-out;
 }
-
 .mission-statement {
   text-align: center;
   font-size: 1.1em;
@@ -288,11 +254,9 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
-
 .mission-statement strong {
   color: #3b82f6;
 }
-
 .badge-container {
   display: flex;
   gap: 20px;
@@ -300,7 +264,6 @@ body {
   margin: 40px 0;
   flex-wrap: wrap;
 }
-
 .floating-badge {
   display: inline-block;
   padding: 12px 25px;
@@ -313,7 +276,6 @@ body {
   transition: all 0.3s;
   animation: pulse 2s infinite;
 }
-
 .floating-badge:hover {
   background: #3b82f6;
   color: white;
@@ -321,7 +283,6 @@ body {
   box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
   animation: none;
 }
-
 .cyber-footer {
   text-align: center;
   margin-top: 80px;
@@ -330,13 +291,11 @@ body {
   color: #64748b;
   font-size: 0.9em;
 }
-
 @media (max-width: 1024px) {
   .hologram-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 768px) {
   .cyberia-title {
     font-size: 3em;
@@ -379,7 +338,6 @@ body {
   }
 }
 </style>
-
 <script>
 // Create binary rain background with moving 0 and 1
 document.addEventListener('DOMContentLoaded', function() {
@@ -461,63 +419,54 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-
 <div class="container">
-
   <!-- CYBERIA Header avec ligne horizontale -->
   <div class="cyberia-header">
     <div class="cyberia-title">CYBERIA</div>
     <div class="cyberia-line"></div>
     <div class="cyberia-subtitle">Cafe & Club</div>
   </div>
-
   <div class="cyber-header">
     <div class="neon-title">WELCOME TO MY CYBERSPACE</div>
     <div class="subtitle">A digital notebook for everything I learn</div>
     <div class="glitch-text" data-text="CYBERSECURITY KNOWLEDGE BASE">CYBERSECURITY KNOWLEDGE BASE</div>
   </div>
-
   <div class="mission-statement">
     <p>In this website, I document <strong>every concept I learn</strong>, <strong>every challenge I solve</strong>, and <strong>every skill I develop</strong> in cybersecurity.<br>
     From academic notes to hands-on labs, this is my personal knowledge repository.</p>
   </div>
-
   <div class="hologram-grid">
-    <a href="{{ site.baseurl }}/about" class="holo-card">
+    <a href="/about/me.html" class="holo-card">
       <h3>À PROPOS</h3>
       <p>Mon parcours, passions et motivation dans la cybersécurité</p>
     </a>
     
-    <a href="{{ site.baseurl }}/fssm" class="holo-card">
+    <a href="/fssm/index.html" class="holo-card">
       <h3>FSSM</h3>
       <p>Formation académique, projets et compétences acquises</p>
     </a>
     
-    <a href="{{ site.baseurl }}/tryhackme" class="holo-card">
+    <a href="/tryhackme/index.html" class="holo-card">
       <h3>TRYHACKME</h3>
       <p>Paths complétés, badges et write-ups de challenges</p>
     </a>
     
-    <a href="{{ site.baseurl }}/my-lab" class="holo-card">
+    <a href="/my-lab/index.html" class="holo-card">
       <h3>MON LAB</h3>
       <p>Environnement de test, machines virtuelles et expériences</p>
     </a>
   </div>
-
   <div class="welcome-text">
     <p>Salut — je suis <strong style="color: #3b82f6;">Haname</strong>, étudiante en cybersécurité à la FSSM.<br>
     Bienvenue sur mon site où je partage mon parcours, mes parcours (paths) TryHackMe, la formation FSSM, et mes laboratoires personnels.</p>
   </div>
-
   <div class="badge-container">
-    <a href="{{ site.baseurl }}/tryhackme" class="floating-badge">TRYHACKME</a>
+    <a href="/tryhackme/index.html" class="floating-badge">TRYHACKME</a>
     <a href="https://github.com/ItsHaname" class="floating-badge" target="_blank">GITHUB</a>
     <a href="#" class="floating-badge">TWITTER</a>
     <a href="#" class="floating-badge">LINKEDIN</a>
   </div>
-
   <div class="cyber-footer">
     © 2025 CYBERIA — HANAME — FSSM — Personal Knowledge Repository
   </div>
-
 </div>
