@@ -6,65 +6,148 @@ nav: tryhackme
 
 <style>
 :root {
-  --main-bg: #0a0a0a;
-  --card-bg: #121212;
-  --accent-red: #ff2e2e;
-  --accent-blue: #2e8bff;
-  --accent-purple: #8a2be2;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
+  --cyber-teal: #00ffff;
+  --cyber-purple: #9d00ff;
+  --cyber-pink: #ff00ff;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  --text-glow: #ffffff;
 }
 
 body {
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(255, 46, 46, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(46, 139, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 90%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-    var(--main-bg);
+  background-color: var(--dark-bg);
+  color: var(--text-glow);
   font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.thm-container {
+/* Matrix rain effect */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   position: relative;
-  overflow: hidden;
 }
 
-/* Glitch effect */
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
+/* Header */
 .header {
   text-align: center;
+  padding: 3rem 0;
+  border-bottom: 2px solid var(--cyber-teal);
   margin-bottom: 3rem;
   position: relative;
-  padding: 2rem;
-  border: 3px solid var(--accent-red);
-  background: rgba(18, 18, 18, 0.9);
-  box-shadow: 
-    0 0 30px rgba(255, 46, 46, 0.3),
-    inset 0 0 30px rgba(255, 46, 46, 0.1);
 }
 
 .header::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 25%;
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--cyber-purple), 
+    var(--cyber-pink), 
+    var(--cyber-purple), 
+    transparent);
+  filter: blur(2px);
+}
+
+.title {
+  font-size: 4rem;
+  margin: 0;
+  color: var(--cyber-teal);
+  text-shadow: 
+    0 0 10px var(--cyber-teal),
+    0 0 20px var(--cyber-teal);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--cyber-pink);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+}
+
+/* Terminal style intro */
+.terminal {
+  background: var(--darker-bg);
+  border: 1px solid var(--cyber-teal);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.2),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  position: relative;
+}
+
+.terminal::before {
+  content: 'user@tryhackme:~$';
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--darker-bg);
+  padding: 0 10px;
+  color: var(--cyber-pink);
+  font-weight: bold;
+}
+
+.terminal p {
+  margin: 0.5rem 0;
+  color: #00ff00;
+}
+
+.terminal p::before {
+  content: '> ';
+  color: var(--cyber-teal);
+}
+
+/* Modules grid */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.module-card {
+  background: linear-gradient(
+    145deg,
+    rgba(0, 255, 255, 0.05),
+    rgba(157, 0, 255, 0.05)
+  );
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cyber-pink);
+  box-shadow: 
+    0 10px 30px rgba(255, 0, 255, 0.3),
+    0 0 50px rgba(157, 0, 255, 0.2);
+}
+
+.module-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -72,75 +155,21 @@ body {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, 
-    var(--accent-red), 
-    var(--accent-blue), 
-    var(--accent-purple),
-    var(--accent-red));
-  animation: pulse 2s infinite;
+    var(--cyber-teal), 
+    var(--cyber-purple), 
+    var(--cyber-pink));
 }
 
-.header h1 {
-  font-size: 3.5rem;
-  color: var(--text-primary);
+.module-title {
+  color: var(--cyber-teal);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  margin: 0;
-  text-shadow: 
-    0 0 10px var(--accent-red),
-    0 0 20px rgba(255, 46, 46, 0.5);
-  animation: glitch 3s infinite;
+  letter-spacing: 1px;
 }
 
-.header p {
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  font-style: italic;
-}
-
-/* Grid System */
-.paths-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-}
-
-.path-card {
-  background: var(--card-bg);
-  border: 2px solid var(--accent-red);
-  padding: 2rem;
-  position: relative;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.path-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 10px 30px rgba(255, 46, 46, 0.3),
-    0 0 50px rgba(46, 139, 255, 0.2);
-  border-color: var(--accent-blue);
-}
-
-.path-card::before {
-  content: '>>';
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  color: var(--accent-red);
-  font-weight: bold;
-}
-
-.path-title {
-  color: var(--accent-blue);
-  font-size: 1.8rem;
-  margin: 0 0 1.5rem 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Room List */
+/* Room list */
 .room-list {
   list-style: none;
   padding: 0;
@@ -148,273 +177,297 @@ body {
 }
 
 .room-item {
-  color: var(--text-primary);
-  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  padding: 0.8rem 1rem;
   margin: 0.5rem 0;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--accent-purple);
-  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--cyber-purple);
   transition: all 0.3s ease;
   font-size: 0.95rem;
 }
 
 .room-item:hover {
-  background: rgba(46, 139, 255, 0.1);
-  border-left-color: var(--accent-blue);
-  padding-left: 3rem;
+  background: rgba(0, 255, 255, 0.1);
+  border-left-color: var(--cyber-pink);
+  padding-left: 1.5rem;
 }
 
-.room-item::before {
-  content: '•';
-  position: absolute;
-  left: 1rem;
-  color: var(--accent-red);
-  font-size: 1.5rem;
+/* Status indicators */
+.status {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.room-item.completed {
-  color: var(--text-secondary);
-  text-decoration: line-through;
-  opacity: 0.7;
+.status-completed {
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
 }
 
-.room-item.completed::before {
-  content: '✓';
-  color: #00ff00;
+.status-inprogress {
+  background: var(--cyber-teal);
+  box-shadow: 0 0 10px var(--cyber-teal);
+  animation: pulse 2s infinite;
 }
 
-/* Terminal Effect */
-.terminal {
-  background: rgba(0, 0, 0, 0.9);
-  border: 2px solid var(--accent-red);
-  padding: 2rem;
-  margin: 2rem 0;
-  font-family: 'Courier New', monospace;
-  color: #00ff00;
-  position: relative;
-  overflow: hidden;
+.status-pending {
+  background: var(--cyber-pink);
+  box-shadow: 0 0 10px var(--cyber-pink);
+  opacity: 0.5;
 }
 
-.terminal::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    var(--accent-red), 
-    transparent);
-  animation: pulse 1.5s infinite;
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
-.terminal-line {
-  margin: 0.5rem 0;
-  line-height: 1.6;
-}
-
-.terminal-line::before {
-  content: '$ ';
-  color: var(--accent-blue);
-  font-weight: bold;
-}
-
-/* Stats Panel */
-.stats-panel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin: 3rem 0;
-}
-
-.stat-box {
-  background: linear-gradient(135deg, 
-    rgba(255, 46, 46, 0.1), 
-    rgba(46, 139, 255, 0.1));
-  border: 1px solid rgba(255, 46, 46, 0.3);
-  padding: 1.5rem;
+/* Profile section */
+.profile-section {
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.stat-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.1), 
-    transparent);
-  transform: rotate(45deg);
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) rotate(45deg); }
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  color: var(--accent-red);
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px currentColor;
-}
-
-.stat-label {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Scanline overlay */
-.scanline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.03;
-}
-
-.scanline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
+  padding: 3rem;
+  margin: 3rem 0;
   background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 255, 0, 0.5),
-    transparent
+    135deg,
+    rgba(0, 255, 255, 0.05),
+    rgba(157, 0, 255, 0.05)
   );
-  animation: scanline 10s linear infinite;
+  border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.profile-link {
+  color: var(--cyber-teal);
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: 1px solid var(--cyber-teal);
+  padding: 0.8rem 2rem;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.profile-link:hover {
+  background: var(--cyber-teal);
+  color: var(--dark-bg);
+  box-shadow: 0 0 20px var(--cyber-teal);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .header h1 {
+  .title {
     font-size: 2.5rem;
   }
   
-  .paths-grid {
-    grid-template-columns: 1fr;
+  .container {
+    padding: 1rem;
   }
   
-  .thm-container {
-    padding: 1rem;
+  .modules-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
 
-<div class="scanline"></div>
+<div class="matrix-bg" id="matrixCanvas"></div>
 
-<div class="thm-container">
+<div class="container">
 
   <div class="header">
-    <h1>TRYHACKME PROGRESS</h1>
-    <p>CYBERSECURITY LEARNING PATH</p>
-  </div>
-
-  <div class="stats-panel">
-    <div class="stat-box">
-      <div class="stat-number">12+</div>
-      <div class="stat-label">Rooms Completed</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">5</div>
-      <div class="stat-label">Badges Earned</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">3165378</div>
-      <div class="stat-label">User ID</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Active Learning</div>
-    </div>
-  </div>
-
-  <div class="paths-grid">
-
-  <div class="path-card">
-      <h2 class="path-title">Introduction to Cyber Security</h2>
-      <ul class="room-list">
-        <li class="room-item completed">What is Cyber Security?</li>
-        <li class="room-item completed">Offensive vs Defensive</li>
-        <li class="room-item completed">Careers in Cyber</li>
-      </ul>
-    </div>
-
-  <div class="path-card">
-      <h2 class="path-title">Introduction to Pentesting</h2>
-      <ul class="room-list">
-        <li class="room-item completed">Pentesting Fundamentals</li>
-        <li class="room-item">Principles of Security</li>
-        <li class="room-item">Methodologies</li>
-      </ul>
-    </div>
-
-   <div class="path-card">
-      <h2 class="path-title">Introduction to Web Hacking</h2>
-      <ul class="room-list">
-        <li class="room-item">Burp Suite</li>
-        <li class="room-item">OWASP Top 10</li>
-        <li class="room-item">SQL Injection</li>
-        <li class="room-item">XSS Attacks</li>
-      </ul>
-    </div>
-
-  <div class="path-card">
-      <h2 class="path-title">Network Security</h2>
-      <ul class="room-list">
-        <li class="room-item">Nmap Basics</li>
-        <li class="room-item">Passive Recon</li>
-        <li class="room-item">Active Recon</li>
-        <li class="room-item">Protocol Analysis</li>
-      </ul>
-    </div>
-
-   <div class="path-card">
-      <h2 class="path-title">Advanced Topics</h2>
-      <ul class="room-list">
-        <li class="room-item">Vulnerability Research</li>
-        <li class="room-item">Metasploit Framework</li>
-        <li class="room-item">Privilege Escalation</li>
-        <li class="room-item">Post-Exploitation</li>
-      </ul>
-    </div>
-
-  <div class="path-card">
-      <h2 class="path-title">Certification Path</h2>
-      <ul class="room-list">
-        <li class="room-item">Jr. Penetration Tester (PT1)</li>
-        <li class="room-item">Practical Challenges</li>
-        <li class="room-item">Exam Preparation</li>
-      </ul>
-    </div>
-
+    <h1 class="title">TRYHACKME</h1>
+    <div class="subtitle">CYBERSECURITY LEARNING JOURNEY</div>
   </div>
 
   <div class="terminal">
-    <div class="terminal-line">[root@tryhackme]$ ./status_check.sh</div>
-    <div class="terminal-line">>> Loading user profile: 3165378</div>
-    <div class="terminal-line">>> Current path: Beginner → Intermediate</div>
-    <div class="terminal-line">>> Active learning: TRUE</div>
-    <div class="terminal-line">>> Next target: Complete Web Hacking module</div>
-    <div class="terminal-line">>> Estimated completion: 2-3 weeks</div>
-    <div class="terminal-line">>> [SYSTEM] Keep hacking!</div>
+    <p>User: 3165378</p>
+    <p>Status: Active Learner</p>
+    <p>Path: Beginner → Pentester</p>
+    <p>Current Focus: Web Application Security</p>
+    <p>Motto: "Learn. Hack. Document."</p>
+  </div>
+
+  <div class="modules-grid">
+    
+    <div class="module-card">
+      <h3 class="module-title">Cyber Security Basics</h3>
+      <ul class="room-list">
+        <li class="room-item">
+          <span class="status status-completed"></span>
+          Introduction to Cyber Security
+        </li>
+        <li class="room-item">
+          <span class="status status-completed"></span>
+          What is Offensive Security
+        </li>
+        <li class="room-item">
+          <span class="status status-inprogress"></span>
+          Defensive Security Principles
+        </li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <h3 class="module-title">Penetration Testing</h3>
+      <ul class="room-list">
+        <li class="room-item">
+          <span class="status status-completed"></span>
+          Pentesting Fundamentals
+        </li>
+        <li class="room-item">
+          <span class="status status-inprogress"></span>
+          Testing Methodologies
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Ethics & Legal Aspects
+        </li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <h3 class="module-title">Web Hacking</h3>
+      <ul class="room-list">
+        <li class="room-item">
+          <span class="status status-inprogress"></span>
+          Introduction to Web Hacking
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Burp Suite Mastery
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          OWASP Top 10
+        </li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <h3 class="module-title">Network Security</h3>
+      <ul class="room-list">
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Network Reconnaissance
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Nmap & Network Scanning
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Protocol Analysis
+        </li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <h3 class="module-title">Advanced Tools</h3>
+      <ul class="room-list">
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Metasploit Framework
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Vulnerability Research
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Privilege Escalation
+        </li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <h3 class="module-title">Certification Path</h3>
+      <ul class="room-list">
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Jr. Penetration Tester (PT1)
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Practical Challenges
+        </li>
+        <li class="room-item">
+          <span class="status status-pending"></span>
+          Real-world Scenarios
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="profile-section">
+    <h3 style="color: var(--cyber-pink); margin-bottom: 1rem;">
+      MY TRYHACKME PROFILE
+    </h3>
+    <p>ID: 3165378</p>
+    <a href="https://tryhackme.com/p/3165378" target="_blank" class="profile-link">
+      VISIT PROFILE →
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>© CYBERIA | Cybersecurity Knowledge Base</p>
+    <p>Last Updated: Today | Always Learning</p>
   </div>
 
 </div>
+
+<script>
+// Simple Matrix effect
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+const matrixBg = document.getElementById('matrixCanvas');
+
+matrixBg.appendChild(canvas);
+
+canvas.width = matrixBg.clientWidth;
+canvas.height = matrixBg.clientHeight;
+
+const matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+const matrixArray = matrix.split("");
+
+const font_size = 12;
+const columns = canvas.width / font_size;
+const drops = [];
+
+for(let x = 0; x < columns; x++)
+    drops[x] = 1; 
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = "#0F0";
+    ctx.font = font_size + "px monospace";
+    
+    for(let i = 0; i < drops.length; i++) {
+        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+        ctx.fillText(text, i * font_size, drops[i] * font_size);
+        
+        if(drops[i] * font_size > canvas.height && Math.random() > 0.975)
+            drops[i] = 0;
+        
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 35);
+
+// Resize canvas on window resize
+window.addEventListener('resize', function() {
+    canvas.width = matrixBg.clientWidth;
+    canvas.height = matrixBg.clientHeight;
+});
+</script>
