@@ -372,7 +372,7 @@ nav: fssm
 <div class="fssm-hero">
   <div class="semester-badge">S6</div>
   <div class="fssm-title">Formation FSSM</div>
-  <div class="fssm-subtitle">Cybersecurity & Network Engineering</div>
+  <div class="fssm-subtitle">Networking  & Cybersecurity</div>
   <div class="university-name">Faculté des Sciences Semlalia • Marrakech</div>
 </div>
 
