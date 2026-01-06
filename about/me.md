@@ -36,9 +36,9 @@ nav: about
 .about-page-wrapper {
     position: relative;
     min-height: 100vh;
-    margin: -60px -20px;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #fef3f7 0%, #f0f4ff 50%, #e8f0fe 100%);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffe0ec 0%, #ffd4e5 50%, #ffc9e0 100%);
 }
 
 .particle-background {
@@ -57,7 +57,7 @@ nav: about
     font-size: 16px;
     opacity: 0;
     animation: floatParticle linear infinite;
-    color: rgba(236, 64, 122, 0.15);
+    color: rgba(255, 182, 193, 0.25);
 }
 
 .particle.floating {
@@ -81,7 +81,7 @@ nav: about
 
 .about-header h1 {
     font-size: 3em;
-    background: linear-gradient(90deg, #ec407a, #3b82f6, #f06292);
+    background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,14 +94,14 @@ nav: about
 
 .about-tagline {
     font-size: 1.2em;
-    color: #7986a3;
+    color: #c2588d;
     font-weight: 300;
 }
 
 .divider {
     width: 150px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #ec407a, #3b82f6, #ec407a, transparent);
+    background: linear-gradient(90deg, transparent, #ff69b4, #ff1493, #ff69b4, transparent);
     margin: 25px auto;
 }
 
@@ -126,10 +126,10 @@ nav: about
     height: 280px;
     border-radius: 50%;
     overflow: hidden;
-    border: 6px solid #ec407a;
+    border: 6px solid #ff69b4;
     box-shadow: 
-        0 10px 40px rgba(236, 64, 122, 0.4),
-        0 0 0 12px rgba(59, 130, 246, 0.1);
+        0 10px 40px rgba(255, 105, 180, 0.5),
+        0 0 0 12px rgba(255, 182, 193, 0.3);
     background: #ffffff;
     transition: all 0.4s ease;
     flex-shrink: 0;
@@ -138,8 +138,8 @@ nav: about
 .profile-image:hover {
     transform: scale(1.05);
     box-shadow: 
-        0 15px 50px rgba(236, 64, 122, 0.5),
-        0 0 0 15px rgba(59, 130, 246, 0.2);
+        0 15px 50px rgba(255, 105, 180, 0.6),
+        0 0 0 15px rgba(255, 182, 193, 0.4);
 }
 
 .profile-image img {
@@ -149,27 +149,27 @@ nav: about
 }
 
 .quick-info {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(236, 64, 122, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 105, 180, 0.4);
     border-radius: 15px;
     padding: 25px;
     flex: 1;
     text-align: left;
-    box-shadow: 0 5px 20px rgba(236, 64, 122, 0.15);
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
     transition: all 0.3s ease;
 }
 
 .quick-info:hover {
-    box-shadow: 0 8px 30px rgba(236, 64, 122, 0.25);
-    border-color: #ec407a;
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.35);
+    border-color: #ff69b4;
 }
 
 .quick-info h3 {
-    color: #ec407a;
+    color: #ff1493;
     font-size: 1.3em;
     margin-bottom: 20px;
     font-weight: 600;
-    border-bottom: 2px solid #ec407a;
+    border-bottom: 2px solid #ff69b4;
     padding-bottom: 10px;
 }
 
@@ -182,21 +182,21 @@ nav: about
 }
 
 .quick-info strong {
-    color: #3b82f6;
+    color: #ff69b4;
 }
 
 .about-section {
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid rgba(236, 64, 122, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 105, 180, 0.3);
     border-radius: 20px;
     padding: 45px;
     margin-bottom: 50px;
-    box-shadow: 0 8px 30px rgba(236, 64, 122, 0.15);
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.2);
     animation: fadeIn 1.4s ease-out;
 }
 
 .about-section h2 {
-    color: #ec407a;
+    color: #ff1493;
     font-size: 2.2em;
     margin-bottom: 25px;
     font-weight: 700;
@@ -211,7 +211,7 @@ nav: about
     left: 0;
     width: 60%;
     height: 3px;
-    background: linear-gradient(90deg, #ec407a, #3b82f6);
+    background: linear-gradient(90deg, #ff1493, #ff69b4);
 }
 
 .about-section p {
@@ -222,12 +222,12 @@ nav: about
 }
 
 .highlight {
-    color: #3b82f6;
+    color: #ff69b4;
     font-weight: 600;
 }
 
 .section-title {
-    color: #ec407a;
+    color: #ff1493;
     font-size: 2em;
     margin: 60px 0 30px 0;
     font-weight: 700;
@@ -243,8 +243,8 @@ nav: about
 }
 
 .focus-card {
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid rgba(236, 64, 122, 0.25);
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 105, 180, 0.3);
     border-radius: 15px;
     padding: 30px;
     transition: all 0.3s ease;
@@ -253,12 +253,12 @@ nav: about
 
 .focus-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(236, 64, 122, 0.2);
-    border-color: #ec407a;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    border-color: #ff69b4;
 }
 
 .focus-card h3 {
-    color: #3b82f6;
+    color: #ff1493;
     font-size: 1.3em;
     margin-bottom: 15px;
     font-weight: 600;
@@ -281,13 +281,13 @@ nav: about
     content: "→";
     position: absolute;
     left: 0;
-    color: #ec407a;
+    color: #ff69b4;
     font-weight: bold;
 }
 
 .newsletter-section {
-    background: linear-gradient(135deg, rgba(236, 64, 122, 0.1), rgba(59, 130, 246, 0.1));
-    border: 2px solid rgba(236, 64, 122, 0.3);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 105, 180, 0.2));
+    border: 2px solid rgba(255, 105, 180, 0.4);
     border-radius: 20px;
     padding: 40px;
     margin: 50px 0;
@@ -296,7 +296,7 @@ nav: about
 }
 
 .newsletter-section h3 {
-    color: #ec407a;
+    color: #ff1493;
     font-size: 1.8em;
     margin-bottom: 15px;
     font-weight: 700;
@@ -322,7 +322,7 @@ nav: about
     flex: 1;
     min-width: 250px;
     padding: 15px 20px;
-    border: 2px solid rgba(236, 64, 122, 0.3);
+    border: 2px solid rgba(255, 105, 180, 0.4);
     border-radius: 8px;
     font-size: 1em;
     background: white;
@@ -332,13 +332,13 @@ nav: about
 
 .subscribe-form input:focus {
     outline: none;
-    border-color: #ec407a;
-    box-shadow: 0 0 15px rgba(236, 64, 122, 0.2);
+    border-color: #ff69b4;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
 }
 
 .subscribe-form button {
     padding: 15px 35px;
-    background: linear-gradient(135deg, #ec407a, #3b82f6);
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
     color: white;
     border: none;
     border-radius: 8px;
@@ -350,7 +350,7 @@ nav: about
 
 .subscribe-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(236, 64, 122, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
     animation: pulse 1s infinite;
 }
 
@@ -383,9 +383,9 @@ nav: about
 
 .social-btn {
     padding: 12px 28px;
-    background: rgba(236, 64, 122, 0.1);
-    border: 2px solid #ec407a;
-    color: #ec407a;
+    background: rgba(255, 105, 180, 0.15);
+    border: 2px solid #ff69b4;
+    color: #ff1493;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
@@ -394,18 +394,18 @@ nav: about
 }
 
 .social-btn:hover {
-    background: linear-gradient(135deg, #ec407a, #3b82f6);
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(236, 64, 122, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
 }
 
 .about-footer {
     text-align: center;
     margin-top: 80px;
     padding-top: 30px;
-    border-top: 2px solid rgba(236, 64, 122, 0.2);
-    color: #7986a3;
+    border-top: 2px solid rgba(255, 105, 180, 0.3);
+    color: #c2588d;
     font-size: 0.9em;
 }
 
