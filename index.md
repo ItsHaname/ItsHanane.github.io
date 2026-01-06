@@ -1,8 +1,9 @@
----
-layout: default
-title: Accueil
-nav: home
----
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Lab - CYBERIA</title>
 <style>
 @keyframes matrixRain {
   0% { transform: translateY(-100vh); }
@@ -21,22 +22,9 @@ nav: home
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-}
-@keyframes glitch-1 {
-  0% { clip-path: inset(40% 0 61% 0); }
-  100% { clip-path: inset(92% 0 1% 0); }
-}
-@keyframes glitch-2 {
-  0% { clip-path: inset(25% 0 58% 0); }
-  100% { clip-path: inset(75% 0 1% 0); }
 }
 body {
   background: #0a0e1a;
@@ -44,6 +32,8 @@ body {
   margin: 0;
   position: relative;
   overflow-x: hidden;
+  font-family: 'Courier New', monospace;
+  color: #e2e8f0;
 }
 .binary-background {
   position: fixed;
@@ -72,217 +62,168 @@ body {
   position: relative;
   z-index: 1;
 }
-/* CYBERIA Header - Style néon avec couleurs bleues marines */
-.cyberia-header {
+
+/* Header */
+.page-header {
   text-align: center;
   margin-bottom: 60px;
   padding: 40px 20px;
-  position: relative;
   background: rgba(0, 20, 40, 0.6);
   border-radius: 30px;
   border: 3px solid #1e4d7b;
-  box-shadow: 0 0 40px rgba(30, 77, 123, 0.5), inset 0 0 30px rgba(30, 77, 123, 0.2);
+  box-shadow: 0 0 40px rgba(30, 77, 123, 0.5);
 }
-.cyberia-title {
-  font-size: 5em;
-  color: #ff6b4a;
-  text-shadow: 
-    0 0 10px #ff6b4a,
-    0 0 20px #ff6b4a,
-    0 0 30px #ff6b4a,
-    0 0 40px #ff3300;
-  margin: 0;
-  font-weight: 900;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  position: relative;
-  font-style: italic;
-  -webkit-text-stroke: 2px #ff3300;
-  paint-order: stroke fill;
-}
-/* Ligne horizontale */
-.cyberia-line {
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    #1e4d7b, 
-    #3b82f6, 
-    #1e4d7b, 
-    transparent);
-  margin: 20px auto;
-  max-width: 500px;
-  box-shadow: 0 0 15px #3b82f6;
-}
-.cyberia-subtitle {
-  font-size: 1.8em;
+.page-title {
+  font-size: 4em;
   color: #60a5fa;
-  margin: 10px 0 0 0;
   text-shadow: 
     0 0 10px #60a5fa,
     0 0 20px #3b82f6,
     0 0 30px #2563eb;
-  letter-spacing: 4px;
-  font-weight: 300;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+.page-subtitle {
+  font-size: 1.5em;
+  color: #94a3b8;
+  margin: 15px 0 0 0;
   font-style: italic;
 }
-.cyberia-subtitle::after {
+.page-subtitle::after {
   content: '_';
   animation: blink 1s infinite;
   color: #60a5fa;
 }
-/* Rest of the page - theme bleu marine */
-.cyber-header {
+
+/* Terminal Box */
+.terminal-box {
+  background: #0f1419;
+  border: 2px solid #2d3748;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px 0;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.terminal-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.terminal-dot.red { background: #ff5f56; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green { background: #27c93f; }
+.terminal-content {
+  color: #00ff00;
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+.terminal-prompt {
+  color: #60a5fa;
+}
+.terminal-comment {
+  color: #64748b;
+}
+
+/* Infrastructure Section */
+.section-title {
   text-align: center;
-  margin-bottom: 60px;
+  font-size: 2em;
+  color: #60a5fa;
+  margin: 60px 0 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
-.neon-title {
-  font-size: 3em;
-  text-align: center;
-  color: transparent;
-  background: linear-gradient(90deg, #3b82f6, #60a5fa, #2563eb);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: gradientBG 3s ease infinite;
-  margin: 40px 0 10px 0;
-  font-weight: 900;
-  letter-spacing: 2px;
+.section-title::before,
+.section-title::after {
+  content: '';
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
 }
-.subtitle {
-  font-size: 1.5em;
-  color: #94a3b8;
-  text-align: center;
-  margin-bottom: 40px;
-  font-style: italic;
-}
-.glitch-text {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #e2e8f0;
-  position: relative;
-  display: inline-block;
-  margin: 10px 0 40px 0;
-}
-.glitch-text:before,
-.glitch-text:after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.glitch-text:before {
-  left: 2px;
-  text-shadow: -1px 0 #3b82f6;
-  animation: glitch-1 2s infinite linear alternate-reverse;
-}
-.glitch-text:after {
-  left: -2px;
-  text-shadow: -1px 0 #60a5fa;
-  animation: glitch-2 3s infinite linear alternate-reverse;
-}
-.hologram-grid {
+
+/* Lab Cards Grid */
+.lab-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin: 60px 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
 }
-.holo-card {
+.lab-card {
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 15px;
   padding: 30px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
   text-decoration: none;
   color: inherit;
   display: block;
+  transition: all 0.3s ease;
 }
-.holo-card:before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #3b82f6, #60a5fa, transparent);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.holo-card:hover:before {
-  opacity: 0.5;
-}
-.holo-card:hover {
-  transform: translateY(-10px) scale(1.02);
+.lab-card:hover {
   border-color: #60a5fa;
-  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  transform: translateY(-5px);
 }
-.holo-card h3 {
+.lab-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 15px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+.lab-icon img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+}
+.lab-card h3 {
   color: #3b82f6;
-  margin: 0 0 15px 0;
+  margin: 15px 0 10px 0;
   font-size: 1.5em;
   font-weight: 600;
 }
-.holo-card p {
+.lab-card p {
   color: #cbd5e1;
   margin: 0;
   line-height: 1.6;
+  font-size: 0.95em;
 }
-.welcome-text {
-  text-align: center;
-  font-size: 1.2em;
-  color: #94a3b8;
-  margin: 50px 0;
-  padding: 30px;
-  background: rgba(15, 23, 42, 0.7);
+
+/* Construction Banner */
+.construction-banner {
+  background: rgba(30, 41, 59, 0.6);
+  border: 2px dashed rgba(59, 130, 246, 0.5);
   border-radius: 15px;
-  border-left: 4px solid #3b82f6;
-  animation: slideIn 1s ease-out;
-}
-.mission-statement {
+  padding: 30px;
   text-align: center;
-  font-size: 1.1em;
+  margin: 60px 0;
+}
+.construction-banner h3 {
   color: #60a5fa;
-  margin: 40px 0;
-  padding: 20px;
-  background: rgba(15, 23, 42, 0.5);
-  border-radius: 10px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  font-size: 1.8em;
+  margin: 0 0 15px 0;
 }
-.mission-statement strong {
-  color: #3b82f6;
+.construction-banner p {
+  color: #94a3b8;
+  margin: 10px 0;
+  line-height: 1.6;
 }
-.badge-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-.floating-badge {
-  display: inline-block;
-  padding: 12px 25px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid #1e40af;
-  border-radius: 25px;
-  color: #60a5fa;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s;
-  animation: pulse 2s infinite;
-}
-.floating-badge:hover {
-  background: #3b82f6;
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
-  animation: none;
-}
+
+/* Footer */
 .cyber-footer {
   text-align: center;
   margin-top: 80px;
@@ -291,196 +232,155 @@ body {
   color: #64748b;
   font-size: 0.9em;
 }
-@media (max-width: 1024px) {
-  .hologram-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 @media (max-width: 768px) {
-  .cyberia-title {
-    font-size: 3em;
-    letter-spacing: 5px;
+  .page-title {
+    font-size: 2.5em;
+    letter-spacing: 4px;
   }
-  
-  .cyberia-subtitle {
-    font-size: 1.2em;
-    letter-spacing: 2px;
-  }
-  
-  .cyberia-line {
-    max-width: 300px;
-  }
-  
-  .neon-title {
-    font-size: 2em;
-  }
-  
-  .subtitle {
+  .page-subtitle {
     font-size: 1.2em;
   }
-  
-  .glitch-text {
-    font-size: 1.4em;
+  .section-title {
+    font-size: 1.5em;
   }
-  
-  .hologram-grid {
+  .section-title::before,
+  .section-title::after {
+    width: 50px;
+  }
+  .lab-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .badge-container {
-    gap: 10px;
-  }
-  
-  .floating-badge {
-    padding: 10px 20px;
-    font-size: 0.9em;
   }
 }
 </style>
-<script>
-// Create binary rain background with moving 0 and 1
-document.addEventListener('DOMContentLoaded', function() {
-  const binaryContainer = document.createElement('div');
-  binaryContainer.className = 'binary-background';
-  document.body.appendChild(binaryContainer);
-  
-  // Create falling binary digits (matrix rain style)
-  for (let i = 0; i < 100; i++) {
-    const digit = document.createElement('div');
-    digit.className = 'binary-digit';
-    digit.textContent = Math.random() > 0.5 ? '1' : '0';
-    
-    // Random position
-    digit.style.left = Math.random() * 100 + 'vw';
-    
-    // Random size
-    const size = Math.random() * 18 + 12;
-    digit.style.fontSize = size + 'px';
-    
-    // Random animation speed
-    const duration = Math.random() * 10 + 5;
-    const delay = Math.random() * 5;
-    digit.style.animationDuration = duration + 's';
-    digit.style.animationDelay = delay + 's';
-    
-    // Random opacity
-    digit.style.opacity = Math.random() * 0.2 + 0.05;
-    
-    // Blue marine colors
-    const colors = [
-      'rgba(59, 130, 246, 0.15)',
-      'rgba(96, 165, 250, 0.15)',
-      'rgba(37, 99, 235, 0.15)',
-      'rgba(30, 64, 175, 0.15)'
-    ];
-    digit.style.color = colors[Math.floor(Math.random() * colors.length)];
-    
-    binaryContainer.appendChild(digit);
-  }
-  
-  // Create floating binary digits (up and down movement)
-  for (let i = 0; i < 30; i++) {
-    const floatDigit = document.createElement('div');
-    floatDigit.className = 'binary-digit float';
-    floatDigit.textContent = Math.random() > 0.5 ? '1' : '0';
-    
-    // Random position
-    floatDigit.style.left = Math.random() * 100 + 'vw';
-    floatDigit.style.top = Math.random() * 100 + 'vh';
-    
-    // Random size
-    const floatSize = Math.random() * 22 + 14;
-    floatDigit.style.fontSize = floatSize + 'px';
-    
-    // Random animation delay
-    floatDigit.style.animationDelay = Math.random() * 2 + 's';
-    
-    // Random opacity
-    floatDigit.style.opacity = Math.random() * 0.3 + 0.1;
-    
-    // Blue marine colors - brighter for floating ones
-    const floatColors = [
-      'rgba(59, 130, 246, 0.25)',
-      'rgba(96, 165, 250, 0.25)',
-      'rgba(37, 99, 235, 0.25)'
-    ];
-    floatDigit.style.color = floatColors[Math.floor(Math.random() * floatColors.length)];
-    
-    binaryContainer.appendChild(floatDigit);
-  }
-  
-  // Add subtle floating animation to cards
-  const cards = document.querySelectorAll('.holo-card');
-  cards.forEach((card, index) => {
-    card.style.animationDelay = (index * 0.1) + 's';
-    card.style.animation = 'slideIn 0.8s ease-out forwards';
-    card.style.opacity = '0';
-  });
-});
-</script>
+</head>
+<body>
+
+<div class="binary-background" id="binaryBG"></div>
+
 <div class="container">
-  <!-- CYBERIA Header avec ligne horizontale -->
-  <div class="cyberia-header">
-    <div class="cyberia-title">CYBERIA</div>
-    <div class="cyberia-line"></div>
-    <div class="cyberia-subtitle">Cafe & Club</div>
+  <!-- Header -->
+  <div class="page-header">
+    <h1 class="page-title">HOME LAB SETUP</h1>
+    <p class="page-subtitle">Raspberry Pi • Docker • Arch Linux</p>
   </div>
-  <div class="cyber-header">
-    <div class="neon-title">WELCOME TO MY CYBERSPACE</div>
-    <div class="subtitle">A digital notebook for everything I learn</div>
-    <div class="glitch-text" data-text="CYBERSECURITY KNOWLEDGE BASE">CYBERSECURITY KNOWLEDGE BASE</div>
+
+  <!-- Terminal Box -->
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot red"></div>
+      <div class="terminal-dot yellow"></div>
+      <div class="terminal-dot green"></div>
+    </div>
+    <div class="terminal-content">
+<span class="terminal-prompt">haname@homelab:~$</span> cat lab_overview.txt<br>
+<span class="terminal-comment">- Infrastructure: Raspberry Pi 4 + Docker Containers + Arch Linux VMs</span><br>
+<span class="terminal-comment">- Objectif: Reconnaissance, Exploitation, Post-Exploitation, Persistence</span><br>
+<span class="terminal-comment">- Reseau: 10.10.10.0/24 (Lab Network)</span><br>
+<span class="terminal-comment">- Status: Building...</span>
+    </div>
   </div>
-  <div class="mission-statement">
-    <p>In this website, I document <strong>every concept I learn</strong>, <strong>every challenge I solve</strong>, and <strong>every skill I develop</strong> in cybersecurity.<br>
-    From academic notes to hands-on labs, this is my personal knowledge repository.</p>
-  </div>
-  <div class="hologram-grid">
-    <a href="/about/me" class="holo-card">
-      <h3>À PROPOS</h3>
-      <p>Mon parcours, passions et motivation dans la cybersécurité</p>
+
+  <!-- Infrastructure Section -->
+  <h2 class="section-title">💻 Infrastructure</h2>
+
+  <div class="lab-grid">
+    <!-- Raspberry Pi -->
+    <a href="/my-lab/pi" class="lab-card">
+      <div class="lab-icon">
+        <img src="https://raw.githubusercontent.com/user-attachments/assets/b338770a-a381-4aac-82f8-a9c083b06536" alt="Raspberry Pi" style="width: 100px; height: 100px;">
+      </div>
+      <h3>Raspberry Pi</h3>
+      <p>Serveur principal du lab, héberge les containers Docker et services réseau</p>
     </a>
-    
-   <a href="/fssm/" class="holo-card">
-      <h3>FSSM</h3>
-      <p>Formation académique, projets et compétences acquises</p>
+
+    <!-- Docker -->
+    <a href="/my-lab/dockerlab" class="lab-card">
+      <div class="lab-icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" style="width: 80px; height: 80px;">
+      </div>
+      <h3>Docker Containers</h3>
+      <p>Environnements isolés pour tests et déploiement d'applications vulnérables</p>
     </a>
-    
-   <a href="/tryhackme/" class="holo-card">
-      <h3>TRYHACKME</h3>
-      <p>Paths complétés, badges et write-ups de challenges</p>
+
+    <!-- Arch Linux -->
+    <a href="/my-lab/archlinux" class="lab-card">
+      <div class="lab-icon">
+        <img src="https://raw.githubusercontent.com/user-attachments/assets/306bea0b-5089-4e15-ac97-b6d99e986cc4" alt="Arch Linux" style="width: 80px; height: 80px;">
+      </div>
+      <h3>Arch Linux</h3>
+      <p>Machines virtuelles pour pentesting et développement d'outils</p>
     </a>
-    
-  <a href="/my-lab/" class="holo-card">
-      <h3>MON LAB</h3>
-      <p>Environnement de test, machines virtuelles et expériences</p>
-   </a>
+
+    <!-- VulHub -->
+    <a href="/my-lab/vulhub_cve" class="lab-card">
+      <div class="lab-icon">
+        <img src="https://raw.githubusercontent.com/user-attachments/assets/a2df6ec4-fda0-4c02-b9c2-05bb6e9b0384" alt="VulHub" style="width: 90px; height: 90px;">
+      </div>
+      <h3>VulHub CVE</h3>
+      <p>Environnements Docker pour exploitation de CVE réels</p>
+    </a>
+
+    <!-- Other Labs -->
+    <a href="/my-lab/other_lab" class="lab-card">
+      <div class="lab-icon">
+        <img src="https://raw.githubusercontent.com/user-attachments/assets/c5b86404-2ba7-423d-a218-e9e963d5420d" alt="Other Labs" style="width: 80px; height: 80px;">
+      </div>
+      <h3>Other Labs</h3>
+      <p>Projets expérimentaux et environnements de test additionnels</p>
+    </a>
   </div>
-  <div class="welcome-text">
-    <p>Salut — je suis <strong style="color: #3b82f6;">Haname</strong>, étudiante en cybersécurité à la FSSM.<br>
-    Bienvenue sur mon site où je partage mon parcours, mes parcours (paths) TryHackMe, la formation FSSM, et mes laboratoires personnels.</p>
+
+  <!-- Construction Banner -->
+  <div class="construction-banner">
+    <h3>🚀 Lab en Construction</h3>
+    <p>Les machines, challenges et write-ups seront ajoutés progressivement.</p>
+    <p>Documentation technique et notes pratiques à venir...</p>
   </div>
-  <!-- COMPTEUR SIMPLE -->
-<div style="text-align: center; margin: 30px 0;">
-  <div style="display: inline-block; background: rgba(15, 23, 42, 0.7); border: 1px solid #3b82f6; border-radius: 10px; padding: 15px 30px; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);">
-    <div style="color: #94a3b8; font-size: 0.9em; margin-bottom: 8px; letter-spacing: 2px;">👁️ VISITEURS</div>
-    <div style="color: #60a5fa; font-size: 2em; font-weight: 700; text-shadow: 0 0 10px #60a5fa;" id="visitorCount">0</div>
+
+  <!-- Footer -->
+  <div class="cyber-footer">
+    <a href="/" style="color: #60a5fa; text-decoration: none;">← Retour à l'accueil</a><br><br>
+    © 2025 CYBERIA — HANAME — Home Lab Setup
   </div>
 </div>
 
 <script>
-let visits = parseInt(localStorage.getItem('cyberiaVisits') || '0');
-visits++;
-localStorage.setItem('cyberiaVisits', visits);
-document.getElementById('visitorCount').textContent = visits;
+// Create binary rain background
+document.addEventListener('DOMContentLoaded', function() {
+  const binaryContainer = document.getElementById('binaryBG');
+  
+  // Falling binary digits
+  for (let i = 0; i < 80; i++) {
+    const digit = document.createElement('div');
+    digit.className = 'binary-digit';
+    digit.textContent = Math.random() > 0.5 ? '1' : '0';
+    digit.style.left = Math.random() * 100 + 'vw';
+    digit.style.fontSize = (Math.random() * 18 + 12) + 'px';
+    digit.style.animationDuration = (Math.random() * 10 + 5) + 's';
+    digit.style.animationDelay = (Math.random() * 5) + 's';
+    digit.style.opacity = Math.random() * 0.2 + 0.05;
+    const colors = ['rgba(59, 130, 246, 0.15)', 'rgba(96, 165, 250, 0.15)', 'rgba(37, 99, 235, 0.15)'];
+    digit.style.color = colors[Math.floor(Math.random() * colors.length)];
+    binaryContainer.appendChild(digit);
+  }
+  
+  // Floating binary digits
+  for (let i = 0; i < 25; i++) {
+    const floatDigit = document.createElement('div');
+    floatDigit.className = 'binary-digit float';
+    floatDigit.textContent = Math.random() > 0.5 ? '1' : '0';
+    floatDigit.style.left = Math.random() * 100 + 'vw';
+    floatDigit.style.top = Math.random() * 100 + 'vh';
+    floatDigit.style.fontSize = (Math.random() * 22 + 14) + 'px';
+    floatDigit.style.animationDelay = (Math.random() * 2) + 's';
+    floatDigit.style.opacity = Math.random() * 0.3 + 0.1;
+    const floatColors = ['rgba(59, 130, 246, 0.25)', 'rgba(96, 165, 250, 0.25)', 'rgba(37, 99, 235, 0.25)'];
+    floatDigit.style.color = floatColors[Math.floor(Math.random() * floatColors.length)];
+    binaryContainer.appendChild(floatDigit);
+  }
+});
 </script>
-  <div class="badge-container">
-    <a href="/tryhackme/" class="floating-badge">TRYHACKME</a>
-    <a href="https://github.com/ItsHaname" class="floating-badge" target="_blank">GITHUB</a>
-    <a href="#" class="floating-badge">TWITTER</a>
-    <a href="#" class="floating-badge">LINKEDIN</a>
-  </div>
-  <div class="cyber-footer">
-    © 2025 CYBERIA — HANAME — FSSM — Personal Knowledge Repository
-  </div>
-</div>
+
+</body>
+</html>
