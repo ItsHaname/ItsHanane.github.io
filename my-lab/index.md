@@ -333,7 +333,7 @@ body {
 
   <!-- Construction Banner -->
   <div class="construction-banner">
-    <h3>🚀 Lab en Construction</h3>
+    <h3>Lab en Construction</h3>
     <p>Les machines, challenges et write-ups seront ajoutés progressivement.</p>
     <p>Documentation technique et notes pratiques à venir...</p>
   </div>
