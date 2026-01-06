@@ -520,4 +520,4 @@ document.addEventListener('DOMContentLoaded', function() {
     © 2025 CYBERIA — HANAME — FSSM — Personal Knowledge Repository
   </div>
 
-</div
+</div>
