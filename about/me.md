@@ -39,10 +39,10 @@ body {
     border: 5px solid #3b82f6;
     margin: 0 auto 30px;
     object-fit: cover;
-    object-position: 55% 25%;
+    object-position: center 30%;
     display: block;
     box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
-    transform: scale(1.45);
+    transform: scale(1.4);
 }
 
 .hero h1 {
@@ -244,7 +244,7 @@ section p {
             Passionate about <span class="highlight">offensive security</span>, <span class="highlight">vulnerability analysis</span>, and <span class="highlight">reverse engineering</span>. Currently pursuing a Bachelor's in Networking and Cybersecurity at FSSM, Cadi Ayyad University.
         </p>
         
-   <div class="stats">
+  <div class="stats">
             <div class="stat">
                 <span class="stat-value">2026</span>
                 <span class="stat-label">Blog Launch</span>
@@ -291,7 +291,7 @@ section p {
     </section>
 
     <!-- What You'll Find Here -->
- <section>
+  <section>
         <h2>What You'll Find Here</h2>
         <div class="cards">
             <div class="card">
@@ -304,7 +304,7 @@ section p {
                 </ul>
             </div>
             
-\  <div class="card">
+ <div class="card">
                 <h3>TryHackMe Journey</h3>
                 <p class="meta">Practical Cybersecurity Training</p>
                 <ul>
@@ -314,7 +314,7 @@ section p {
                 </ul>
             </div>
             
-  <div class="card">
+div class="card">
                 <h3>Personal Lab</h3>
                 <p class="meta">Hands-On Learning Environment</p>
                 <ul>
@@ -337,7 +337,7 @@ section p {
     </section>
 
     <!-- About This Blog -->
-<section>
+ <section>
         <h2>About This Blog</h2>
         <p>
             On January 1st, 2026, I launched <span class="highlight">Cyberia</span> to document my journey through the world of cybersecurity. This blog serves as both a personal learning journal and a resource for others interested in the field.
