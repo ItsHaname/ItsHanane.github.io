@@ -280,12 +280,12 @@ section p {
         <h2>Education</h2>
         <div class="timeline-item">
             <h3>Bachelor's in Networking & Cybersecurity</h3>
-            <p class="period">FSSM, Cadi Ayyad University | 2024 - Present</p>
+            <p class="period">FSSM, Cadi Ayyad University | 2025-2026 - Present</p>
             <p>Specialized program focusing on network defense, penetration testing, and security protocols. Building strong foundations in system administration and threat analysis.</p>
         </div>
         <div class="timeline-item">
             <h3>Computer Science Foundations</h3>
-            <p class="period">FSSM | 2022 - 2024</p>
+            <p class="period">FSSM | 2023 - 2025</p>
             <p>Core studies in programming, algorithms, databases, and computer architecture. and technical fundamentals.</p>
         </div>
     </section>
