@@ -260,12 +260,23 @@ body {
   margin-top: 15px;
 }
 
+.status-badge.done {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
 .status-dot {
   width: 8px;
   height: 8px;
   background: #3b82f6;
   border-radius: 50%;
   animation: pulse 2s infinite;
+}
+
+.status-dot.done {
+  background: #10b981;
+  animation: none;
 }
 
 .tips-section {
@@ -381,7 +392,7 @@ body {
       My goal? <strong>Not breaking my system</strong> while exploring and experimenting.<br><br>
       I'm currently running <strong>Arch Linux on dual boot</strong>, and I'm documenting every useful thing I discover along the way.
       If you're interested in installing Arch yourself, check out 
-      <a href="https://gelules.github.io/linux/arch.html" target="_blank">this installation guide</a> — why not give it a try? 🚀
+      <a href="https://gelules.github.io/linux/arch.html" target="_blank">this installation guide</a> — why not give it a try? 
     </p>
   </div>
 
@@ -393,17 +404,17 @@ body {
   <h2 class="section-title">Useful Resources & Guides</h2>
 
   <div class="resources-grid">
-    <a href="#" class="resource-card">
+    <a href="{{ site.baseurl }}/my-lab/masterpass" class="resource-card">
       <div class="resource-number">1</div>
       <h3>Master Password Setup</h3>
       <p>Secure your system with a master password configuration for enhanced security and credential management.</p>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Coming soon
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
       </div>
     </a>
 
-   <a href="#" class="resource-card">
+  <a href="#" class="resource-card">
       <div class="resource-number">2</div>
       <h3>System Maintenance</h3>
       <p>Essential commands and practices to keep your Arch system healthy and running smoothly without breaking things.</p>
@@ -413,7 +424,7 @@ body {
       </div>
     </a>
 
-  <a href="#" class="resource-card">
+   <a href="#" class="resource-card">
       <div class="resource-number">3</div>
       <h3>Package Management</h3>
       <p>Pacman tips, AUR helpers, and best practices for installing and managing software safely on Arch.</p>
@@ -455,7 +466,7 @@ body {
   </div>
 
   <div class="tips-section">
-    <h3>💡 Quick Tips I've Learned</h3>
+    <h3> Quick Tips I've Learned</h3>
     <ul>
       <li>Always read the Arch Wiki before installing anything</li>
       <li>Create snapshots before major system updates</li>
