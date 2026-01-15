@@ -353,7 +353,7 @@ body {
     </div>
    <!-- Modules Grid -->
     <div class="hologram-grid">
-        <a href="{{ site.baseurl }}/fssm/Iot.md" class="holo-card">
+        <a href="{{ site.baseurl }}/fssm/Iot" class="holo-card">
             <div class="module-icon">M1</div>
             <h3>IoT Analyse et Connexion</h3>
             <p>Internet des objets, protocoles IoT, analyse de données connectées</p>
@@ -363,7 +363,7 @@ body {
             </div>
         </a>
 
-  <a href="{{ site.baseurl }}/fssm/programmation reseau.md" class="holo-card">
+  <a href="{{ site.baseurl }}/fssm/programmation-reseau" class="holo-card">
             <div class="module-icon">M2</div>
             <h3>Parallélisme & Programmation Réseaux</h3>
             <p>Programmation parallèle, sockets, protocoles réseau avancés</p>
@@ -372,7 +372,7 @@ body {
                 En cours
             </div>
         </a>
-    <a href="{{ site.baseurl }}/fssm/droit.md" class="holo-card">
+    <a href="{{ site.baseurl }}/fssm/droit" class="holo-card">
             <div class="module-icon">M3</div>
             <h3>Droit Digital</h3>
             <p>RGPD, propriété intellectuelle, aspects juridiques du numérique</p>
@@ -382,7 +382,7 @@ body {
             </div>
         </a>
 
-  <a href="{{ site.baseurl }}/fssm/Gouvernance.md" class="holo-card">
+  <a href="{{ site.baseurl }}/fssm/Gouvernance" class="holo-card">
             <div class="module-icon">M4</div>
             <h3>Gouvernance de la Sécurité</h3>
             <p>ISO 27001, gestion des risques, politiques de sécurité</p>
@@ -391,7 +391,7 @@ body {
                 En cours
             </div>
         </a>
-     <a href="{{ site.baseurl }}/fssm/crypto.md" class="holo-card">
+     <a href="{{ site.baseurl }}/fssm/crypto" class="holo-card">
             <div class="module-icon">M5</div>
             <h3>Cryptographie & Cybersécurité</h3>
             <p>Chiffrement, PKI, signatures numériques, sécurité applicative</p>
