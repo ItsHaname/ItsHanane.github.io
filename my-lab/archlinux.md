@@ -148,6 +148,28 @@ body {
   border-bottom-color: #60a5fa;
 }
 
+.arch-mascot-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.arch-mascot {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid rgba(59, 130, 246, 0.5);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+  transition: all 0.4s ease;
+}
+
+.arch-mascot:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 20px 60px rgba(96, 165, 250, 0.6);
+  border-color: #60a5fa;
+}
+
 .section-title {
   font-size: 2.5em;
   color: transparent;
@@ -375,6 +397,10 @@ body {
   .resources-grid {
     grid-template-columns: 1fr;
   }
+  
+  .arch-mascot {
+    max-width: 100%;
+  }
 }
 </style>
 
@@ -394,6 +420,10 @@ body {
       If you're interested in installing Arch yourself, check out 
       <a href="https://gelules.github.io/linux/arch.html" target="_blank">this installation guide</a> — why not give it a try? 
     </p>
+  </div>
+
+  <div class="arch-mascot-container">
+    <img src="{{ site.baseurl }}/assets/images/arch-mascot.png" alt="Arch Linux Mascot" class="arch-mascot">
   </div>
 
   <div class="warning-box">
