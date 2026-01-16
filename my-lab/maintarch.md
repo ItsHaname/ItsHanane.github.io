@@ -5,7 +5,7 @@ nav: lab
 ---
 
 <style>
-/* Arrière-plan binaire global fusionné */
+/* Arrière-plan binaire global */
 body {
   background-color: #0a0e1a;
   background-image: 
@@ -23,9 +23,8 @@ body {
   50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
 }
 
-/* Élargissement du conteneur principal */
 .article-container {
-  max-width: 1200px; /* Augmenté de 900px à 1200px */
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
   animation: fadeIn 0.8s ease-out;
@@ -73,7 +72,7 @@ body {
 }
 
 .article-title {
-  font-size: 3.5em; /* Légèrement augmenté pour l'affichage large */
+  font-size: 3em;
   color: #60a5fa;
   margin: 20px 0;
   font-weight: 900;
@@ -85,7 +84,7 @@ body {
   color: #94a3b8;
   font-size: 1.2em;
   line-height: 1.6;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -114,29 +113,29 @@ body {
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 15px;
-  padding: 50px; /* Padding augmenté pour accompagner l'élargissement */
+  padding: 40px;
   margin: 30px 0;
 }
 
 .content-section h2 {
   color: #3b82f6;
-  font-size: 2.2em;
-  margin-bottom: 25px;
+  font-size: 2em;
+  margin-bottom: 20px;
   padding-bottom: 15px;
   border-bottom: 2px solid rgba(59, 130, 246, 0.3);
 }
 
 .content-section h3 {
   color: #60a5fa;
-  font-size: 1.6em;
-  margin: 35px 0 20px 0;
+  font-size: 1.5em;
+  margin: 30px 0 15px 0;
 }
 
 .content-section p {
   color: #cbd5e1;
   line-height: 1.8;
   margin: 15px 0;
-  font-size: 1.1em;
+  font-size: 1.05em;
 }
 
 .code-block {
@@ -144,7 +143,7 @@ body {
   border: 1px solid #1e40af;
   border-radius: 10px;
   padding: 25px;
-  margin: 25px 0;
+  margin: 20px 0;
   overflow-x: auto;
 }
 
@@ -156,6 +155,11 @@ body {
   line-height: 1.8;
 }
 
+.code-block code {
+  color: #60a5fa;
+  font-size: 1.1em;
+}
+
 .command-line {
   color: #3b82f6;
   font-family: 'Courier New', monospace;
@@ -165,26 +169,40 @@ body {
   font-size: 1.05em;
 }
 
-.info-box, .warning-box {
-  padding: 25px;
-  margin: 25px 0;
-  border-radius: 8px;
-}
-
 .info-box {
   background: rgba(59, 130, 246, 0.1);
-  border-left: 5px solid #3b82f6;
+  border-left: 4px solid #3b82f6;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.info-box strong {
+  color: #60a5fa;
 }
 
 .warning-box {
   background: rgba(239, 68, 68, 0.1);
-  border-left: 5px solid #ef4444;
+  border-left: 4px solid #ef4444;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.warning-box strong {
+  color: #f87171;
+}
+
+.step-list {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
 }
 
 .step-list li {
   counter-increment: step-counter;
-  margin: 40px 0;
-  padding-left: 70px;
+  margin: 30px 0;
+  padding-left: 60px;
   position: relative;
 }
 
@@ -193,70 +211,143 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
   border-radius: 50%;
   font-weight: bold;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 .key-points {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin: 35px 0;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
 }
 
 .key-point {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e40af;
-  border-radius: 12px;
-  padding: 25px;
+  border-radius: 10px;
+  padding: 20px;
   transition: all 0.3s;
 }
 
 .key-point:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+  box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+  transform: translateY(-5px);
+}
+
+.key-point h4 {
+  color: #3b82f6;
+  margin: 0 0 10px 0;
+}
+
+.key-point p {
+  color: #94a3b8;
+  margin: 0;
+  font-size: 0.95em;
 }
 
 .script-container {
   background: rgba(10, 14, 26, 0.9);
   border: 2px solid #3b82f6;
   border-radius: 15px;
-  padding: 40px;
-  margin: 40px 0;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+.script-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.script-icon {
+  color: #3b82f6;
+  font-size: 1.5em;
+}
+
+.script-title {
+  color: #60a5fa;
+  font-size: 1.3em;
+  margin: 0;
 }
 
 table {
   width: 100%;
-  margin: 25px 0;
-  font-size: 1.05em;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-table th, table td {
-  padding: 20px;
+table th {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 15px;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+table tr:last-child td {
+  border-bottom: none;
 }
 
 .article-footer {
   text-align: center;
-  margin-top: 80px;
-  padding: 40px;
+  margin-top: 60px;
+  padding: 30px;
   background: rgba(15, 23, 42, 0.5);
-  border-radius: 20px;
+  border-radius: 15px;
   border-top: 2px solid rgba(59, 130, 246, 0.3);
 }
 
-@media (max-width: 1240px) {
-  .article-container { max-width: 95%; }
+.article-meta {
+  color: #64748b;
+  font-size: 0.9em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid #3b82f6;
+  border-radius: 25px;
+  color: #60a5fa;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.back-link:hover {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
 }
 
 @media (max-width: 768px) {
-  .article-title { font-size: 2.2em; }
+  .article-title { font-size: 2em; }
   .content-section { padding: 25px; }
+  .step-list li { padding-left: 50px; }
+  .key-points { grid-template-columns: 1fr; }
+  .code-block pre { font-size: 1em; }
 }
 </style>
 
@@ -273,9 +364,9 @@ table th, table td {
 
   <div class="content-section">
     <h2>Why Regular Maintenance</h2>
-    <p>Arch Linux follows a rolling release model. Unlike Ubuntu or Fedora, Arch requires regular maintenance to stay clean and performant. A weekly 15-minute routine prevents file accumulation and keeps your system stable.</p>
+    <p>Arch Linux follows a rolling release model, receiving constant updates. Unlike Ubuntu or Fedora with scheduled releases, Arch requires regular maintenance to stay clean and performant. A weekly 15-minute routine prevents file accumulation and keeps your system stable.</p>
     
-   <div class="key-points">
+  <div class="key-points">
       <div class="key-point">
         <h4>Clean System</h4>
         <p>Remove unused packages and cached files</p>
@@ -293,12 +384,14 @@ table th, table td {
 
   <div class="content-section">
     <h2>Weekly Routine in 9 Steps</h2>
-    <ul class="step-list">
+    
+   <ul class="step-list">
       <li>
         <h3>Check Arch News</h3>
-        <p>Always visit <span class="command-line">archlinux.org/news</span> before updating. Some updates require manual intervention.</p>
+        <p>Always visit <span class="command-line">archlinux.org/news</span> before updating. Some updates require manual intervention. This step can save you hours of troubleshooting.</p>
       </li>
-      <li>
+      
+   <li>
         <h3>Update System</h3>
         <div class="code-block">
 <pre><code># With pacman
@@ -308,25 +401,268 @@ sudo pacman -Syu
 yay -Syu</code></pre>
         </div>
         <div class="info-box">
-          <strong>Important:</strong> Always reboot after kernel updates.
+          <strong>Important:</strong> Always reboot after kernel updates to use the latest version.
         </div>
       </li>
-      <li>
+      
+  <li>
         <h3>Clean Package Cache</h3>
         <div class="code-block">
-<pre><code>sudo paccache -r
+<pre><code># Keep last 3 versions of each package
+sudo paccache -r
+
+# Remove all versions of uninstalled packages
 sudo paccache -ruk0</code></pre>
-</div>
-        <p>This typically frees 500 MB to 2 GB of space.</p>
+        </div>
+        <p>This typically frees between 500 MB to 2 GB of disk space on my system.</p>
       </li>
-      <li>
+      
+  <li>
+        <h3>Remove Orphan Packages</h3>
+        <div class="code-block">
+<pre><code># List orphan packages
+pacman -Qtdq
+
+# Remove orphan packages
+sudo pacman -Qtdq | sudo pacman -Rns -</code></pre>
+        </div>
+        <p>Orphan packages are dependencies no longer needed by any installed package.</p>
+      </li>
+      
+  <li>
         <h3>Manage Configuration Files</h3>
         <div class="code-block">
-<pre><code>sudo DIFFPROG=vimdiff pacdiff</code></pre>
+<pre><code># Find .pacnew and .pacsave files
+sudo find /etc -name "*.pacnew" -o -name "*.pacsave"
+
+# Merge interactively
+sudo DIFFPROG=vimdiff pacdiff
+
+# or with meld (graphical)
+sudo DIFFPROG=meld pacdiff</code></pre>
         </div>
-        <p>Merge .pacnew and .pacsave files after updates.</p>
+        <p>When pacman updates a package you've modified, it creates these backup files that need merging.</p>
+      </li>
+      
+   <li>
+        <h3>Clean Systemd Journals</h3>
+        <div class="code-block">
+<pre><code># Check current size
+journalctl --disk-usage
+
+# Keep only last 2 weeks
+sudo journalctl --vacuum-time=2weeks</code></pre>
+        </div>
+      </li>
+      
+   <li>
+        <h3>Check Failed Services</h3>
+        <div class="code-block">
+<pre><code># List failed services
+systemctl --failed
+
+# Investigate specific service
+journalctl -u service-name</code></pre>
+        </div>
+      </li>
+      
+   <li>
+        <h3>Clean User Cache</h3>
+        <div class="code-block">
+<pre><code># Check cache usage
+du -sh ~/.cache/*
+
+# Clean thumbnails
+rm -rf ~/.cache/thumbnails/*
+
+# Clean yay/paru cache
+yay -Sc</code></pre>
+        </div>
+      </li>
+      
+  <li>
+        <h3>Check Disk Space</h3>
+        <div class="code-block">
+<pre><code># Overview
+df -h
+
+# Detailed analysis (install ncdu if needed)
+ncdu /</code></pre>
+        </div>
       </li>
     </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>Automation Script</h2>
+    
+<div class="script-container">
+      <div class="script-header">
+        <span class="script-icon">#!/bin/bash</span>
+        <h3 class="script-title">arch-maintenance.sh</h3>
+      </div>
+      
+ <div class="code-block">
+<pre><code>#!/bin/bash
+
+echo "═══════════════════════════════════════════"
+echo "  Arch Linux Weekly Maintenance"
+echo "═══════════════════════════════════════════"
+echo ""
+
+read -p "Have you checked archlinux.org/news? (y/n) " -n 1 -r
+echo ""
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Please check news before continuing."
+    exit 1
+fi
+
+echo "→ Updating system..."
+yay -Syu
+
+echo ""
+echo "→ Cleaning package cache..."
+sudo paccache -r
+sudo paccache -ruk0
+
+echo ""
+echo "→ Searching for orphan packages..."
+orphans=$(pacman -Qtdq)
+if [ -n "$orphans" ]; then
+    echo "$orphans"
+    read -p "Remove these packages? (y/n) " -n 1 -r
+    echo ""
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        sudo pacman -Qtdq | sudo pacman -Rns -
+    fi
+else
+    echo "✓ No orphan packages found"
+fi
+
+echo ""
+echo "→ Searching for .pacnew/.pacsave files..."
+pacnew_files=$(sudo find /etc -name "*.pacnew" -o -name "*.pacsave" 2>/dev/null)
+if [ -n "$pacnew_files" ]; then
+    echo "$pacnew_files"
+    echo "Use 'sudo pacdiff' to merge them"
+else
+    echo "✓ No configuration files to merge"
+fi
+
+echo ""
+echo "→ Cleaning systemd journals..."
+echo "Current size: $(journalctl --disk-usage | grep -oP '\d+\.\d+[GM]')"
+sudo journalctl --vacuum-time=2weeks
+
+echo ""
+echo "→ Checking services..."
+failed=$(systemctl --failed --no-pager --no-legend)
+if [ -n "$failed" ]; then
+    echo "⚠ Failed services:"
+    echo "$failed"
+else
+    echo "✓ All services running correctly"
+fi
+
+echo ""
+echo "→ Disk space:"
+df -h / /home | grep -v tmpfs
+
+echo ""
+echo "═══════════════════════════════════════════"
+echo "  Maintenance Complete"
+echo "═══════════════════════════════════════════"</code></pre>
+  </div>
+    </div>
+    
+  <div class="info-box">
+      <strong>Installation:</strong>
+      <div class="code-block" style="margin-top: 10px;">
+<pre><code># Create the file
+nano ~/Scripts/arch-maintenance.sh
+
+# Make executable
+chmod +x ~/Scripts/arch-maintenance.sh
+
+# Run it
+~/Scripts/arch-maintenance.sh</code></pre>
+  </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Monthly Tasks</h2>
+    <p>In addition to weekly maintenance, perform these tasks monthly:</p>
+    
+   <div class="key-points">
+      <div class="key-point">
+        <h4>Update Mirrorlist</h4>
+        <p>Use reflector for fastest servers</p>
+      </div>
+      <div class="key-point">
+        <h4>Firmware Updates</h4>
+        <p>Run fwupdmgr update</p>
+      </div>
+      <div class="key-point">
+        <h4>Full Backup</h4>
+        <p>Complete system snapshot with Timeshift</p>
+      </div>
+      <div class="key-point">
+        <h4>Refresh GPG Keys</h4>
+        <p>Keep package signing keys current</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Critical Rules</h2>
+    
+   <div class="warning-box">
+      <strong>Never Do:</strong>
+      <table>
+        <tr>
+          <td><span class="command-line">pacman -Sy package</span></td>
+          <td>Always use <span class="command-line">-Syu</span> for full updates</td>
+        </tr>
+        <tr>
+          <td>Ignore Arch news</td>
+          <td>Some updates require manual intervention</td>
+        </tr>
+        <tr>
+          <td>Force conflicting updates</td>
+          <td>Understand conflicts before proceeding</td>
+        </tr>
+        <tr>
+          <td>Skip backups</td>
+          <td>Always have bootable USB ready</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Quick Reference</h2>
+    <div class="code-block">
+<pre><code># Complete update
+sudo pacman -Syu
+
+# System cleanup
+sudo paccache -r && sudo paccache -ruk0
+sudo pacman -Qtdq | sudo pacman -Rns -
+sudo journalctl --vacuum-time=2weeks
+
+# System checks
+systemctl --failed
+df -h
+pacman -Qdt</code></pre>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Conclusion</h2>
+    <p>This 15-minute weekly routine keeps my Arch Linux system stable and performant. Since adopting this discipline, I haven't had any major issues requiring reinstallation.</p>
+    
+  <p>Arch's advantage is transparency and total control over your system. Regular maintenance investment pays off with long-term stability and performance.</p>
   </div>
 
   <div class="article-footer">
