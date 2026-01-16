@@ -388,7 +388,7 @@ body {
 
   <div class="intro-box">
     <p>
-      <strong>Hey!</strong> 👋 This is my documentation page where I track everything I learn about <strong>Arch Linux</strong>. 
+      <strong>Hey!</strong> This is my documentation page where I track everything I learn about <strong>Arch Linux</strong>. 
       My goal? <strong>Not breaking my system</strong> while exploring and experimenting.<br><br>
       I'm currently running <strong>Arch Linux on dual boot</strong>, and I'm documenting every useful thing I discover along the way.
       If you're interested in installing Arch yourself, check out 
@@ -397,7 +397,7 @@ body {
   </div>
 
   <div class="warning-box">
-    <h4>⚠️ Learning & Experimenting</h4>
+    <h4>Learning & Experimenting</h4>
     <p>This page is my personal lab notebook. Things might break, commands might change, and mistakes will be made — but that's how we learn!</p>
   </div>
 
@@ -414,17 +414,17 @@ body {
       </div>
     </a>
 
-  <a href="#" class="resource-card">
+   <a href="{{ site.baseurl }}/my-lab/maintarch" class="resource-card">
       <div class="resource-number">2</div>
       <h3>System Maintenance</h3>
       <p>Essential commands and practices to keep your Arch system healthy and running smoothly without breaking things.</p>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Coming soon
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
       </div>
     </a>
 
-   <a href="#" class="resource-card">
+  <a href="#" class="resource-card">
       <div class="resource-number">3</div>
       <h3>Package Management</h3>
       <p>Pacman tips, AUR helpers, and best practices for installing and managing software safely on Arch.</p>
@@ -444,7 +444,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="resource-card">
+ <a href="#" class="resource-card">
       <div class="resource-number">5</div>
       <h3>Dotfiles & Customization</h3>
       <p>My configuration files, themes, and customizations to make Arch look and feel awesome.</p>
@@ -466,7 +466,7 @@ body {
   </div>
 
   <div class="tips-section">
-    <h3> Quick Tips I've Learned</h3>
+    <h3>Quick Tips I've Learned</h3>
     <ul>
       <li>Always read the Arch Wiki before installing anything</li>
       <li>Create snapshots before major system updates</li>
@@ -479,7 +479,7 @@ body {
 
   <div class="footer-nav">
     <a href="{{ site.baseurl }}/my-lab" class="nav-button">← Back to Lab</a>
-    <a href="https://wiki.archlinux.org/" target="_blank" class="nav-button">Arch Wiki 📚</a>
+    <a href="https://wiki.archlinux.org/" target="_blank" class="nav-button">Arch Wiki</a>
   </div>
 </div>
 
