@@ -1,29 +1,28 @@
 <style>
-body {
+  /* On réinitialise tout pour éviter les décalages */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
     background: #1a1f2e;
-    font-family: Arial, sans-serif;
-    /* On supprime le padding et on s'assure que la marge est à 0 */
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden; /* Évite un défilement horizontal inutile */
-}
+  }
 
-img {
+  img {
+    /* On force l'image à prendre 100% de la largeur du parent */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
     display: block;
-    /* L'image prend 100% de la largeur de la fenêtre */
-    width: 100vw; 
-    height: auto;
-    /* On retire le max-width pour ne plus brider la taille */
-    max-width: none; 
-    /* On retire les arrondis et les marges pour coller aux bords */
-    margin: 0; 
-    border-radius: 0; 
-    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.2);
-}
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 
-img:hover {
-    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
-}
+  /* Si tu veux quand même un petit effet au survol */
+  img:hover {
+    filter: brightness(1.1);
+  }
 </style>
 
 <img alt="image" src="https://github.com/user-attachments/assets/5b6bcc1a-6f76-46fd-88fb-34b43fbaa0e5" />
