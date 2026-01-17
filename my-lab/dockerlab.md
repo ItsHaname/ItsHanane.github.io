@@ -417,7 +417,7 @@ body {
   </div>
 
   <div class="docker-logo-container">
-    <div class="docker-icon">🐳</div>
+    <img src="{{ site.baseurl }}/assets/images/docker.png" alt="Docker Learning" class="docker-mascot">
   </div>
 
   <div class="warning-box">
@@ -438,7 +438,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="resource-card">
+  <a href="#" class="resource-card">
       <div class="resource-number">2</div>
       <h3>Docker Installation & Setup</h3>
       <p>Step-by-step guide to installing Docker on different platforms and configuring your environment for optimal performance.</p>
@@ -458,7 +458,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="resource-card">
+  <a href="#" class="resource-card">
       <div class="resource-number">4</div>
       <h3>Docker Compose</h3>
       <p>Multi-container applications made easy. Define and run complex applications with docker-compose.yml configurations.</p>
