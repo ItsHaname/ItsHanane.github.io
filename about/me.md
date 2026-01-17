@@ -3,7 +3,7 @@ layout: default
 title: About
 nav: about
 ---
-
+<link rel="icon" href="https://raw.githubusercontent.com/ItsHaname/ItsHaname.github.io/main/logo" type="image/png">
 <style>
 * {
     margin: 0;
