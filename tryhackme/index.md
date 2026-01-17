@@ -451,73 +451,106 @@ body {
     </div>
   </div>
 
-  <!-- Stats Section -->
-  <h2 class="section-title">Progress Stats</h2>
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-number">1</div>
-      <div class="stat-label">Rooms Completed</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">0</div>
-      <div class="stat-label">In Progress</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">1</div>
-      <div class="stat-label">Write-ups</div>
-    </div>
-  </div>
-
   <!-- Rooms Section -->
   <h2 class="section-title">Rooms & Write-ups</h2>
   
   <div class="rooms-grid">
     <!-- Honeypot Room -->
     <a href="{{ site.baseurl }}/my-lab/tryhackme/honeypot" class="room-card">
-      <span class="room-difficulty difficulty-easy">Easy</span>
       <div class="room-icon">🍯</div>
       <h3>Honeypot</h3>
       <p class="room-description">Learn about honeypots and how they can be used to detect and analyze malicious activity in a network environment.</p>
-      <div class="room-tags">
-        <span class="tag">Honeypot</span>
-        <span class="tag">Detection</span>
-        <span class="tag">Security</span>
-      </div>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        In Progress
-      </div>
     </a>
 
- <!-- Template for future rooms -->
+    <!-- Nmap Room -->
   <a href="#" class="room-card">
-      <span class="room-difficulty difficulty-medium">Medium</span>
-      <div class="room-icon">🔐</div>
-      <h3>Room à venir</h3>
-      <p class="room-description">Les prochaines rooms que je complète seront ajoutées ici avec leurs write-ups et notes détaillées.</p>
-      <div class="room-tags">
-        <span class="tag">Coming Soon</span>
-      </div>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        À venir
-      </div>
+      <div class="room-icon"></div>
+      <h3>Nmap</h3>
+      <p class="room-description">X</p>
     </a>
 
+    <!-- OWASP Top 10 -->
    <a href="#" class="room-card">
-      <span class="room-difficulty difficulty-hard">Hard</span>
-      <div class="room-icon">🎯</div>
-      <h3>Room à venir</h3>
-      <p class="room-description">Les prochaines rooms que je complète seront ajoutées ici avec leurs write-ups et notes détaillées.</p>
-      <div class="room-tags">
-        <span class="tag">Coming Soon</span>
-      </div>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        À venir
-      </div>
+      <div class="room-icon"></div>
+      <h3>OWASP Top 10</h3>
+      <p class="room-description">X</p>
     </a>
-  </div>
+
+   <!-- SQL Injection -->
+   <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>SQL Injection</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Burp Suite -->
+   <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Burp Suite</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Metasploit -->
+   <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Metasploit</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Linux PrivEsc -->
+  <a href="#" class="room-card">
+      <div class="room-icon">🐧</div>
+      <h3>Linux Privilege Escalation</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Windows PrivEsc -->
+   <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Windows Privilege Escalation</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Active Directory -->
+   <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Active Directory</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Blue Team -->
+  <a href="#" class="room-card">
+      <div class="room-icon">🛡️</div>
+      <h3>Blue Team Fundamentals</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Cryptography -->
+  <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Cryptography</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Reverse Engineering -->
+  <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Reverse Engineering</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Network Services -->
+   <a href="#" class="room-card">
+      <div class="room-icon"></div>
+      <h3>Network Services</h3>
+      <p class="room-description">X</p>
+    </a>
+
+    <!-- Web Enumeration -->
+   <a href="#" class="room-card">
+      <div class="room-icon">🕸️</div>
+      <h3>Web Enumeration</h3>
+      <p class="room-description">X</p>
 
   <!-- Footer -->
   <div class="footer-nav">
