@@ -1,10 +1,4 @@
-# My Lab - CYBERIA - Code HTML Complet
-
-## Code HTML mis à jour avec les vraies images
-
-```html
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -303,7 +297,7 @@ body {
     <!-- Docker -->
     <a href="/my-lab/dockerlab" class="lab-card">
       <div class="lab-icon">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" style="width: 80px; height: 80px;">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
       </div>
       <h3>Docker Containers</h3>
       <p>Environnements isolés pour tests et déploiement d'applications vulnérables</p>
@@ -390,20 +384,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-```
-
-## Images utilisées
-
-- **Raspberry Pi**: `/assets/images/pi.png`
-- **Docker**: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg`
-- **Arch Linux**: `/assets/images/arch-mascot.png`
-- **VulHub**: `/assets/images/vulhub.png`
-- **Other Labs**: `/assets/images/otherlab.png`
-
-## Fichiers requis dans `/assets/images/`
-
-Assure-toi d'avoir ces fichiers dans ton dossier :
-- `pi.png`
-- `arch-mascot.png`
-- `vulhub.png`
-- `otherlab.png`
