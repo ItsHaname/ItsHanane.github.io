@@ -3,32 +3,34 @@
     background: #1a1f2e;
     margin: 0;
     padding: 0;
-    /* On centre tout le contenu du body */
     display: flex;
     flex-direction: column;
     align-items: center; 
   }
 
   .container {
-    /* On prend 96% de la largeur pour laisser 2% de vide de chaque côté */
-    width: 96%; 
-    max-width: 1800px; /* Optionnel: évite que ce soit TROP géant sur les écrans TV */
-    margin: 20px auto;
+    /* On passe à 85% pour laisser plus d'espace sur les côtés */
+    width: 85%; 
+    /* On limite la largeur maximale pour les très grands écrans */
+    max-width: 1400px; 
+    margin: 40px auto;
   }
 
   img {
     display: block;
-    width: 100%; /* L'image remplit tout le container de 96% */
+    width: 100%;
     height: auto;
-    margin-bottom: 30px; /* Espace entre les images */
-    border-radius: 12px; /* Un petit arrondi pour la douceur */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Une ombre plus profonde */
-    transition: transform 0.3s ease;
+    margin-bottom: 50px; /* Plus d'espace entre les images pour aérer */
+    border-radius: 15px; /* Coins encore plus arrondis pour un look moderne */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    /* Transition pour que le survol soit tout doux */
+    transition: all 0.4s ease-in-out; 
   }
 
   img:hover {
-    transform: scale(1.01); /* Un très léger zoom au survol */
-    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.3);
+    transform: translateY(-5px); /* L'image monte légèrement au survol */
+    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.3);
+    filter: brightness(1.05);
   }
 </style>
 
