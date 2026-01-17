@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TryHackMe
+title: Docker Lab
 ---
 <link rel="icon" href="https://raw.githubusercontent.com/ItsHaname/ItsHaname.github.io/main/logo" type="image/png">
 <style>
@@ -20,6 +20,11 @@ title: TryHackMe
   100% { background-position: 0% 50%; }
 }
 
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -31,17 +36,15 @@ title: TryHackMe
   50% { opacity: 0; }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@keyframes containerFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #0a0e1a;
-  color: #e2e8f0;
-  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
   position: relative;
   overflow-x: hidden;
 }
@@ -60,7 +63,7 @@ body {
   position: absolute;
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  color: rgba(220, 38, 38, 0.15);
+  color: rgba(59, 130, 246, 0.15);
   opacity: 0;
   animation: matrixRain linear infinite;
 }
@@ -77,51 +80,37 @@ body {
   z-index: 1;
 }
 
-/* Hero Section */
 .page-header {
   text-align: center;
   margin-bottom: 60px;
   padding: 40px 20px;
   background: rgba(0, 20, 40, 0.6);
   border-radius: 30px;
-  border: 3px solid #7a1f1f;
-  box-shadow: 0 0 40px rgba(220, 38, 38, 0.5), inset 0 0 30px rgba(220, 38, 38, 0.2);
-}
-
-.platform-badge {
-  display: inline-block;
-  padding: 10px 25px;
-  background: rgba(220, 38, 38, 0.2);
-  color: #ef4444;
-  font-size: 1em;
-  font-weight: 700;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  letter-spacing: 2px;
+  border: 3px solid #1e4d7b;
+  box-shadow: 0 0 40px rgba(30, 77, 123, 0.5), inset 0 0 30px rgba(30, 77, 123, 0.2);
 }
 
 .page-title {
   font-size: 4em;
-  color: #dc2626;
+  color: #2496ed;
   text-shadow: 
-    0 0 10px #dc2626,
-    0 0 20px #dc2626,
-    0 0 30px #dc2626,
-    0 0 40px #991b1b;
+    0 0 10px #2496ed,
+    0 0 20px #2496ed,
+    0 0 30px #2496ed,
+    0 0 40px #1d7fc7;
   margin: 0 0 20px 0;
   font-weight: 900;
   letter-spacing: 8px;
   text-transform: uppercase;
   font-style: italic;
-  -webkit-text-stroke: 2px #991b1b;
+  -webkit-text-stroke: 2px #1d7fc7;
 }
 
 .page-subtitle {
   font-size: 1.5em;
-  color: #ef4444;
+  color: #60a5fa;
   margin: 10px 0 0 0;
-  text-shadow: 0 0 10px #ef4444, 0 0 20px #dc2626;
+  text-shadow: 0 0 10px #60a5fa, 0 0 20px #3b82f6;
   letter-spacing: 3px;
   font-style: italic;
 }
@@ -129,66 +118,68 @@ body {
 .page-subtitle::after {
   content: '_';
   animation: blink 1s infinite;
-  color: #ef4444;
+  color: #60a5fa;
 }
 
-/* Profile Section */
-.profile-section {
+.intro-box {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(36, 150, 237, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-left: 4px solid #2496ed;
+}
+
+.intro-box p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.intro-box strong {
+  color: #60a5fa;
+}
+
+.intro-box a {
+  color: #2496ed;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(36, 150, 237, 0.3);
+  transition: all 0.3s;
+}
+
+.intro-box a:hover {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+
+.docker-logo-container {
   text-align: center;
   margin: 40px 0;
-  padding: 30px;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  border-radius: 15px;
+  padding: 20px;
 }
 
-.profile-section iframe {
-  border: none;
-  max-width: 100%;
+.docker-mascot {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid rgba(36, 150, 237, 0.5);
+  box-shadow: 0 10px 40px rgba(36, 150, 237, 0.4);
+  transition: all 0.4s ease;
+  animation: containerFloat 4s ease-in-out infinite;
 }
 
-/* Terminal Section */
-.terminal {
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  border-radius: 12px;
-  padding: 25px;
-  margin: 40px 0;
-  font-family: 'Courier New', monospace;
+.docker-mascot:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 20px 60px rgba(96, 165, 250, 0.6);
+  border-color: #60a5fa;
 }
 
-.terminal-header {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.terminal-dot.red { background: #ff5f56; }
-.terminal-dot.yellow { background: #ffbd2e; }
-.terminal-dot.green { background: #27c93f; }
-
-.terminal-text {
-  color: #ef4444;
-  line-height: 1.8;
-  font-size: 0.95em;
-}
-
-.prompt {
-  color: #dc2626;
-  font-weight: bold;
-}
-
-/* Section Title */
 .section-title {
   font-size: 2.5em;
   color: transparent;
-  background: linear-gradient(90deg, #dc2626, #ef4444, #991b1b);
+  background: linear-gradient(90deg, #2496ed, #60a5fa, #1d7fc7);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -198,17 +189,16 @@ body {
   text-align: center;
 }
 
-/* Rooms Grid */
-.rooms-grid {
+.resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
   margin: 40px 0;
 }
 
-.room-card {
+.resource-card {
   background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(220, 38, 38, 0.3);
+  border: 1px solid rgba(36, 150, 237, 0.3);
   border-radius: 15px;
   padding: 30px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -219,105 +209,82 @@ body {
   display: block;
 }
 
-.room-card:before {
+.resource-card:before {
   content: '';
   position: absolute;
   top: -2px;
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #dc2626, #ef4444, transparent);
+  background: linear-gradient(45deg, #2496ed, #60a5fa, transparent);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s;
 }
 
-.room-card:hover:before {
+.resource-card:hover:before {
   opacity: 0.5;
 }
 
-.room-card:hover {
+.resource-card:hover {
   transform: translateY(-10px) scale(1.02);
-  border-color: #ef4444;
-  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
+  border-color: #60a5fa;
+  box-shadow: 0 15px 35px rgba(36, 150, 237, 0.3);
 }
 
-.room-difficulty {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 6px 14px;
-  border-radius: 15px;
-  font-size: 0.85em;
-  font-weight: 700;
-  border: 1px solid;
+.resource-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2496ed, #1d7fc7);
+  color: white;
+  font-size: 1.5em;
+  font-weight: 900;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(36, 150, 237, 0.4);
 }
 
-.difficulty-easy {
-  background: rgba(34, 197, 94, 0.15);
-  border-color: rgba(34, 197, 94, 0.3);
-  color: #22c55e;
-}
-
-.difficulty-medium {
-  background: rgba(234, 179, 8, 0.15);
-  border-color: rgba(234, 179, 8, 0.3);
-  color: #eab308;
-}
-
-.difficulty-hard {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: rgba(239, 68, 68, 0.3);
-  color: #ef4444;
-}
-
-.room-icon {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  display: block;
-  color: #dc2626;
-}
-
-.room-card h3 {
-  color: #fff;
+.resource-card h3 {
+  color: #2496ed;
   font-size: 1.6em;
   margin: 0 0 15px 0;
   font-weight: 600;
 }
 
-.room-description {
+.resource-card p {
   color: #cbd5e1;
-  font-size: 0.95em;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
 }
 
-.room-tags {
-  display: flex;
-  flex-wrap: wrap;
+.resource-link {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
-  margin-bottom: 15px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
-.tag {
-  background: rgba(220, 38, 38, 0.15);
-  padding: 5px 12px;
-  border-radius: 12px;
-  font-size: 0.8em;
-  color: #ef4444;
-  border: 1px solid rgba(220, 38, 38, 0.3);
+.resource-link:hover {
+  color: #2496ed;
+  gap: 12px;
 }
 
 .status-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(220, 38, 38, 0.15);
+  background: rgba(36, 150, 237, 0.15);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9em;
-  color: #ef4444;
-  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: #60a5fa;
+  border: 1px solid rgba(36, 150, 237, 0.3);
   margin-top: 15px;
 }
 
@@ -330,7 +297,7 @@ body {
 .status-dot {
   width: 8px;
   height: 8px;
-  background: #dc2626;
+  background: #2496ed;
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -340,38 +307,60 @@ body {
   animation: none;
 }
 
-/* Stats Section */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+.tips-section {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(36, 150, 237, 0.3);
+  border-radius: 15px;
+  padding: 30px;
   margin: 40px 0;
 }
 
-.stat-card {
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  border-radius: 15px;
-  padding: 25px;
-  text-align: center;
+.tips-section h3 {
+  color: #60a5fa;
+  font-size: 1.8em;
+  margin: 0 0 20px 0;
 }
 
-.stat-number {
-  font-size: 3em;
-  color: #dc2626;
-  font-weight: 900;
-  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+.tips-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.stat-label {
+.tips-section li {
   color: #cbd5e1;
-  font-size: 1em;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  padding: 12px 0 12px 30px;
+  position: relative;
+  line-height: 1.6;
 }
 
-/* Footer */
+.tips-section li:before {
+  content: "🐳";
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+.warning-box {
+  background: rgba(255, 107, 74, 0.1);
+  border: 2px solid rgba(255, 107, 74, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.warning-box h4 {
+  color: #ff6b4a;
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+}
+
+.warning-box p {
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.6;
+}
+
 .footer-nav {
   display: flex;
   justify-content: center;
@@ -383,20 +372,20 @@ body {
 .nav-button {
   display: inline-block;
   padding: 15px 30px;
-  background: rgba(220, 38, 38, 0.2);
-  border: 1px solid #dc2626;
+  background: rgba(36, 150, 237, 0.2);
+  border: 1px solid #2496ed;
   border-radius: 10px;
-  color: #ef4444;
+  color: #60a5fa;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s;
 }
 
 .nav-button:hover {
-  background: #dc2626;
+  background: #2496ed;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 10px 20px rgba(36, 150, 237, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -410,12 +399,12 @@ body {
     letter-spacing: 2px;
   }
   
-  .rooms-grid {
+  .resources-grid {
     grid-template-columns: 1fr;
   }
   
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .docker-mascot {
+    max-width: 100%;
   }
 }
 </style>
@@ -423,139 +412,171 @@ body {
 <div class="binary-background"></div>
 
 <div class="container">
-  <!-- Hero Section -->
   <div class="page-header">
-    <div class="platform-badge">TRYHACKME</div>
-    <h1 class="page-title">CYBERSECURITY</h1>
-    <p class="page-subtitle">Learning Journey & Room Notes</p>
+    <h1 class="page-title">DOCKER LAB</h1>
+    <p class="page-subtitle">Containerization & DevOps Journey</p>
   </div>
 
-  <!-- Profile Section -->
-  <div class="profile-section">
-    <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3165378"></iframe>
+  <div class="intro-box">
+    <p>
+      <strong>Welcome to my Docker Lab!</strong> This is where I document everything I learn about <strong>Docker and containerization</strong>. 
+      From basic concepts to advanced orchestration, I'm building my skills one container at a time.<br><br>
+      Docker has revolutionized how we build, ship, and run applications. Join me as I explore this powerful technology 
+      and share my experiments, configurations, and lessons learned along the way.
+    </p>
   </div>
 
-  <!-- Terminal Info -->
-  <div class="terminal">
-    <div class="terminal-header">
-      <div class="terminal-dot red"></div>
-      <div class="terminal-dot yellow"></div>
-      <div class="terminal-dot green"></div>
-    </div>
-    <div class="terminal-text">
-      <span class="prompt">haname@tryhackme:~$</span> cat journey_info.txt<br>
-      → Approche: Random Rooms & Challenges<br>
-      → Focus: Practical Skills & Real-World Scenarios<br>
-      → Documentation: Write-ups & Notes pour chaque room<br>
-      → Status: Active learning...
-    </div>
+  <div class="docker-logo-container">
+    <img src="{{ site.baseurl }}/assets/images/docker.png" alt="Docker Learning" class="docker-mascot">
   </div>
 
-  <!-- Rooms Section -->
-  <h2 class="section-title">Rooms & Write-ups</h2>
-  
-  <div class="rooms-grid">
-    <!-- Honeypot Room -->
-    <a href="{{ site.baseurl }}/my-lab/tryhackme/honeypot" class="room-card">
-      <div class="room-icon">🍯</div>
-      <h3>Honeypot</h3>
-      <p class="room-description">Learn about honeypots and how they can be used to detect and analyze malicious activity in a network environment.</p>
+  <div class="warning-box">
+    <h4>Learning & Building</h4>
+    <p>This is my experimental space for Docker. Containers will be created, destroyed, and recreated — that's the beauty of containerization!</p>
+  </div>
+
+  <h2 class="section-title">Docker Resources & Labs</h2>
+
+  <div class="resources-grid">
+    <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="resource-card">
+      <div class="resource-number">1</div>
+      <h3>Introduction to Docker</h3>
+      <p>Visual presentation covering Docker basics, core concepts, and why containerization matters in modern development.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
     </a>
 
-    <!-- Nmap Room -->
-  <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Nmap</h3>
-      <p class="room-description">X</p>
+   <a href="#" class="resource-card">
+      <div class="resource-number">2</div>
+      <h3>Docker Installation & Setup</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- OWASP Top 10 -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>OWASP Top 10</h3>
-      <p class="room-description">X</p>
+   <a href="#" class="resource-card">
+      <div class="resource-number">3</div>
+      <h3>Working with Dockerfiles</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-   <!-- SQL Injection -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>SQL Injection</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">4</div>
+      <h3>Docker Compose</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Burp Suite -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Burp Suite</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">5</div>
+      <h3>Networking & Volumes</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Metasploit -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Metasploit</h3>
-      <p class="room-description">X</p>
+   <a href="#" class="resource-card">
+      <div class="resource-number">6</div>
+      <h3>Real-World Projects</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Linux PrivEsc -->
-  <a href="#" class="room-card">
-      <div class="room-icon">🐧</div>
-      <h3>Linux Privilege Escalation</h3>
-      <p class="room-description">X</p>
+   <a href="#" class="resource-card">
+      <div class="resource-number">7</div>
+      <h3>Practice Lab 1</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Windows PrivEsc -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Windows Privilege Escalation</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">8</div>
+      <h3>Practice Lab 2</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Active Directory -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Active Directory</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">9</div>
+      <h3>Practice Lab 3</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Blue Team -->
-  <a href="#" class="room-card">
-      <div class="room-icon">🛡️</div>
-      <h3>Blue Team Fundamentals</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">10</div>
+      <h3>Practice Lab 4</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Cryptography -->
-  <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Cryptography</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">11</div>
+      <h3>Docker Security</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
 
-    <!-- Reverse Engineering -->
-  <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Reverse Engineering</h3>
-      <p class="room-description">X</p>
+  <a href="#" class="resource-card">
+      <div class="resource-number">12</div>
+      <h3>Kubernetes Basics</h3>
+      <p>X</p>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        À venir
+      </div>
     </a>
+  </div>
 
-    <!-- Network Services -->
-   <a href="#" class="room-card">
-      <div class="room-icon"></div>
-      <h3>Network Services</h3>
-      <p class="room-description">X</p>
-    </a>
+  <div class="tips-section">
+    <h3>Docker Quick Tips</h3>
+    <ul>
+      <li>Always use official images as base images when possible</li>
+      <li>Keep your images small - use multi-stage builds</li>
+      <li>Never store secrets in images - use Docker secrets or environment variables</li>
+      <li>Use .dockerignore to exclude unnecessary files from your build context</li>
+      <li>Tag your images properly for better version control</li>
+      <li>Clean up unused containers and images regularly with docker system prune</li>
+      <li>Test your containers locally before pushing to production</li>
+      <li>Document your Dockerfile and docker-compose.yml files thoroughly</li>
+    </ul>
+  </div>
 
-    <!-- Web Enumeration -->
-   <a href="#" class="room-card">
-      <div class="room-icon">🕸️</div>
-      <h3>Web Enumeration</h3>
-      <p class="room-description">X</p>
-
-  <!-- Footer -->
   <div class="footer-nav">
     <a href="{{ site.baseurl }}/my-lab" class="nav-button">← Back to Lab</a>
-    <a href="https://tryhackme.com" target="_blank" class="nav-button">TryHackMe</a>
+    <a href="https://docs.docker.com/" target="_blank" class="nav-button">Docker Docs</a>
+    <a href="https://hub.docker.com/" target="_blank" class="nav-button">Docker Hub</a>
   </div>
 </div>
 
@@ -573,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function() {
     digit.style.animationDuration = (Math.random() * 10 + 5) + 's';
     digit.style.animationDelay = Math.random() * 5 + 's';
     digit.style.opacity = Math.random() * 0.2 + 0.05;
-    const colors = ['rgba(220, 38, 38, 0.15)', 'rgba(239, 68, 68, 0.15)', 'rgba(153, 27, 27, 0.15)'];
+    const colors = ['rgba(36, 150, 237, 0.15)', 'rgba(96, 165, 250, 0.15)', 'rgba(29, 127, 199, 0.15)'];
     digit.style.color = colors[Math.floor(Math.random() * colors.length)];
     binaryContainer.appendChild(digit);
   }
@@ -588,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
     floatDigit.style.fontSize = (Math.random() * 22 + 14) + 'px';
     floatDigit.style.animationDelay = Math.random() * 2 + 's';
     floatDigit.style.opacity = Math.random() * 0.3 + 0.1;
-    const floatColors = ['rgba(220, 38, 38, 0.25)', 'rgba(239, 68, 68, 0.25)'];
+    const floatColors = ['rgba(36, 150, 237, 0.25)', 'rgba(96, 165, 250, 0.25)'];
     floatDigit.style.color = floatColors[Math.floor(Math.random() * floatColors.length)];
     binaryContainer.appendChild(floatDigit);
   }
