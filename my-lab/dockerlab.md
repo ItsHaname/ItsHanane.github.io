@@ -2,14 +2,14 @@
 body {
     background: #1a1f2e;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
 }
 img {
     display: block;
-    margin: 30px auto;
-    width: 98%;
-    max-width: 1800px;
+    margin: 20px auto;
+    width: 99%;
+    max-width: 2400px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 217, 255, 0.2);
