@@ -93,11 +93,11 @@ body {
 }
 
 .raspberry-logo {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 30px;
   animation: floatUpDown 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(194, 51, 82, 0.5));
+  filter: drop-shadow(0 0 25px rgba(194, 51, 82, 0.6));
 }
 
 .raspberry-logo img {
@@ -192,9 +192,10 @@ body {
 }
 
 .spec-icon {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 15px;
-  animation: floatUpDown 3s ease-in-out infinite;
+  color: #ff6b4a;
+  font-weight: 900;
 }
 
 .spec-card h3 {
@@ -343,9 +344,12 @@ body {
 }
 
 .info-box li:before {
-  content: "🍓";
+  content: "▸";
   position: absolute;
   left: 0;
+  color: #ff6b4a;
+  font-size: 1.2em;
+  font-weight: 900;
 }
 
 .footer-nav {
@@ -387,8 +391,8 @@ body {
   }
   
   .raspberry-logo {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
   }
   
   .projects-grid {
@@ -406,14 +410,14 @@ body {
 <div class="container">
   <div class="page-header">
     <div class="raspberry-logo">
-      <img src="{{ site.baseurl }}/assets/images/raspberry-pi-logo.png" alt="Raspberry Pi Logo">
+      <img src="/assets/images/pi.png" alt="Raspberry Pi Logo">
     </div>
     <h1 class="page-title">RASPBERRY PI</h1>
-    <p class="page-subtitle">My Portable Hacking Lab</p>
+    <p class="page-subtitle">Professional Cybersecurity Lab</p>
   </div>
 
   <div class="hero-section">
-    <h2>🍓 What is Raspberry Pi?</h2>
+    <h2>What is Raspberry Pi?</h2>
     <p>
       The <strong>Raspberry Pi</strong> is a small, affordable single-board computer that's perfect for learning, 
       experimenting, and building cybersecurity projects. It's my go-to device for <strong>penetration testing</strong>, 
@@ -423,25 +427,25 @@ body {
 
   <div class="specs-grid">
     <div class="spec-card">
-      <div class="spec-icon">🧠</div>
+      <div class="spec-icon">CPU</div>
       <h3>Processor</h3>
       <p>ARM Cortex CPU<br>Quad-core performance</p>
     </div>
     
   <div class="spec-card">
-      <div class="spec-icon">💾</div>
+      <div class="spec-icon">RAM</div>
       <h3>Memory</h3>
       <p>Up to 8GB RAM<br>Perfect for multi-tasking</p>
     </div>
     
   <div class="spec-card">
-      <div class="spec-icon">📡</div>
+      <div class="spec-icon">NET</div>
       <h3>Connectivity</h3>
       <p>WiFi, Bluetooth, Ethernet<br>Network security ready</p>
     </div>
     
   <div class="spec-card">
-      <div class="spec-icon">🔌</div>
+      <div class="spec-icon">PWR</div>
       <h3>Portable</h3>
       <p>Low power consumption<br>Take it anywhere</p>
     </div>
@@ -492,7 +496,7 @@ body {
 
    <a href="#" class="project-card">
       <div class="project-number">5</div>
-      <h3>WiFi Pineapple Alternative</h3>
+      <h3>WiFi Auditing Platform</h3>
       <p>Building a wireless auditing platform for testing WiFi security and performing authorized security assessments.</p>
       <div class="status-badge">
         <span class="status-dot"></span>
@@ -512,7 +516,7 @@ body {
   </div>
 
   <div class="info-box">
-    <h3>💡 Why Use Raspberry Pi for Cybersecurity?</h3>
+    <h3>Why Use Raspberry Pi for Cybersecurity?</h3>
     <ul>
       <li><strong>Affordable</strong> - Low-cost platform for learning and experimenting</li>
       <li><strong>Portable</strong> - Easy to carry and deploy anywhere</li>
@@ -524,8 +528,8 @@ body {
   </div>
 
   <div class="footer-nav">
-    <a href="{{ site.baseurl }}/my-lab" class="nav-button">← Back to Lab</a>
-    <a href="https://www.raspberrypi.org/" target="_blank" class="nav-button">Official Raspberry Pi 🍓</a>
+    <a href="/my-lab" class="nav-button">← Back to Lab</a>
+    <a href="https://www.raspberrypi.org/" target="_blank" class="nav-button">Official Raspberry Pi Website</a>
   </div>
 </div>
 
