@@ -39,11 +39,13 @@ body {
     border: 5px solid #3b82f6;
     margin: 0 auto 30px;
     object-fit: cover;
-    object-position: center 35%;
+    object-position: center 40%;
     display: block;
     box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
     background: #0a0e1a;
-    transform: scale(1.15);
+    transform: scale(1.2);
+    filter: brightness(1.1) contrast(1.05);
+    mix-blend-mode: lighten;
 }
 
 .hero h1 {
