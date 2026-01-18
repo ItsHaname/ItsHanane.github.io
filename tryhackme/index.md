@@ -210,7 +210,7 @@ body {
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(220, 38, 38, 0.3);
   border-radius: 15px;
-  padding: 25px; /* Réduit un peu le padding interne */
+  padding: 30px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
@@ -218,7 +218,7 @@ body {
   color: inherit;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligne le contenu à gauche */
+  align-items: flex-start;
 }
 
 .room-card:before {
@@ -244,29 +244,29 @@ body {
   box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
 }
 
-/* MODIFICATION ICI : Image petite en haut à gauche */
+/* Taille ajustée selon votre demande : un peu plus grande */
 .room-image {
-  width: 80px; /* Taille réduite */
-  height: 50px; /* Taille réduite */
-  object-fit: contain; /* Garde les proportions de l'icône */
-  border-radius: 5px;
-  margin-bottom: 15px;
-  background: rgba(255,255,255,0.05); /* Optionnel : léger fond pour l'icône */
+  width: 110px; 
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  /* background: rgba(255,255,255,0.02); Optionnel */
 }
 
 .room-card h3 {
   color: #fff;
-  font-size: 1.4em;
-  margin: 0 0 10px 0;
-  font-weight: 600;
+  font-size: 1.5em;
+  margin: 0 0 12px 0;
+  font-weight: 700;
   text-align: left;
 }
 
 .room-description {
   color: #cbd5e1;
-  font-size: 0.9em;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 20px;
   text-align: left;
 }
 
@@ -275,12 +275,12 @@ body {
   align-items: center;
   gap: 8px;
   background: rgba(220, 38, 38, 0.15);
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
-  font-size: 0.85em;
+  font-size: 0.9em;
   color: #ef4444;
   border: 1px solid rgba(220, 38, 38, 0.3);
-  margin-top: auto; /* Pousse le badge vers le bas */
+  margin-top: auto;
 }
 
 .status-badge.done {
@@ -408,7 +408,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
       <h3>Cryptography Basics</h3>
       <p class="room-description">Learn the basics of cryptography and symmetric encryption.</p>
@@ -418,7 +418,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Public Key Cryptography" class="room-image">
       <h3>Public Key Cryptography Basics</h3>
       <p class="room-description">Discover how public key ciphers such as RSA work and explore their role in applications such as SSH.</p>
@@ -438,7 +438,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="John the Ripper" class="room-image">
       <h3>John the Ripper: The Basics</h3>
       <p class="room-description">Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool.</p>
@@ -450,25 +450,7 @@ body {
 
   <a href="#" class="room-card">
       <h3>Nmap</h3>
-      <p class="room-description">Nmap is a powerful network scanning tool used for security auditing.</p>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        À venir
-      </div>
-    </a>
-
-  <a href="#" class="room-card">
-      <h3>OWASP Top 10</h3>
-      <p class="room-description">Web application security risks analysis.</p>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        À venir
-      </div>
-    </a>
-
-   <a href="#" class="room-card">
-      <h3>SQL Injection</h3>
-      <p class="room-description">Exploiting database vulnerabilities via web input.</p>
+      <p class="room-description">Scan networks and discover open ports and services using this industry-standard tool.</p>
       <div class="status-badge">
         <span class="status-dot"></span>
         À venir
@@ -486,7 +468,6 @@ body {
 document.addEventListener('DOMContentLoaded', function() {
   const binaryContainer = document.querySelector('.binary-background');
   
-  // Falling binary digits
   for (let i = 0; i < 100; i++) {
     const digit = document.createElement('div');
     digit.className = 'binary-digit';
@@ -501,7 +482,6 @@ document.addEventListener('DOMContentLoaded', function() {
     binaryContainer.appendChild(digit);
   }
   
-  // Floating binary digits
   for (let i = 0; i < 30; i++) {
     const floatDigit = document.createElement('div');
     floatDigit.className = 'binary-digit float';
