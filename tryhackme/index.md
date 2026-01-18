@@ -242,40 +242,12 @@ body {
   box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
 }
 
-.room-difficulty {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 6px 14px;
-  border-radius: 15px;
-  font-size: 0.85em;
-  font-weight: 700;
-  border: 1px solid;
-}
-
-.difficulty-easy {
-  background: rgba(34, 197, 94, 0.15);
-  border-color: rgba(34, 197, 94, 0.3);
-  color: #22c55e;
-}
-
-.difficulty-medium {
-  background: rgba(234, 179, 8, 0.15);
-  border-color: rgba(234, 179, 8, 0.3);
-  color: #eab308;
-}
-
-.difficulty-hard {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: rgba(239, 68, 68, 0.3);
-  color: #ef4444;
-}
-
-.room-icon {
-  font-size: 2.5em;
+.room-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
   margin-bottom: 15px;
-  display: block;
-  color: #dc2626;
 }
 
 .room-card h3 {
@@ -290,22 +262,6 @@ body {
   font-size: 0.95em;
   line-height: 1.6;
   margin-bottom: 15px;
-}
-
-.room-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-.tag {
-  background: rgba(220, 38, 38, 0.15);
-  padding: 5px 12px;
-  border-radius: 12px;
-  font-size: 0.8em;
-  color: #ef4444;
-  border: 1px solid rgba(220, 38, 38, 0.3);
 }
 
 .status-badge {
@@ -338,37 +294,6 @@ body {
 .status-dot.done {
   background: #10b981;
   animation: none;
-}
-
-/* Stats Section */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin: 40px 0;
-}
-
-.stat-card {
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  border-radius: 15px;
-  padding: 25px;
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 3em;
-  color: #dc2626;
-  font-weight: 900;
-  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
-}
-
-.stat-label {
-  color: #cbd5e1;
-  font-size: 1em;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /* Footer */
@@ -411,10 +336,6 @@ body {
   }
   
   .rooms-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stats-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -466,8 +387,8 @@ body {
       </div>
     </a>
 
-  <!-- Introduction to Docker -->
-   <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
+    <!-- Introduction to Docker -->
+  <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/dock.png" alt="Docker" class="room-image">
       <h3>Introduction to Docker</h3>
       <p class="room-description">Learn the basics of Docker containerization, understand core concepts, and get hands-on experience with containers.</p>
@@ -488,6 +409,50 @@ body {
       </div>
     </a>
 
+    <!-- Cryptography Basics -->
+   <a href="#" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
+      <h3>Cryptography Basics</h3>
+      <p class="room-description">Learn the basics of cryptography and symmetric encryption.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
+    <!-- Public Key Cryptography Basics -->
+   <a href="#" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Public Key Cryptography" class="room-image">
+      <h3>Public Key Cryptography Basics</h3>
+      <p class="room-description">Discover how public key ciphers such as RSA work and explore their role in applications such as SSH.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
+    <!-- Hashing Basics -->
+   <a href="#" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="Hashing Basics" class="room-image">
+      <h3>Hashing Basics</h3>
+      <p class="room-description">Learn about hashing functions and their uses in password verification and file integrity checking.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
+    <!-- John the Ripper: The Basics -->
+   <a href="#" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="John the Ripper" class="room-image">
+      <h3>John the Ripper: The Basics</h3>
+      <p class="room-description">Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
     <!-- Nmap Room -->
    <a href="#" class="room-card">
       <h3>Nmap</h3>
@@ -499,7 +464,7 @@ body {
     </a>
 
     <!-- OWASP Top 10 -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>OWASP Top 10</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -519,7 +484,7 @@ body {
     </a>
 
     <!-- Burp Suite -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>Burp Suite</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -569,18 +534,8 @@ body {
     </a>
 
     <!-- Blue Team -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <h3>Blue Team Fundamentals</h3>
-      <p class="room-description">X</p>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        À venir
-      </div>
-    </a>
-
-    <!-- Cryptography -->
-  <a href="#" class="room-card">
-      <h3>Cryptography</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
         <span class="status-dot"></span>
@@ -599,7 +554,7 @@ body {
     </a>
 
     <!-- Network Services -->
-  <a href="#" class="room-card">
+    <a href="#" class="room-card">
       <h3>Network Services</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -609,7 +564,7 @@ body {
     </a>
 
     <!-- Web Enumeration -->
-   <a href="#" class="room-card">
+    <a href="#" class="room-card">
       <h3>Web Enumeration</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
