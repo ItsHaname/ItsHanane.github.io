@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <!-- Infrastructure Section -->
-  <h2 class="section-title">💻 Infrastructure</h2>
+  <h2 class="section-title"> Infrastructure</h2>
 
   <div class="lab-grid">
     <!-- Raspberry Pi -->
@@ -359,10 +359,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Other Labs -->
   <a href="/my-lab/other_lab" class="lab-card">
       <div class="lab-icon">
-        <img src="/assets/images/otherlab.png" alt="Other Labs">
+        <img src="/assets/images/tor.png" alt="Other Labs">
       </div>
-      <h3>Other Labs</h3>
-      <p>Projets expérimentaux et environnements de test additionnels</p>
+      <h3>Anonymity & Privacy</h3>
+      <p>Labs pratiques sur Tails OS, réseau Tor et techniques de confidentialité</p>
     </a>
   </div>
 
