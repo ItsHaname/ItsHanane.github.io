@@ -244,7 +244,7 @@ body {
 
 .room-image {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -432,7 +432,7 @@ body {
     </a>
 
     <!-- Hashing Basics -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="Hashing Basics" class="room-image">
       <h3>Hashing Basics</h3>
       <p class="room-description">Learn about hashing functions and their uses in password verification and file integrity checking.</p>
@@ -464,7 +464,7 @@ body {
     </a>
 
     <!-- OWASP Top 10 -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <h3>OWASP Top 10</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -474,7 +474,7 @@ body {
     </a>
 
     <!-- SQL Injection -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <h3>SQL Injection</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -484,7 +484,7 @@ body {
     </a>
 
     <!-- Burp Suite -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <h3>Burp Suite</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -514,7 +514,7 @@ body {
     </a>
 
     <!-- Windows PrivEsc -->
-   <a href="#" class="room-card">
+    <a href="#" class="room-card">
       <h3>Windows Privilege Escalation</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -534,7 +534,7 @@ body {
     </a>
 
     <!-- Blue Team -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>Blue Team Fundamentals</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -554,7 +554,7 @@ body {
     </a>
 
     <!-- Network Services -->
-    <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>Network Services</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -564,7 +564,7 @@ body {
     </a>
 
     <!-- Web Enumeration -->
-    <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>Web Enumeration</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
