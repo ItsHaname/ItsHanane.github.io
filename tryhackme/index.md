@@ -439,7 +439,7 @@ body {
     </a>
 
   <a href="#" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="John the Ripper" class="room-image">
+      <img src="{{ site.baseurl }}/assets/images/jhon.png" alt="John the Ripper" class="room-image">
       <h3>John the Ripper: The Basics</h3>
       <p class="room-description">Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool.</p>
       <div class="status-badge done">
