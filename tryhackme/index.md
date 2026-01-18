@@ -388,7 +388,7 @@ body {
     </a>
 
     <!-- Introduction to Docker -->
-  <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
+   <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/dock.png" alt="Docker" class="room-image">
       <h3>Introduction to Docker</h3>
       <p class="room-description">Learn the basics of Docker containerization, understand core concepts, and get hands-on experience with containers.</p>
@@ -410,7 +410,7 @@ body {
     </a>
 
     <!-- Cryptography Basics -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
       <h3>Cryptography Basics</h3>
       <p class="room-description">Learn the basics of cryptography and symmetric encryption.</p>
@@ -432,7 +432,7 @@ body {
     </a>
 
     <!-- Hashing Basics -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="Hashing Basics" class="room-image">
       <h3>Hashing Basics</h3>
       <p class="room-description">Learn about hashing functions and their uses in password verification and file integrity checking.</p>
@@ -443,7 +443,7 @@ body {
     </a>
 
     <!-- John the Ripper: The Basics -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="John the Ripper" class="room-image">
       <h3>John the Ripper: The Basics</h3>
       <p class="room-description">Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool.</p>
@@ -464,7 +464,7 @@ body {
     </a>
 
     <!-- OWASP Top 10 -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>OWASP Top 10</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -474,7 +474,7 @@ body {
     </a>
 
     <!-- SQL Injection -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>SQL Injection</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -494,7 +494,7 @@ body {
     </a>
 
     <!-- Metasploit -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <h3>Metasploit</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
@@ -544,7 +544,7 @@ body {
     </a>
 
     <!-- Reverse Engineering -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <h3>Reverse Engineering</h3>
       <p class="room-description">X</p>
       <div class="status-badge">
