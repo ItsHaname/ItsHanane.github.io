@@ -380,7 +380,7 @@ body {
       </div>
     </a>
 
-  <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
+   <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/dock.png" alt="Docker" class="room-image">
       <h3>Introduction to Docker</h3>
       <p class="room-description">Learn the basics of Docker containerization, understand core concepts, and get hands-on experience with containers.</p>
@@ -390,7 +390,7 @@ body {
       </div>
     </a>
 
-  <a href="https://www.canva.com/design/DAG-yGatPVg/TdUJPJGrO0DccBwOh2OtTw/edit?utm_content=DAG-yGatPVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG-yGatPVg/TdUJPJGrO0DccBwOh2OtTw/edit?utm_content=DAG-yGatPVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/iot.png" alt="IoT Pentesting" class="room-image">
       <h3>Intro to IoT Pentesting</h3>
       <p class="room-description">Discover the fundamentals of IoT security and learn penetration testing techniques for Internet of Things devices.</p>
@@ -400,7 +400,7 @@ body {
       </div>
     </a>
 
-  <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
       <h3>Cryptography Basics</h3>
       <p class="room-description">Learn the basics of cryptography and symmetric encryption.</p>
@@ -410,7 +410,7 @@ body {
       </div>
     </a>
 
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Public Key Cryptography" class="room-image">
       <h3>Public Key Cryptography Basics</h3>
       <p class="room-description">Discover how public key ciphers such as RSA work and explore their role in applications such as SSH.</p>
@@ -420,7 +420,7 @@ body {
       </div>
     </a>
 
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="Hashing Basics" class="room-image">
       <h3>Hashing Basics</h3>
       <p class="room-description">Learn about hashing functions and their uses in password verification and file integrity checking.</p>
@@ -440,7 +440,7 @@ body {
       </div>
     </a>
 
-  <a href="https://www.canva.com/design/DAG-9aWxX_E/OMOr6swEWBCkKz3fMkJ6cw/edit?utm_content=DAG-9aWxX_E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG-9aWxX_E/OMOr6swEWBCkKz3fMkJ6cw/edit?utm_content=DAG-9aWxX_E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/Gouv.png" alt="Governance & Regulation" class="room-image">
       <h3>Governance & Regulation</h3>
       <p class="room-description">Explore policies and frameworks vital for regulating cyber security in an organisation.</p>
@@ -460,7 +460,7 @@ body {
       </div>
     </a>
 
-  <a href="https://www.canva.com/design/DAG--sYoFjY/MhZHZBlMEOq3M1yUNYSR3Q/edit?utm_content=DAG--sYoFjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG--sYoFjY/MhZHZBlMEOq3M1yUNYSR3Q/edit?utm_content=DAG--sYoFjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/soc.png" class="room-image">
       <h3>SOC Role in Blue Team</h3>
       <p class="room-description">Discover security roles and learn how to advance your SOC career, starting from the L1 analyst.</p>
@@ -470,7 +470,7 @@ body {
       </div>
     </a>
 
-  <a href="https://www.canva.com/design/DAG--7v-mEA/3uK8rfMVrBx5uzCo0pEYsw/edit?utm_content=DAG--7v-mEA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG--7v-mEA/3uK8rfMVrBx5uzCo0pEYsw/edit?utm_content=DAG--7v-mEA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/hu.png" class="room-image">
       <h3>Humans as Attack Vectors</h3>
       <p class="room-description">Understand why and how people are targeted in cyber attacks and how the SOC helps defend them.</p>
