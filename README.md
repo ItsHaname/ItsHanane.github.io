@@ -55,12 +55,6 @@ Where code meets design and aesthetics matter.
 
 ---
 
-## Visit My Blog
-
-**[itshaname.github.io](https://itshaname.github.io/)**
-
----
-
 <div align="center">
   <sub>Built with HTML & CSS</sub>
   <br>
