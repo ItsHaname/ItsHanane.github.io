@@ -400,7 +400,7 @@ body {
       </div>
     </a>
 
-   <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+  <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
       <h3>Cryptography Basics</h3>
       <p class="room-description">Learn the basics of cryptography and symmetric encryption.</p>
@@ -449,7 +449,8 @@ body {
         Done
       </div>
     </a>
-    <a href="https://www.canva.com/design/DAG--b-keWE/XOwv2THcEwci6br-HkwYzQ/edit?utm_content=DAG--b-keWE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+
+   <a href="https://www.canva.com/design/DAG--b-keWE/XOwv2THcEwci6br-HkwYzQ/edit?utm_content=DAG--b-keWE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/anal.png" class="room-image">
       <h3>Junior Security Analyst Intro</h3>
       <p class="room-description">Play through a day in the life of a Security Analyst and experience their everyday duties.</p>
@@ -458,7 +459,8 @@ body {
         Done
       </div>
     </a>
-    <a href="https://www.canva.com/design/DAG--sYoFjY/MhZHZBlMEOq3M1yUNYSR3Q/edit?utm_content=DAG--sYoFjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+
+  <a href="https://www.canva.com/design/DAG--sYoFjY/MhZHZBlMEOq3M1yUNYSR3Q/edit?utm_content=DAG--sYoFjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/soc.png" class="room-image">
       <h3>SOC Role in Blue Team</h3>
       <p class="room-description">Discover security roles and learn how to advance your SOC career, starting from the L1 analyst.</p>
@@ -467,13 +469,15 @@ body {
         Done
       </div>
     </a>
-     <a href="https://www.canva.com/design/DAG--7v-mEA/3uK8rfMVrBx5uzCo0pEYsw/edit?utm_content=DAG--7v-mEA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+
+  <a href="https://www.canva.com/design/DAG--7v-mEA/3uK8rfMVrBx5uzCo0pEYsw/edit?utm_content=DAG--7v-mEA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/hu.png" class="room-image">
       <h3>Humans as Attack Vectors</h3>
       <p class="room-description">Understand why and how people are targeted in cyber attacks and how the SOC helps defend them.</p>
       <div class="status-badge done">
         <span class="status-dot done"></span>
         Done
+      </div>
     </a>
   </div>
 
