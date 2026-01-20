@@ -450,7 +450,7 @@ body {
       </div>
     </a>
     <a href="https://www.canva.com/design/DAG--b-keWE/XOwv2THcEwci6br-HkwYzQ/edit?utm_content=DAG--b-keWE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/anal.png" alt="John the Ripper" class="room-image">
+      <img src="{{ site.baseurl }}/assets/images/anal.png" class="room-image">
       <h3>Junior Security Analyst Intro</h3>
       <p class="room-description">Play through a day in the life of a Security Analyst and experience their everyday duties.</p>
       <div class="status-badge done">
