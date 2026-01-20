@@ -1,6 +1,7 @@
-layout: default
-title: Accueil
-nav: home
+---
+ layout: default
+ title: Accueil
+ nav: home
 ---
 <link rel="icon" href="https://raw.githubusercontent.com/ItsHaname/ItsHaname.github.io/main/logo" type="image/png">
 <style>
