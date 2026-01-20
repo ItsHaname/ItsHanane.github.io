@@ -458,6 +458,15 @@ body {
         Done
       </div>
     </a>
+    <a href="https://www.canva.com/design/DAG--sYoFjY/MhZHZBlMEOq3M1yUNYSR3Q/edit?utm_content=DAG--sYoFjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/soc.png" class="room-image">
+      <h3>SOC Role in Blue Team</h3>
+      <p class="room-description">Discover security roles and learn how to advance your SOC career, starting from the L1 analyst.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
   </div>
 
   <div class="footer-nav">
