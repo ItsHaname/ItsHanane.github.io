@@ -410,7 +410,7 @@ body {
       </div>
     </a>
 
-   <a href="#" class="room-card">
+   <a href="https://www.canva.com/design/DAG_DwECttc/dkaItkRUUDpv-RLuiKvvWw/edit?utm_content=DAG_DwECttc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Public Key Cryptography" class="room-image">
       <h3>Public Key Cryptography Basics</h3>
       <p class="room-description">Discover how public key ciphers such as RSA work and explore their role in applications such as SSH.</p>
