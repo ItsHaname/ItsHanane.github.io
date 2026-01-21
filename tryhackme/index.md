@@ -488,7 +488,7 @@ body {
         Done
       </div>
     </a>
-   <a href="#" class="room-card">
+   <a href="https://www.canva.com/design/DAG_AT1jkTw/FahY6GCaBBjkyqhOBKaWkQ/edit?utm_content=DAG_AT1jkTw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/l1.png" class="room-image">
       <h3>SOC L1 Alert Triage</h3>
       <p class="room-description">Learn more about SOC alerts and build a systematic approach to efficiently triaging them.</p>
