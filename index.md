@@ -771,7 +771,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="eye-overlay"></div>
       </div>
       
-  <div class="counter-content">
+   <div class="counter-content">
         <div class="counter-label">
           <span class="eye-icon">👁️</span>
           <span>Big Sister is watching</span>
