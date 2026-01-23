@@ -483,31 +483,23 @@ It’s still cooking , definitely not done yet But u’re welcome to peek in the
         <div class="eye-overlay"></div>
       </div>
       
-   <!-- BIG SISTER COUNTER ENHANCED -->
-  <div class="counter-container">
-    <div class="counter-box">
-      <div class="lain-image-container">
-        <img src="/assets/images/watch.png" 
-             alt="Lain watching" 
-             class="lain-image">
-      </div>
-      
    <div class="counter-content">
         <div class="counter-label">
           <span class="eye-icon">👁️</span>
-          <span>BIG SISTER IS WATCHING</span>
+          <span>Big Sister is watching</span>
         </div>
         <div class="counter-number" id="visitorCount">0</div>
         <div class="counter-subtitle">visitors observed</div>
       </div>
     </div>
   </div>
-<script>
-let visits = parseInt(localStorage.getItem('cyberiaVisits') || '0');
-visits++;
-localStorage.setItem('cyberiaVisits', visits);
-document.getElementById('visitorCount').textContent = visits;
-</script>
+
+  <script>
+    let visits = parseInt(localStorage.getItem('cyberiaVisits') || '0');
+    visits++;
+    localStorage.setItem('cyberiaVisits', visits);
+    document.getElementById('visitorCount').textContent = visits;
+  </script>
   <div class="badge-container">
     <a href="/tryhackme/" class="floating-badge">TRYHACKME</a>
     <a href="https://github.com/ItsHaname" class="floating-badge" target="_blank">GITHUB</a>
