@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <img src="/assets/images/pi.png" alt="Raspberry Pi">
       </div>
       <h3>Raspberry Pi</h3>
-      <p>just some projects </p>
+      <p>For when you need a server, a robot, a Pi-hole, and a reason to buy more microSD cards. </p>
     </a>
  <!-- Docker -->
     <a href="/my-lab/dockerlab" class="lab-card">
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="construction-banner">
     <h3>Lab en Construction</h3>
     <p>Les machines, challenges et write-ups seront ajoutés progressivement.</p>
-    <p>Documentation technique et notes pratiques à venir...</p>
+    <p>Fresh to Tails. Let's see how deep the privacy rabbit hole goes.</p>
   </div>
 
   <!-- Footer -->
