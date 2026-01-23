@@ -439,6 +439,15 @@ body {
         Done
       </div>
     </a>
+     <a href="https://www.canva.com/design/DAG_RWdc7CM/UwLs-eRzwx2bmHJa9Osj_g/edit?utm_content=DAG_RWdc7CM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/tor1.png" alt="John the Ripper" class="room-image">
+      <h3>Tor</h3>
+      <p class="room-description">A beginner orienteered guide on using the Tor network</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
 
    <a href="https://www.canva.com/design/DAG-9aWxX_E/OMOr6swEWBCkKz3fMkJ6cw/edit?utm_content=DAG-9aWxX_E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/Gouv.png" alt="Governance & Regulation" class="room-image">
