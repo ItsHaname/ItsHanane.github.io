@@ -190,6 +190,11 @@ body {
   gap: 20px;
   margin: 60px 0;
 }
+
+.holo-card.gitbook-wide {
+  grid-column: span 4;
+  max-width: 100%;
+}
 .holo-card {
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(59, 130, 246, 0.3);
@@ -457,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <p>Environnement de test, machines virtuelles et expériences</p>
    </a>
    
-   <a href="https://cyberia-1.gitbook.io" target="_blank" class="holo-card">
+   <a href="https://cyberia-1.gitbook.io" target="_blank" class="holo-card gitbook-wide">
       <h3>CYBERIA GITBOOK</h3>
       <p>You can check also this, kinda good tho — Documentation complète</p>
     </a>
