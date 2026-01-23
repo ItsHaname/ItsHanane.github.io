@@ -23,9 +23,8 @@
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -38,6 +37,20 @@
 @keyframes glitch-2 {
   0% { clip-path: inset(25% 0 58% 0); }
   100% { clip-path: inset(75% 0 1% 0); }
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes eyeGlow {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+    transform: scale(1.05);
+  }
 }
 body {
   background: #0a0e1a;
@@ -263,6 +276,135 @@ body {
 .mission-statement strong {
   color: #3b82f6;
 }
+
+/* Big Sister Counter Styles */
+.counter-container {
+  margin: 60px 0;
+  display: flex;
+  justify-content: center;
+  animation: slideIn 1s ease-out;
+}
+
+.counter-box {
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.3),
+    inset 0 0 20px rgba(59, 130, 246, 0.1);
+  transition: all 0.4s ease;
+  max-width: 600px;
+  width: 100%;
+}
+
+.counter-box:hover {
+  border-color: rgba(96, 165, 250, 0.8);
+  box-shadow: 
+    0 0 50px rgba(59, 130, 246, 0.5),
+    inset 0 0 30px rgba(59, 130, 246, 0.2);
+  transform: scale(1.02);
+}
+
+.counter-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  animation: rotate 4s linear infinite;
+}
+
+.lain-image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  animation: eyeGlow 2s ease-in-out infinite;
+}
+
+.lain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(1.2);
+}
+
+.eye-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(59, 130, 246, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+.counter-content {
+  position: relative;
+  z-index: 1;
+}
+
+.counter-label {
+  font-size: 1.3em;
+  color: #3b82f6;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eye-icon {
+  font-size: 1.5em;
+  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8));
+}
+
+.counter-number {
+  font-size: 3.5em;
+  color: #60a5fa;
+  font-weight: 900;
+  text-shadow: 
+    0 0 10px rgba(59, 130, 246, 0.8),
+    0 0 20px rgba(59, 130, 246, 0.5),
+    0 0 30px rgba(59, 130, 246, 0.3);
+  letter-spacing: 3px;
+  margin: 10px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.counter-subtitle {
+  font-size: 1em;
+  color: #94a3b8;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
 .badge-container {
   display: flex;
   gap: 20px;
@@ -332,6 +474,31 @@ body {
   .hologram-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  
+  .counter-box {
+    padding: 25px 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lain-image-container {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+  }
+
+  .counter-label {
+    font-size: 1.1em;
+    justify-content: center;
+  }
+
+  .counter-number {
+    font-size: 3em;
+  }
+
+  .counter-subtitle {
+    font-size: 0.9em;
   }
   
   .badge-container {
@@ -466,14 +633,15 @@ document.addEventListener('DOMContentLoaded', function() {
       <h3>CYBERIA GITBOOK</h3>
       <p>You can check also this, kinda good tho — Documentation complète</p>
     <p> so this is my GitBook for the labs I find interesting and fun.
-It’s still cooking , definitely not done yet But u’re welcome to peek in the kitchen</p>
+It's still cooking , definitely not done yet But u're welcome to peek in the kitchen</p>
     </a>
   </div>
   <div class="welcome-text">
     <p>Salut — je suis <strong style="color: #3b82f6;">Haname</strong>, étudiante en cybersécurité à la FSSM.<br>
     Bienvenue sur mon site où je partage mon parcours, mes parcours (paths) TryHackMe, la formation FSSM, et mes laboratoires personnels.</p>
   </div>
-  <!-- BIG SISTER COUNTER ENHANCED -->
+  
+  <!-- BIG SISTER COUNTER -->
   <div class="counter-container">
     <div class="counter-box">
       <div class="lain-image-container">
@@ -500,6 +668,7 @@ It’s still cooking , definitely not done yet But u’re welcome to peek in the
     localStorage.setItem('cyberiaVisits', visits);
     document.getElementById('visitorCount').textContent = visits;
   </script>
+
   <div class="badge-container">
     <a href="/tryhackme/" class="floating-badge">TRYHACKME</a>
     <a href="https://github.com/ItsHaname" class="floating-badge" target="_blank">GITHUB</a>
