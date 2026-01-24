@@ -421,20 +421,12 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- NotPetya - Add your Canva link in the href -->
     <a href="YOUR_CANVA_LINK_HERE" target="_blank" class="cve-card">
       <div class="cve-header">
-        <span class="cve-id">CVE-2017-0144</span>
+        <span class="cve-id">CVE-2017-7494 </span>
         <span class="severity critical">Critical</span>
       </div>
-      <h3>NotPetya Ransomware</h3>
+      <h3>SambaCry</h3>
       <div class="cve-description">
-        The NotPetya worm that exploited EternalBlue (SMBv1). Caused billions in damage worldwide. 
-        Interesting part: it was actually a wiper disguised as ransomware—files couldn't be recovered even with payment.
-      </div>
-      <div class="cve-tags">
-        <span class="tag">EternalBlue</span>
-        <span class="tag">SMB</span>
-        <span class="tag">Ransomware</span>
-        <span class="tag">Worm</span>
-        <span class="tag">Windows</span>
+        C'est une vulnérabilité d'exécution de code à distance (RCE) dans Samba (service de partage de fichiers Linux/UNIX). Elle permet à un attaquant de télécharger et exécuter du code arbitraire sur le serveur Samba.
       </div>
       <div class="view-details">
         View Full Analysis →
@@ -475,15 +467,5 @@ document.addEventListener('DOMContentLoaded', function() {
         <span class="tag">Queue</span>
       </div>
     </div>
-  </div>
-
-  <div class="contact-box">
-    <h3>Got CVE Suggestions?</h3>
-    <p>
-      If you know any interesting vulnerabilities I should research, or if you have questions about my findings, DM me on Discord. (Specifically, the ones that Vulhub missed.)
-    </p>
-    <a href="https://discord.com/users/1395011739006930957" class="discord-link" target="_blank">
-      Contact on Discord
-    </a>
   </div>
 </div>
