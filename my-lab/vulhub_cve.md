@@ -418,11 +418,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <div class="cve-grid">
-    <!-- NotPetya - Add your Canva link in the href -->
     <a href="https://www.canva.com/design/DAG_SuknGG4/0Hy_DdLaBnxiTEk-kHgBDg/edit?utm_content=DAG_SuknGG4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="cve-card">
       <div class="cve-header">
         <span class="cve-id">CVE-2017-7494 </span>
-        <span class="severity critical">Critical</span>
       </div>
       <h3>SambaCry</h3>
       <div class="cve-description">
@@ -437,12 +435,52 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="cve-card coming-soon">
       <div class="cve-header">
         <span class="cve-id">CVE-????-????</span>
-        <span class="severity high">High</span>
       </div>
       <h3>Next Research Target</h3>
       <div class="cve-description">
-        Currently researching new vulnerabilities in the lab. 
-        More documentation coming soon with detailed analysis and testing results.
+        comming soon
+      </div>
+      <div class="cve-tags">
+        <span class="tag">In Progress</span>
+        <span class="tag">Research</span>
+        <span class="tag">Testing</span>
+      </div>
+    </div>
+    <div class="cve-card coming-soon">
+      <div class="cve-header">
+        <span class="cve-id">CVE-????-????</span>
+      </div>
+      <h3>Next Research Target</h3>
+      <div class="cve-description">
+        comming soon
+      </div>
+      <div class="cve-tags">
+        <span class="tag">In Progress</span>
+        <span class="tag">Research</span>
+        <span class="tag">Testing</span>
+      </div>
+    </div>
+    <div class="cve-card coming-soon">
+      <div class="cve-header">
+        <span class="cve-id">CVE-????-????</span>
+      </div>
+      <h3>Next Research Target</h3>
+      <div class="cve-description">
+        comming soon
+      </div>
+      <div class="cve-tags">
+        <span class="tag">In Progress</span>
+        <span class="tag">Research</span>
+        <span class="tag">Testing</span>
+      </div>
+    </div>
+    <div class="cve-card coming-soon">
+      <div class="cve-header">
+        <span class="cve-id">CVE-????-????</span>
+      </div>
+      <h3>Next Research Target</h3>
+      <div class="cve-description">
+        comming soon
       </div>
       <div class="cve-tags">
         <span class="tag">In Progress</span>
@@ -455,12 +493,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="cve-card coming-soon">
       <div class="cve-header">
         <span class="cve-id">CVE-????-????</span>
-        <span class="severity medium">Medium</span>
       </div>
       <h3>Additional Research</h3>
       <div class="cve-description">
-        Planning to explore more interesting vulnerabilities. 
-        Each addition will include testing methodology and practical findings.
+    comming soon 
       </div>
       <div class="cve-tags">
         <span class="tag">Planned</span>
