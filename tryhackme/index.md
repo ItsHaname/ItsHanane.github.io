@@ -2,34 +2,64 @@
 layout: default
 title: TryHackMe
 ---
+
 <link rel="icon" href="https://raw.githubusercontent.com/ItsHaname/ItsHaname.github.io/main/logo" type="image/png">
+
 <style>
+/* ==================== ANIMATIONS ==================== */
+
 @keyframes matrixRain {
-  0% { transform: translateY(-100vh); }
-  100% { transform: translateY(100vh); }
+  0% { 
+    transform: translateY(-100vh); 
+  }
+  100% { 
+    transform: translateY(100vh); 
+  }
 }
 
 @keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+  100% { 
+    background-position: 0% 50%; 
+  }
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0; 
+  }
 }
+
+/* ==================== RESET & BASE ==================== */
 
 * {
   margin: 0;
@@ -45,6 +75,8 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
+/* ==================== BACKGROUND BINAIRE ==================== */
 
 .binary-background {
   position: fixed;
@@ -69,6 +101,8 @@ body {
   animation: floatUpDown 3s ease-in-out infinite;
 }
 
+/* ==================== CONTAINER PRINCIPAL ==================== */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -77,6 +111,8 @@ body {
   z-index: 1;
 }
 
+/* ==================== HEADER DE LA PAGE ==================== */
+
 .page-header {
   text-align: center;
   margin-bottom: 60px;
@@ -84,7 +120,9 @@ body {
   background: rgba(0, 20, 40, 0.6);
   border-radius: 30px;
   border: 3px solid #7a1f1f;
-  box-shadow: 0 0 40px rgba(220, 38, 38, 0.5), inset 0 0 30px rgba(220, 38, 38, 0.2);
+  box-shadow: 
+    0 0 40px rgba(220, 38, 38, 0.5), 
+    inset 0 0 30px rgba(220, 38, 38, 0.2);
 }
 
 .platform-badge {
@@ -120,7 +158,9 @@ body {
   font-size: 1.5em;
   color: #ef4444;
   margin: 10px 0 0 0;
-  text-shadow: 0 0 10px #ef4444, 0 0 20px #dc2626;
+  text-shadow: 
+    0 0 10px #ef4444, 
+    0 0 20px #dc2626;
   letter-spacing: 3px;
   font-style: italic;
 }
@@ -130,6 +170,8 @@ body {
   animation: blink 1s infinite;
   color: #ef4444;
 }
+
+/* ==================== SECTION PROFIL ==================== */
 
 .profile-section {
   text-align: center;
@@ -144,6 +186,8 @@ body {
   border: none;
   max-width: 100%;
 }
+
+/* ==================== TERMINAL ==================== */
 
 .terminal {
   background: rgba(15, 23, 42, 0.85);
@@ -166,9 +210,17 @@ body {
   border-radius: 50%;
 }
 
-.terminal-dot.red { background: #ff5f56; }
-.terminal-dot.yellow { background: #ffbd2e; }
-.terminal-dot.green { background: #27c93f; }
+.terminal-dot.red { 
+  background: #ff5f56; 
+}
+
+.terminal-dot.yellow { 
+  background: #ffbd2e; 
+}
+
+.terminal-dot.green { 
+  background: #27c93f; 
+}
 
 .terminal-text {
   color: #ef4444;
@@ -180,6 +232,8 @@ body {
   color: #dc2626;
   font-weight: bold;
 }
+
+/* ==================== TITRE DE SECTION ==================== */
 
 .section-title {
   font-size: 2.5em;
@@ -194,12 +248,16 @@ body {
   text-align: center;
 }
 
+/* ==================== GRILLE DES ROOMS ==================== */
+
 .rooms-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
   margin: 40px 0;
 }
+
+/* ==================== CARTE ROOM ==================== */
 
 .room-card {
   background: rgba(15, 23, 42, 0.85);
@@ -211,9 +269,15 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  
+  /* Flexbox pour alignement */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
+  /* Hauteur uniforme */
+  min-height: 320px;
+  height: 100%;
 }
 
 .room-card:before {
@@ -239,12 +303,15 @@ body {
   box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
 }
 
+/* Éléments de la carte */
+
 .room-image {
   width: 110px; 
   height: 70px;
   object-fit: contain;
   border-radius: 8px;
   margin-bottom: 18px;
+  flex-shrink: 0;
 }
 
 .room-card h3 {
@@ -253,6 +320,7 @@ body {
   margin: 0 0 12px 0;
   font-weight: 700;
   text-align: left;
+  flex-shrink: 0;
 }
 
 .room-description {
@@ -261,7 +329,10 @@ body {
   line-height: 1.6;
   margin-bottom: 20px;
   text-align: left;
+  flex-grow: 1;
 }
+
+/* ==================== BADGES DE STATUT ==================== */
 
 .status-badge {
   display: inline-flex;
@@ -274,12 +345,19 @@ body {
   color: #ef4444;
   border: 1px solid rgba(220, 38, 38, 0.3);
   margin-top: auto;
+  flex-shrink: 0;
 }
 
 .status-badge.done {
   background: rgba(16, 185, 129, 0.15);
   border-color: rgba(16, 185, 129, 0.3);
   color: #10b981;
+}
+
+.status-badge.progress {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
 }
 
 .status-dot {
@@ -294,6 +372,13 @@ body {
   background: #10b981;
   animation: none;
 }
+
+.status-dot.progress {
+  background: #f59e0b;
+  animation: pulse 2s infinite;
+}
+
+/* ==================== NAVIGATION FOOTER ==================== */
 
 .footer-nav {
   display: flex;
@@ -322,6 +407,8 @@ body {
   box-shadow: 0 10px 20px rgba(220, 38, 38, 0.4);
 }
 
+/* ==================== RESPONSIVE ==================== */
+
 @media (max-width: 768px) {
   .page-title {
     font-size: 2.5em;
@@ -337,31 +424,26 @@ body {
     grid-template-columns: 1fr;
   }
 }
-.status-badge.progress {
-  background: rgba(245, 158, 11, 0.15);
-  border-color: rgba(245, 158, 11, 0.3);
-  color: #f59e0b;
-}
-
-.status-dot.progress {
-  background: #f59e0b;
-  animation: pulse 2s infinite;
-}
 </style>
 
+<!-- Background binaire animé -->
 <div class="binary-background"></div>
 
 <div class="container">
+  
+  <!-- En-tête de la page -->
   <div class="page-header">
     <div class="platform-badge">TRYHACKME</div>
     <h1 class="page-title">CYBERSECURITY</h1>
     <p class="page-subtitle">Learning Journey & Room Notes</p>
   </div>
 
+  <!-- Section profil TryHackMe -->
   <div class="profile-section">
     <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3165378"></iframe>
   </div>
 
+  <!-- Terminal d'information -->
   <div class="terminal">
     <div class="terminal-header">
       <div class="terminal-dot red"></div>
@@ -377,10 +459,14 @@ body {
     </div>
   </div>
 
+  <!-- Titre de section -->
   <h2 class="section-title">Rooms & Write-ups</h2>
   
+  <!-- Grille des rooms -->
   <div class="rooms-grid">
-    <a href="https://www.canva.com/design/DAG-szd4Ha4/FUYHK4XgKzJ9cewGWGoNaw/edit?utm_content=DAG-szd4Ha4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+    
+    <!-- Room: Introduction To Honeypots -->
+  <a href="https://www.canva.com/design/DAG-szd4Ha4/FUYHK4XgKzJ9cewGWGoNaw/edit?utm_content=DAG-szd4Ha4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/honey.png" alt="Honeypots" class="room-image">
       <h3>Introduction To Honeypots</h3>
       <p class="room-description">Learn about honeypots and how they can be used to detect and analyze malicious activity in a network environment.</p>
@@ -390,6 +476,7 @@ body {
       </div>
     </a>
 
+    <!-- Room: Introduction to Docker -->
    <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/dock.png" alt="Docker" class="room-image">
       <h3>Introduction to Docker</h3>
@@ -400,6 +487,7 @@ body {
       </div>
     </a>
 
+    <!-- Room: Intro to IoT Pentesting -->
    <a href="https://www.canva.com/design/DAG-yGatPVg/TdUJPJGrO0DccBwOh2OtTw/edit?utm_content=DAG-yGatPVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/iot.png" alt="IoT Pentesting" class="room-image">
       <h3>Intro to IoT Pentesting</h3>
@@ -410,6 +498,7 @@ body {
       </div>
     </a>
 
+    <!-- Room: Cryptography Basics -->
    <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
       <h3>Cryptography Basics</h3>
@@ -420,6 +509,7 @@ body {
       </div>
     </a>
 
+    <!-- Room: Public Key Cryptography Basics -->
    <a href="https://www.canva.com/design/DAG_DwECttc/dkaItkRUUDpv-RLuiKvvWw/edit?utm_content=DAG_DwECttc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Public Key Cryptography" class="room-image">
       <h3>Public Key Cryptography Basics</h3>
@@ -430,6 +520,7 @@ body {
       </div>
     </a>
 
+    <!-- Room: Hashing Basics -->
    <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto2.png" alt="Hashing Basics" class="room-image">
       <h3>Hashing Basics</h3>
@@ -440,7 +531,8 @@ body {
       </div>
     </a>
 
-   <a href="#" class="room-card">
+    <!-- Room: John the Ripper -->
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/jhon.png" alt="John the Ripper" class="room-image">
       <h3>John the Ripper: The Basics</h3>
       <p class="room-description">Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool.</p>
@@ -449,8 +541,10 @@ body {
         Done
       </div>
     </a>
-     <a href="https://www.canva.com/design/DAG_RWdc7CM/UwLs-eRzwx2bmHJa9Osj_g/edit?utm_content=DAG_RWdc7CM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/tor1.png" alt="John the Ripper" class="room-image">
+
+    <!-- Room: Tor -->
+  <a href="https://www.canva.com/design/DAG_RWdc7CM/UwLs-eRzwx2bmHJa9Osj_g/edit?utm_content=DAG_RWdc7CM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/tor1.png" alt="Tor" class="room-image">
       <h3>Tor</h3>
       <p class="room-description">A beginner orienteered guide on using the Tor network</p>
       <div class="status-badge done">
@@ -459,6 +553,7 @@ body {
       </div>
     </a>
 
+    <!-- Room: Governance & Regulation -->
    <a href="https://www.canva.com/design/DAG-9aWxX_E/OMOr6swEWBCkKz3fMkJ6cw/edit?utm_content=DAG-9aWxX_E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/Gouv.png" alt="Governance & Regulation" class="room-image">
       <h3>Governance & Regulation</h3>
@@ -469,8 +564,9 @@ body {
       </div>
     </a>
 
-   <a href="https://www.canva.com/design/DAG--b-keWE/XOwv2THcEwci6br-HkwYzQ/edit?utm_content=DAG--b-keWE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/anal.png" class="room-image">
+    <!-- Room: Junior Security Analyst Intro -->
+  <a href="https://www.canva.com/design/DAG--b-keWE/XOwv2THcEwci6br-HkwYzQ/edit?utm_content=DAG--b-keWE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/anal.png" alt="Junior Security Analyst" class="room-image">
       <h3>Junior Security Analyst Intro</h3>
       <p class="room-description">Play through a day in the life of a Security Analyst and experience their everyday duties.</p>
       <div class="status-badge done">
@@ -479,8 +575,9 @@ body {
       </div>
     </a>
 
+    <!-- Room: SOC Role in Blue Team -->
    <a href="https://www.canva.com/design/DAG--sYoFjY/MhZHZBlMEOq3M1yUNYSR3Q/edit?utm_content=DAG--sYoFjY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/soc.png" class="room-image">
+      <img src="{{ site.baseurl }}/assets/images/soc.png" alt="SOC Role" class="room-image">
       <h3>SOC Role in Blue Team</h3>
       <p class="room-description">Discover security roles and learn how to advance your SOC career, starting from the L1 analyst.</p>
       <div class="status-badge done">
@@ -489,8 +586,9 @@ body {
       </div>
     </a>
 
+    <!-- Room: Humans as Attack Vectors -->
    <a href="https://www.canva.com/design/DAG--7v-mEA/3uK8rfMVrBx5uzCo0pEYsw/edit?utm_content=DAG--7v-mEA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/hu.png" class="room-image">
+      <img src="{{ site.baseurl }}/assets/images/hu.png" alt="Humans as Attack Vectors" class="room-image">
       <h3>Humans as Attack Vectors</h3>
       <p class="room-description">Learn how attackers exploit vulnerable and misconfigured systems, and how you can protect them.</p>
       <div class="status-badge done">
@@ -498,8 +596,10 @@ body {
         Done
       </div>
     </a>
-     <a href="https://www.canva.com/design/DAG-_zfcGMY/qSU10HYB2cA10WGS2jMgpA/edit?utm_content=DAG-_zfcGMY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/hu.png" class="room-image">
+
+    <!-- Room: Systems as Attack Vectors -->
+  <a href="https://www.canva.com/design/DAG-_zfcGMY/qSU10HYB2cA10WGS2jMgpA/edit?utm_content=DAG-_zfcGMY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/hu.png" alt="Systems as Attack Vectors" class="room-image">
       <h3>Systems as Attack Vectors</h3>
       <p class="room-description">Understand why and how people are targeted in cyber attacks and how the SOC helps defend them.</p>
       <div class="status-badge done">
@@ -507,82 +607,100 @@ body {
         Done
       </div>
     </a>
-   <a href="https://www.canva.com/design/DAG_AT1jkTw/FahY6GCaBBjkyqhOBKaWkQ/edit?utm_content=DAG_AT1jkTw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/l1.png" class="room-image">
+
+    <!-- Room: SOC L1 Alert Triage -->
+  <a href="https://www.canva.com/design/DAG_AT1jkTw/FahY6GCaBBjkyqhOBKaWkQ/edit?utm_content=DAG_AT1jkTw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/l1.png" alt="SOC L1 Alert Triage" class="room-image">
       <h3>SOC L1 Alert Triage</h3>
       <p class="room-description">Learn more about SOC alerts and build a systematic approach to efficiently triaging them.</p>
       <div class="status-badge done">
         <span class="status-dot done"></span>
         Done
       </div>
-    </a> 
-    <a href="https://www.canva.com/design/DAG_JsoJXms/AeSRz2hOuRoT2bq4AmFS-A/edit?utm_content=DAG_JsoJXms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/l2.png" class="room-image">
-      <h3>  SOC L1 Alert Reporting </h3>
+    </a>
+
+    <!-- Room: SOC L1 Alert Reporting -->
+   <a href="https://www.canva.com/design/DAG_JsoJXms/AeSRz2hOuRoT2bq4AmFS-A/edit?utm_content=DAG_JsoJXms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/l2.png" alt="SOC L1 Alert Reporting" class="room-image">
+      <h3>SOC L1 Alert Reporting</h3>
       <p class="room-description">Learn how to properly report, escalate, and communicate about high-risk SOC alerts.</p>
       <div class="status-badge done">
         <span class="status-dot done"></span>
         Done
       </div>
-    </a> 
-    <a href="https://www.canva.com/design/DAG_JxoRkVI/amTj5_EcQS_3j8cBCar6RQ/edit?utm_content=DAG_JxoRkVI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/l3.png" class="room-image">
-      <h3> SOC Workbooks and Lookups </h3>
+    </a>
+
+    <!-- Room: SOC Workbooks and Lookups -->
+   <a href="https://www.canva.com/design/DAG_JxoRkVI/amTj5_EcQS_3j8cBCar6RQ/edit?utm_content=DAG_JxoRkVI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/l3.png" alt="SOC Workbooks" class="room-image">
+      <h3>SOC Workbooks and Lookups</h3>
       <p class="room-description">Discover useful corporate resources to help you structure and simplify L1 alert triage.</p>
       <div class="status-badge done">
         <span class="status-dot done"></span>
         Done
       </div>
-    </a> 
-    <a href="https://www.canva.com/design/DAG_Xc-gmfo/AOFWs5p31jWbFQK0bOapIw/edit?utm_content=DAG_Xc-gmfo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-  <img src="{{ site.baseurl }}/assets/images/ci.png" class="room-image">
-  <h3>First Shift CTF</h3>
-  <p class="room-description">The first SOC shift won't be that challenging, right?</p>
-  <div class="status-badge progress">
-    <span class="status-dot progress"></span>
-    32% Progress
-  </div>
-  </a>
+    </a>
+
+    <!-- Room: First Shift CTF -->
+   <a href="https://www.canva.com/design/DAG_Xc-gmfo/AOFWs5p31jWbFQK0bOapIw/edit?utm_content=DAG_Xc-gmfo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/ci.png" alt="First Shift CTF" class="room-image">
+      <h3>First Shift CTF</h3>
+      <p class="room-description">The first SOC shift won't be that challenging, right?</p>
+      <div class="status-badge progress">
+        <span class="status-dot progress"></span>
+        32% Progress
+      </div>
+    </a>
+
+    <!-- Room: Exploitation with cURL -->
    <a href="#" class="room-card">
-  <img src="{{ site.baseurl }}/assets/images/curl.png" class="room-image">
-  <h3>Exploitation with cURL - Hoperation Eggsploit</h3>
-    <p class="room-description">The evil Easter bunnies operate a web control panel that holds the wormhole open. Using cURL, identify the endpoints, send the required requests, and shut the wormhole once               and for all.</p>
-          <div class="status-badge done">
-                <span class="status-dot done"></span>
-                Done
-            </div>
-  </a>
-     <a href="https://www.canva.com/design/DAG_dOdT248/qnxPdLoJp4mogljHcgREzQ/edit?utm_content=DAG_dOdT248&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-  <img src="{{ site.baseurl }}/assets/images/sec.png" class="room-image">
-  <h3>Security Principles</h3>
-    <p class="room-description">Learn about the security triad and common security models and principles.</p>
-          <div class="status-badge done">
-                <span class="status-dot done"></span>
-                Done
-            </div>
-  </a>
-  /a>
-     <a href="https://www.canva.com/design/DAG_boAdx-s/Ka6N7nbz_9HEEUa8KEPL7w/edit?utm_content=DAG_boAdx-s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-  <img src="{{ site.baseurl }}/assets/images/ing.png" class="room-image">
-  <h3>Security Engineer Intro</h3>
-    <p class="room-description">What does a day in the life of a security engineer look like?</p>
-          <div class="status-badge done">
-                <span class="status-dot done"></span>
-                Done
-            </div>
-  </a>
+      <img src="{{ site.baseurl }}/assets/images/curl.png" alt="cURL Exploitation" class="room-image">
+      <h3>Exploitation with cURL - Hoperation Eggsploit</h3>
+      <p class="room-description">The evil Easter bunnies operate a web control panel that holds the wormhole open. Using cURL, identify the endpoints, send the required requests, and shut the wormhole once and for all.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
+    <!-- Room: Security Principles -->
+  <a href="https://www.canva.com/design/DAG_dOdT248/qnxPdLoJp4mogljHcgREzQ/edit?utm_content=DAG_dOdT248&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/sec.png" alt="Security Principles" class="room-image">
+      <h3>Security Principles</h3>
+      <p class="room-description">Learn about the security triad and common security models and principles.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
+    <!-- Room: Security Engineer Intro -->
+  <a href="https://www.canva.com/design/DAG_boAdx-s/Ka6N7nbz_9HEEUa8KEPL7w/edit?utm_content=DAG_boAdx-s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/ing.png" alt="Security Engineer" class="room-image">
+      <h3>Security Engineer Intro</h3>
+      <p class="room-description">What does a day in the life of a security engineer look like?</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
+
   </div>
 
+  <!-- Navigation footer -->
   <div class="footer-nav">
     <a href="{{ site.baseurl }}/my-lab" class="nav-button">← Back to Lab</a>
     <a href="https://tryhackme.com" target="_blank" class="nav-button">TryHackMe</a>
   </div>
+
 </div>
 
 <script>
+// Génération des chiffres binaires animés en arrière-plan
 document.addEventListener('DOMContentLoaded', function() {
   const binaryContainer = document.querySelector('.binary-background');
   
+  // Création de 100 chiffres qui tombent
   for (let i = 0; i < 100; i++) {
     const digit = document.createElement('div');
     digit.className = 'binary-digit';
@@ -592,11 +710,18 @@ document.addEventListener('DOMContentLoaded', function() {
     digit.style.animationDuration = (Math.random() * 10 + 5) + 's';
     digit.style.animationDelay = Math.random() * 5 + 's';
     digit.style.opacity = Math.random() * 0.2 + 0.05;
-    const colors = ['rgba(220, 38, 38, 0.15)', 'rgba(239, 68, 68, 0.15)', 'rgba(153, 27, 27, 0.15)'];
+    
+    const colors = [
+      'rgba(220, 38, 38, 0.15)', 
+      'rgba(239, 68, 68, 0.15)', 
+      'rgba(153, 27, 27, 0.15)'
+    ];
     digit.style.color = colors[Math.floor(Math.random() * colors.length)];
+    
     binaryContainer.appendChild(digit);
   }
   
+  // Création de 30 chiffres flottants
   for (let i = 0; i < 30; i++) {
     const floatDigit = document.createElement('div');
     floatDigit.className = 'binary-digit float';
@@ -606,8 +731,13 @@ document.addEventListener('DOMContentLoaded', function() {
     floatDigit.style.fontSize = (Math.random() * 22 + 14) + 'px';
     floatDigit.style.animationDelay = Math.random() * 2 + 's';
     floatDigit.style.opacity = Math.random() * 0.3 + 0.1;
-    const floatColors = ['rgba(220, 38, 38, 0.25)', 'rgba(239, 68, 68, 0.25)'];
+    
+    const floatColors = [
+      'rgba(220, 38, 38, 0.25)', 
+      'rgba(239, 68, 68, 0.25)'
+    ];
     floatDigit.style.color = floatColors[Math.floor(Math.random() * floatColors.length)];
+    
     binaryContainer.appendChild(floatDigit);
   }
 });
