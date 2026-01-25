@@ -253,6 +253,7 @@ body {
 .rooms-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 1fr;
   gap: 25px;
   margin: 40px 0;
 }
@@ -274,10 +275,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
-  /* Hauteur uniforme */
-  min-height: 320px;
-  height: 100%;
 }
 
 .room-card:before {
@@ -466,7 +463,7 @@ body {
   <div class="rooms-grid">
     
     <!-- Room: Introduction To Honeypots -->
-  <a href="https://www.canva.com/design/DAG-szd4Ha4/FUYHK4XgKzJ9cewGWGoNaw/edit?utm_content=DAG-szd4Ha4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG-szd4Ha4/FUYHK4XgKzJ9cewGWGoNaw/edit?utm_content=DAG-szd4Ha4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/honey.png" alt="Honeypots" class="room-image">
       <h3>Introduction To Honeypots</h3>
       <p class="room-description">Learn about honeypots and how they can be used to detect and analyze malicious activity in a network environment.</p>
@@ -477,7 +474,7 @@ body {
     </a>
 
     <!-- Room: Introduction to Docker -->
-   <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
+  <a href="https://www.canva.com/design/DAG-rGFAO3Q/3FW6lGUjPm0yXQBBDkcSKQ/edit?utm_content=DAG-rGFAO3Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/dock.png" alt="Docker" class="room-image">
       <h3>Introduction to Docker</h3>
       <p class="room-description">Learn the basics of Docker containerization, understand core concepts, and get hands-on experience with containers.</p>
@@ -488,7 +485,7 @@ body {
     </a>
 
     <!-- Room: Intro to IoT Pentesting -->
-   <a href="https://www.canva.com/design/DAG-yGatPVg/TdUJPJGrO0DccBwOh2OtTw/edit?utm_content=DAG-yGatPVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+  <a href="https://www.canva.com/design/DAG-yGatPVg/TdUJPJGrO0DccBwOh2OtTw/edit?utm_content=DAG-yGatPVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/iot.png" alt="IoT Pentesting" class="room-image">
       <h3>Intro to IoT Pentesting</h3>
       <p class="room-description">Discover the fundamentals of IoT security and learn penetration testing techniques for Internet of Things devices.</p>
@@ -499,7 +496,7 @@ body {
     </a>
 
     <!-- Room: Cryptography Basics -->
-   <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+  <a href="https://www.canva.com/design/DAG-y0eYKzw/5WrIOY1MGnqsIvEns_DpWg/edit?utm_content=DAG-y0eYKzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/crypto1.png" alt="Cryptography Basics" class="room-image">
       <h3>Cryptography Basics</h3>
       <p class="room-description">Learn the basics of cryptography and symmetric encryption.</p>
@@ -532,7 +529,7 @@ body {
     </a>
 
     <!-- Room: John the Ripper -->
-  <a href="#" class="room-card">
+   <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/jhon.png" alt="John the Ripper" class="room-image">
       <h3>John the Ripper: The Basics</h3>
       <p class="room-description">Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool.</p>
@@ -620,7 +617,7 @@ body {
     </a>
 
     <!-- Room: SOC L1 Alert Reporting -->
-   <a href="https://www.canva.com/design/DAG_JsoJXms/AeSRz2hOuRoT2bq4AmFS-A/edit?utm_content=DAG_JsoJXms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+  <a href="https://www.canva.com/design/DAG_JsoJXms/AeSRz2hOuRoT2bq4AmFS-A/edit?utm_content=DAG_JsoJXms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/l2.png" alt="SOC L1 Alert Reporting" class="room-image">
       <h3>SOC L1 Alert Reporting</h3>
       <p class="room-description">Learn how to properly report, escalate, and communicate about high-risk SOC alerts.</p>
@@ -631,7 +628,7 @@ body {
     </a>
 
     <!-- Room: SOC Workbooks and Lookups -->
-   <a href="https://www.canva.com/design/DAG_JxoRkVI/amTj5_EcQS_3j8cBCar6RQ/edit?utm_content=DAG_JxoRkVI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+  <a href="https://www.canva.com/design/DAG_JxoRkVI/amTj5_EcQS_3j8cBCar6RQ/edit?utm_content=DAG_JxoRkVI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/l3.png" alt="SOC Workbooks" class="room-image">
       <h3>SOC Workbooks and Lookups</h3>
       <p class="room-description">Discover useful corporate resources to help you structure and simplify L1 alert triage.</p>
@@ -642,7 +639,7 @@ body {
     </a>
 
     <!-- Room: First Shift CTF -->
-   <a href="https://www.canva.com/design/DAG_Xc-gmfo/AOFWs5p31jWbFQK0bOapIw/edit?utm_content=DAG_Xc-gmfo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+  <a href="https://www.canva.com/design/DAG_Xc-gmfo/AOFWs5p31jWbFQK0bOapIw/edit?utm_content=DAG_Xc-gmfo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/ci.png" alt="First Shift CTF" class="room-image">
       <h3>First Shift CTF</h3>
       <p class="room-description">The first SOC shift won't be that challenging, right?</p>
@@ -653,7 +650,7 @@ body {
     </a>
 
     <!-- Room: Exploitation with cURL -->
-   <a href="#" class="room-card">
+  <a href="#" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/curl.png" alt="cURL Exploitation" class="room-image">
       <h3>Exploitation with cURL - Hoperation Eggsploit</h3>
       <p class="room-description">The evil Easter bunnies operate a web control panel that holds the wormhole open. Using cURL, identify the endpoints, send the required requests, and shut the wormhole once and for all.</p>
@@ -664,7 +661,7 @@ body {
     </a>
 
     <!-- Room: Security Principles -->
-  <a href="https://www.canva.com/design/DAG_dOdT248/qnxPdLoJp4mogljHcgREzQ/edit?utm_content=DAG_dOdT248&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG_dOdT248/qnxPdLoJp4mogljHcgREzQ/edit?utm_content=DAG_dOdT248&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/sec.png" alt="Security Principles" class="room-image">
       <h3>Security Principles</h3>
       <p class="room-description">Learn about the security triad and common security models and principles.</p>
@@ -675,7 +672,7 @@ body {
     </a>
 
     <!-- Room: Security Engineer Intro -->
-  <a href="https://www.canva.com/design/DAG_boAdx-s/Ka6N7nbz_9HEEUa8KEPL7w/edit?utm_content=DAG_boAdx-s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+   <a href="https://www.canva.com/design/DAG_boAdx-s/Ka6N7nbz_9HEEUa8KEPL7w/edit?utm_content=DAG_boAdx-s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
       <img src="{{ site.baseurl }}/assets/images/ing.png" alt="Security Engineer" class="room-image">
       <h3>Security Engineer Intro</h3>
       <p class="room-description">What does a day in the life of a security engineer look like?</p>
