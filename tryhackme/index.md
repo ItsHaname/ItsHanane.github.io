@@ -681,7 +681,15 @@ body {
         Done
       </div>
     </a>
-
+    <a href="https://www.canva.com/design/DAG_eLkKork/LcmAn6i4oDlsc39qklPKyw/edit?utm_content=DAG_eLkKork&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/cry.png" alt="Cryptography" class="room-image">
+      <h3>Introduction to Cryptography</h3>
+      <p class="room-description">Learn about encryption algorithms such as AES, Diffie-Hellman key exchange, hashing, PKI, and TLS.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
   </div>
 
   <!-- Navigation footer -->
