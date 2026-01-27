@@ -700,7 +700,7 @@ body {
       </div>
     </a>
     <a href="https://www.canva.com/design/DAG_p2cX7z8/Boj0_ZrC5N4IQPqCsoEtmg/edit?utm_content=DAG_p2cX7z8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/man.png" alt="Cryptography" class="room-image">
+      <img src="{{ site.baseurl }}/assets/images/vul.png" alt="Cryptography" class="room-image">
       <h3>Vulnerability Management</h3>
       <p class="room-description">Learn how to identify, detect, mitigate and report a vulnerability effectively.</p>
       <div class="status-badge done">
