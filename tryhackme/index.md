@@ -708,6 +708,15 @@ body {
         Done
       </div>
     </a>
+    <a href="https://www.canva.com/design/DAHAGvkUHjw/WaY2s5WSZNgtA6Wd7J9m1w/edit?utm_content=DAHAGvkUHjw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/net.png" alt="Secure Network Architecture" class="room-image">
+      <h3>Secure Network Architecture</h3>
+      <p class="room-description">Learn about and implement security best practices for network environments.</p>
+      <div class="status-badge done">
+        <span class="status-dot done"></span>
+        Done
+      </div>
+    </a>
   </div>
 
   <!-- Navigation footer -->
