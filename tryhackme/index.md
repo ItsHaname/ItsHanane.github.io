@@ -649,11 +649,11 @@ body {
       </div>
     </a>
 
-    <!-- Room: Exploitation with cURL -->
-  <a href="#" class="room-card">
-      <img src="{{ site.baseurl }}/assets/images/curl.png" alt="cURL Exploitation" class="room-image">
-      <h3>Exploitation with cURL - Hoperation Eggsploit</h3>
-      <p class="room-description">The evil Easter bunnies operate a web control panel that holds the wormhole open. Using cURL, identify the endpoints, send the required requests, and shut the wormhole once and for all.</p>
+    
+  <a href="https://www.canva.com/design/DAHAeR33J70/IE6Pnrso3dYY52jyRA1oYQ/edit?utm_content=DAHAeR33J70&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="room-card">
+      <img src="{{ site.baseurl }}/assets/images/wire.png" alt="cURL Exploitation" class="room-image">
+      <h3>Wireshark: The Basics</h3>
+      <p class="room-description"> Learn the basics of Wireshark and how to analyse protocols and PCAPs.</p>
       <div class="status-badge done">
         <span class="status-dot done"></span>
         Done
